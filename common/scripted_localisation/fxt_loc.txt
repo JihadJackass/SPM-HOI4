@@ -1,0 +1,43 @@
+defined_text = {
+	name = FXT_UNDO_PC_LABEL
+	text = {
+		trigger = { check_variable = { global.fxt_pc_cursor > 0 } }
+		localization_key = FXT_UNDO_PC_LABEL_N
+	}
+	text = {
+		localization_key = FXT_UNDO_PC_LABEL_NONE
+	}
+}
+
+defined_text = {
+	name = FXT_RESTORE_WS_LABEL
+	text = {
+		trigger = { has_global_flag = fxt_arm_restore }
+		localization_key = FXT_RESTORE_WS_LABEL_ARM
+	}
+	text = {
+		localization_key = FXT_RESTORE_WS_LABEL_IDLE
+	}
+}
+
+defined_text = {
+	name = FXT_ACTIVITY
+	text = {
+		trigger = { has_global_flag = fxt_enabled }
+		localization_key = FXT_ACTIVITY_OFF
+	}
+	text = {
+		localization_key = FXT_ACTIVITY_ON
+	}
+}
+
+defined_text = {
+	name = FXT_OPENING
+	text = {
+		trigger = { has_global_flag = fxt_enabled }
+		localization_key = FXT_CLOSE
+	}
+	text = {
+		localization_key = FXT_OPEN
+	}
+}

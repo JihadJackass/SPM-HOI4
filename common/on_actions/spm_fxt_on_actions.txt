@@ -1,0 +1,8 @@
+on_actions = {
+	# ROOT = winner, FROM = loser, called for every winner/loser pair before the conference opens
+	on_before_peace_conference_start = {
+		effect = {
+			fxt_on_peace_conference = yes
+		}
+	}
+}

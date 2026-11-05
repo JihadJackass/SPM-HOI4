@@ -1,0 +1,1983 @@
+# Single Player Magic decisions (generated)
+
+spm_decisions_categories = {
+	spm_enable_spm_menu = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			NOT = { has_country_flag = spm_enabled }
+		}
+		available = { is_ai = no }
+		complete_effect = {
+			set_country_flag = spm_enabled
+			custom_effect_tooltip = spm_enabled_tt
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_disable_spm_menu = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clr_country_flag = spm_enabled
+			custom_effect_tooltip = spm_disabled_tt
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_fixes = {
+	spm_fix_undo_pc = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+			check_variable = { global.fxt_pc_cursor > 0 }
+		}
+		complete_effect = {
+			fxt_undo_peace_conference = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_fix_undo_mine = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+			has_variable = fxt_pc_id
+		}
+		complete_effect = {
+			fxt_undo_country_peace = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_fix_my_cores = {
+		icon = generic_form_nation
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			fxt_return_cores = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_fix_save_world = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			fxt_save_world = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_fix_restore_world = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+			has_global_flag = fxt_ws_saved
+		}
+		complete_effect = {
+			fxt_restore_world = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_resources = {
+	spm_add_pp_100 = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_political_power = 100
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_pp_500 = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_political_power = 500
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_cp_50 = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_command_power = 50
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_stability = {
+		icon = generic_civil_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_stability = 0.10
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_war_support = {
+		icon = generic_civil_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_war_support = 0.10
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_army = {
+	spm_add_land_combat = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_land_combat_idea }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_land_combat_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_land_combat = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_land_combat_idea
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_land_combat_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_naval_combat = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_naval_combat_idea }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_naval_combat_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_naval_combat = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_naval_combat_idea
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_naval_combat_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_air_combat = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_air_combat_idea }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_air_combat_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_air_combat = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_air_combat_idea
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_air_combat_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_old_combat = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_combat_idea
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_combat_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_manpower = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_manpower = 100000
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_manpower = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_manpower = -100000
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_political = {
+	spm_pol_show_boost = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_pol_show_boost }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_country_flag = spm_pol_show_boost
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_pol_hide_boost = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_boost
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clr_country_flag = spm_pol_show_boost
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_pol_show_switch = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_pol_show_switch }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_country_flag = spm_pol_show_switch
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_pol_hide_switch = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_switch
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clr_country_flag = spm_pol_show_switch
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_democratic = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_boost
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = democratic
+				popularity = 0.25
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_communism = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_boost
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = communism
+				popularity = 0.25
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_fascism = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_boost
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = fascism
+				popularity = 0.25
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_neutrality = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_boost
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_popularity = {
+				ideology = neutrality
+				popularity = 0.25
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_change_democratic = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_switch
+			NOT = { has_government = democratic }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_politics = {
+				ruling_party = democratic
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_change_communism = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_switch
+			NOT = { has_government = communism }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_politics = {
+				ruling_party = communism
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_change_fascism = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_switch
+			NOT = { has_government = fascism }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_politics = {
+				ruling_party = fascism
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_change_neutrality = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_pol_show_switch
+			NOT = { has_government = neutrality }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_politics = {
+				ruling_party = neutrality
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_decisions_ideology_ban = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			if = {
+				limit = { has_government = democratic }
+				set_popularities = { democratic = 100 communism = 0 fascism = 0 neutrality = 0 }
+			}
+			if = {
+				limit = { has_government = communism }
+				set_popularities = { democratic = 0 communism = 100 fascism = 0 neutrality = 0 }
+			}
+			if = {
+				limit = { has_government = fascism }
+				set_popularities = { democratic = 0 communism = 0 fascism = 100 neutrality = 0 }
+			}
+			if = {
+				limit = { has_government = neutrality }
+				set_popularities = { democratic = 0 communism = 0 fascism = 0 neutrality = 100 }
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_enable_elections = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_elections = no
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			spm_set_elections_yes = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_disable_elections = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_elections = yes
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			spm_set_elections_no = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_bop_italy_left = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			original_tag = ITA
+			has_power_balance = { id = ITA_power_balance }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = ITA_power_balance
+				value = -0.20
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_bop_italy_right = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			original_tag = ITA
+			has_power_balance = { id = ITA_power_balance }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_power_balance_value = {
+				id = ITA_power_balance
+				value = 0.20
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_state = {
+	spm_core_states = {
+		icon = generic_form_nation
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			every_owned_state = {
+				limit = { NOT = { is_core_of = ROOT } }
+				add_core_of = ROOT
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_compliance_growth = {
+		icon = generic_form_nation
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_compliance_growth_idea }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_compliance_growth_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_compliance_growth = {
+		icon = generic_form_nation
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_compliance_growth_idea
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_compliance_growth_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_equipment = {
+	spm_add_infantry = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = infantry_equipment_1
+				amount = 1000
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_support = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = support_equipment_1
+				amount = 200
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_artillery = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = artillery_equipment_1
+				amount = 200
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_truck = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = motorized_equipment_1
+				amount = 500
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_tank = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = light_tank_chassis_1
+				amount = 200
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_plane = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = small_plane_airframe_1
+				amount = 200
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_train = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = train_equipment_1
+				amount = 50
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_convoy = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_equipment_to_stockpile = {
+				type = convoy_1
+				amount = 100
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_production = {
+	spm_add_construction_speed = {
+		icon = generic_construction
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_civilian_production_idea }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_civilian_production_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_construction_speed = {
+		icon = generic_construction
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_civilian_production_idea
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_civilian_production_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_efficiency_growth = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_production_efficiency_idea }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_production_efficiency_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_efficiency_growth = {
+		icon = generic_industry
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_production_efficiency_idea
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_production_efficiency_idea
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_war = {
+	spm_add_volunteer_reductions = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_volunteer_reductions }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_volunteer_reductions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_volunteer_reductions = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_volunteer_reductions
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_volunteer_reductions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_wargoal_reductions = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_add_wargoal_reductions }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_add_wargoal_reductions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_wargoal_reductions = {
+		icon = generic_army_support
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_add_wargoal_reductions
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_add_wargoal_reductions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_end_current_war = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_war = yes
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			fxt_white_peace_all = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_win_civil_war = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_civil_war = yes
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			fxt_end_civil_war = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_wt = {
+	spm_increase_world_tension_plus100 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = 100
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_increase_world_tension_plus50 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = 50
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_increase_world_tension_plus25 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = 25
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_increase_world_tension_plus10 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = 10
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_reduce_world_tension_minus10 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = -10
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_reduce_world_tension_minus25 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = -25
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_reduce_world_tension_minus50 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = -50
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_reduce_world_tension_minus100 = {
+		icon = generic_prepare_civil_war
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_threat = -100
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_subject = {
+	spm_add_subject_integration_policy = {
+		icon = generic_independence
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_idea = spm_subject_integration_policy }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_ideas = spm_subject_integration_policy
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_subject_integration_policy = {
+		icon = generic_independence
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_idea = spm_subject_integration_policy
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			remove_ideas = spm_subject_integration_policy
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_end_all_puppet = {
+		icon = generic_independence
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			num_subjects > 0
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			every_subject_country = {
+				ROOT = { end_puppet = PREV }
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_end_puppet = {
+		icon = generic_independence
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_subject = yes
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			OVERLORD = { end_puppet = ROOT }
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_add_autonomy = {
+		icon = generic_independence
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_subject = yes
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_autonomy_score = {
+				value = 500
+				localization = SPM_TOOLPACK_SOURCE
+			}
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_factions = {
+	spm_create_generic = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_in_faction = no
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			create_faction_from_template = faction_template_generic
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_create_defensive_democratic = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_in_faction = no
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			create_faction_from_template = faction_template_defensive_democratic
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_create_world_revolution = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_in_faction = no
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			create_faction_from_template = faction_template_world_revolution
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_create_generic_dominance = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_in_faction = no
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			create_faction_from_template = faction_template_generic_dominance
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_leave_faction = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_in_faction = yes
+			is_faction_leader = no
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			leave_faction = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_dismantle_faction = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_faction_leader = yes
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			dismantle_faction = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_join_faction_of = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		target_trigger = {
+			FROM = {
+				is_faction_leader = yes
+				NOT = { tag = ROOT }
+			}
+		}
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_in_faction = no
+		}
+		available = { is_ai = no }
+		complete_effect = {
+			FROM = { add_to_faction = ROOT }
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_invite_to_faction = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		target_trigger = {
+			FROM = {
+				is_in_faction = no
+				NOT = { tag = ROOT }
+			}
+		}
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_faction_leader = yes
+			has_country_flag = spm_show_invites
+		}
+		available = { is_ai = no }
+		complete_effect = {
+			add_to_faction = FROM
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_show_invites = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			is_faction_leader = yes
+			NOT = { has_country_flag = spm_show_invites }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_country_flag = spm_show_invites
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_hide_invites = {
+		icon = generic_nationalism
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_show_invites
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clr_country_flag = spm_show_invites
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_decisions_gamerules = {
+	spm_rule_can_create_factions_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_create_factions }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_create_factions = yes }
+			set_country_flag = spm_rule_can_create_factions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_create_factions_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_create_factions
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_create_factions = yes }
+			clr_country_flag = spm_rule_can_create_factions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_join_factions_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_join_factions }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_join_factions = yes }
+			set_country_flag = spm_rule_can_join_factions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_join_factions_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_join_factions
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_join_factions = yes }
+			clr_country_flag = spm_rule_can_join_factions
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_puppet_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_puppet }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_puppet = yes }
+			set_country_flag = spm_rule_can_puppet
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_puppet_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_puppet
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_puppet = yes }
+			clr_country_flag = spm_rule_can_puppet
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_send_volunteers_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_send_volunteers }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_send_volunteers = yes }
+			set_country_flag = spm_rule_can_send_volunteers
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_send_volunteers_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_send_volunteers
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_send_volunteers = yes }
+			clr_country_flag = spm_rule_can_send_volunteers
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_force_government_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_force_government }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_force_government = yes }
+			set_country_flag = spm_rule_can_force_government
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_force_government_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_force_government
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_force_government = yes }
+			clr_country_flag = spm_rule_can_force_government
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_guarantee_other_ideologies_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_guarantee_other_ideologies }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_guarantee_other_ideologies = yes }
+			set_country_flag = spm_rule_can_guarantee_other_ideologies
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_guarantee_other_ideologies_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_guarantee_other_ideologies
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_guarantee_other_ideologies = yes }
+			clr_country_flag = spm_rule_can_guarantee_other_ideologies
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_boost_other_ideologies_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_boost_other_ideologies }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_boost_other_ideologies = yes }
+			set_country_flag = spm_rule_can_boost_other_ideologies
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_boost_other_ideologies_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_boost_other_ideologies
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_boost_other_ideologies = yes }
+			clr_country_flag = spm_rule_can_boost_other_ideologies
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_declare_war_on_same_ideology_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_can_declare_war_on_same_ideology }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_declare_war_on_same_ideology = yes }
+			set_country_flag = spm_rule_can_declare_war_on_same_ideology
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_can_declare_war_on_same_ideology_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_can_declare_war_on_same_ideology
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_declare_war_on_same_ideology = yes }
+			clr_country_flag = spm_rule_can_declare_war_on_same_ideology
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_justify_any_on = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			NOT = { has_country_flag = spm_rule_justify_any }
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_rule = { can_only_justify_war_on_threat_country = no }
+			set_country_flag = spm_rule_justify_any
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_rule_justify_any_reset = {
+		icon = generic_research
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = spm_rule_justify_any
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			clear_rule = { can_only_justify_war_on_threat_country = no }
+			clr_country_flag = spm_rule_justify_any
+		}
+		ai_will_do = { base = 0 }
+	}
+}
+
+spm_paranoia = {
+	spm_add_paranoia = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = SOV_paranoia_system_active_flag
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_to_variable = { SOV_paranoia = 10 }
+			SOV_paranoia_clamp_and_update_ui_effect = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_remove_paranoia = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = SOV_paranoia_system_active_flag
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			add_to_variable = { SOV_paranoia = -10 }
+			SOV_paranoia_clamp_and_update_ui_effect = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_reset_paranoia = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = SOV_paranoia_system_active_flag
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			set_variable = { SOV_paranoia = 0 }
+			SOV_paranoia_clamp_and_update_ui_effect = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+
+	spm_end_paranoia = {
+		icon = generic_political_discourse
+		cost = 0
+		fire_only_once = no
+		visible = {
+			is_ai = no
+			has_country_flag = spm_enabled
+			has_country_flag = SOV_paranoia_system_active_flag
+		}
+		available = {
+			is_ai = no
+		}
+		complete_effect = {
+			SOV_remove_paranoia_effect = yes
+		}
+		ai_will_do = { base = 0 }
+	}
+}

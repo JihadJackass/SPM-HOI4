@@ -1,0 +1,190 @@
+scripted_gui = {
+	fxt_main_container = {
+		context_type = selected_country_context
+		window_name = "fxt_main_container"
+
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_global_flag = fxt_enabled
+				OR = {
+					has_country_flag = tp_is_host
+					NOT = { has_global_flag = tp_is_multiplayer }
+				}
+			}
+		}
+
+		effects = {
+			fxt_close_click = {
+				clr_global_flag = fxt_enabled
+				clr_global_flag = fxt_arm_restore
+			}
+			fxt_undo_peace_click = {
+				fxt_undo_country_peace = yes
+			}
+			fxt_return_cores_click = {
+				fxt_return_cores = yes
+			}
+			fxt_give_back_click = {
+				fxt_give_back_land = yes
+			}
+			fxt_free_click = {
+				if = {
+					limit = { is_subject = yes }
+					OVERLORD = { end_puppet = PREV }
+				}
+			}
+			fxt_free_subjects_click = {
+				every_subject_country = {
+					PREV = { end_puppet = PREV }
+				}
+			}
+			fxt_puppet_me_click = {
+				ROOT = { puppet = PREV }
+			}
+			fxt_white_peace_click = {
+				fxt_white_peace_all = yes
+			}
+			fxt_end_cw_click = {
+				fxt_end_civil_war = yes
+			}
+			fxt_leave_faction_click = {
+				if = {
+					limit = { is_faction_leader = yes }
+					dismantle_faction = yes
+				}
+				else = {
+					leave_faction = yes
+				}
+			}
+			fxt_restore_ws_country_click = {
+				fxt_restore_country_from_world = yes
+			}
+			fxt_undo_pc_click = {
+				fxt_undo_peace_conference = yes
+			}
+			fxt_save_ws_click = {
+				fxt_save_world = yes
+				clr_global_flag = fxt_arm_restore
+			}
+			fxt_restore_ws_click = {
+				if = {
+					limit = { has_global_flag = fxt_arm_restore }
+					clr_global_flag = fxt_arm_restore
+					fxt_restore_world = yes
+				}
+				else = {
+					set_global_flag = fxt_arm_restore
+				}
+			}
+			fxt_take_my_cores_click = {
+				every_owned_state = {
+					limit = { is_core_of = ROOT }
+					ROOT = { transfer_state = PREV }
+				}
+			}
+			fxt_return_mine_click = {
+				every_core_state = {
+					limit = { is_owned_by = ROOT }
+					PREV = { transfer_state = PREV }
+				}
+			}
+			fxt_peace_with_me_click = {
+				ROOT = { white_peace = PREV }
+			}
+			fxt_free_from_me_click = {
+				ROOT = { end_puppet = PREV }
+			}
+			fxt_annex_me_click = {
+				ROOT = {
+					annex_country = {
+						target = PREV
+						transfer_troops = yes
+					}
+				}
+			}
+			fxt_gov_democratic_click = {
+				fxt_set_government_democratic = yes
+			}
+			fxt_gov_communism_click = {
+				fxt_set_government_communism = yes
+			}
+			fxt_gov_fascism_click = {
+				fxt_set_government_fascism = yes
+			}
+			fxt_gov_neutrality_click = {
+				fxt_set_government_neutrality = yes
+			}
+		}
+
+		triggers = {
+			fxt_undo_peace_click_enabled = {
+				has_variable = fxt_pc_id
+			}
+			fxt_return_cores_click_enabled = {
+				any_core_state = { NOT = { is_owned_by = PREV } }
+			}
+			fxt_give_back_click_enabled = {
+				any_owned_state = { NOT = { is_core_of = PREV } }
+			}
+			fxt_free_click_enabled = {
+				is_subject = yes
+			}
+			fxt_free_subjects_click_enabled = {
+				num_subjects > 0
+			}
+			fxt_puppet_me_click_enabled = {
+				NOT = { tag = ROOT }
+				NOT = { is_subject_of = ROOT }
+			}
+			fxt_white_peace_click_enabled = {
+				has_war = yes
+			}
+			fxt_end_cw_click_enabled = {
+				has_civil_war = yes
+			}
+			fxt_leave_faction_click_enabled = {
+				is_in_faction = yes
+			}
+			fxt_restore_ws_country_click_enabled = {
+				has_global_flag = fxt_ws_saved
+				check_variable = { fxt_ws_id = global.fxt_ws_counter }
+			}
+			fxt_undo_pc_click_enabled = {
+				check_variable = { global.fxt_pc_cursor > 0 }
+			}
+			fxt_restore_ws_click_enabled = {
+				has_global_flag = fxt_ws_saved
+			}
+			fxt_take_my_cores_click_enabled = {
+				NOT = { tag = ROOT }
+				any_owned_state = { is_core_of = ROOT }
+			}
+			fxt_return_mine_click_enabled = {
+				NOT = { tag = ROOT }
+				any_core_state = { is_owned_by = ROOT }
+			}
+			fxt_peace_with_me_click_enabled = {
+				has_war_with = ROOT
+			}
+			fxt_free_from_me_click_enabled = {
+				is_subject_of = ROOT
+			}
+			fxt_annex_me_click_enabled = {
+				NOT = { tag = ROOT }
+			}
+			fxt_gov_democratic_click_enabled = {
+				NOT = { has_government = democratic }
+			}
+			fxt_gov_communism_click_enabled = {
+				NOT = { has_government = communism }
+			}
+			fxt_gov_fascism_click_enabled = {
+				NOT = { has_government = fascism }
+			}
+			fxt_gov_neutrality_click_enabled = {
+				NOT = { has_government = neutrality }
+			}
+		}
+	}
+}

@@ -1,0 +1,175 @@
+defined_text = {
+	name = SPM_MENU_FXT
+	text = {
+		trigger = { has_global_flag = fxt_enabled }
+		localization_key = SPM_MENU_FXT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_FXT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_SMT
+	text = {
+		trigger = { has_global_flag = smt_enabled }
+		localization_key = SPM_MENU_SMT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_SMT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_CAT
+	text = {
+		trigger = { has_global_flag = cat_enabled }
+		localization_key = SPM_MENU_CAT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_CAT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_CPT
+	text = {
+		trigger = { has_global_flag = cpt_enabled }
+		localization_key = SPM_MENU_CPT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_CPT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_TPT
+	text = {
+		trigger = { has_global_flag = tpt_enabled }
+		localization_key = SPM_MENU_TPT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_TPT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_DST_A
+	text = {
+		trigger = { has_global_flag = dst_A_enabled }
+		localization_key = SPM_MENU_DST_A_ON
+	}
+	text = {
+		localization_key = SPM_MENU_DST_A_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_DST_B
+	text = {
+		trigger = { has_global_flag = dst_B_enabled }
+		localization_key = SPM_MENU_DST_B_ON
+	}
+	text = {
+		localization_key = SPM_MENU_DST_B_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_BST
+	text = {
+		trigger = { has_global_flag = bst_enabled }
+		localization_key = SPM_MENU_BST_ON
+	}
+	text = {
+		localization_key = SPM_MENU_BST_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_MST_C
+	text = {
+		trigger = { has_global_flag = mst_C_enabled }
+		localization_key = SPM_MENU_MST_C_ON
+	}
+	text = {
+		localization_key = SPM_MENU_MST_C_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_MST_S
+	text = {
+		trigger = { has_global_flag = mst_S_enabled }
+		localization_key = SPM_MENU_MST_S_ON
+	}
+	text = {
+		localization_key = SPM_MENU_MST_S_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_RMT
+	text = {
+		trigger = { has_global_flag = rmt_enabled }
+		localization_key = SPM_MENU_RMT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_RMT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_CRT
+	text = {
+		trigger = { has_global_flag = crt_enabled }
+		localization_key = SPM_MENU_CRT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_CRT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_RET
+	text = {
+		trigger = { has_global_flag = ret_enabled }
+		localization_key = SPM_MENU_RET_ON
+	}
+	text = {
+		localization_key = SPM_MENU_RET_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_CCT
+	text = {
+		trigger = { has_global_flag = cct_enabled }
+		localization_key = SPM_MENU_CCT_ON
+	}
+	text = {
+		localization_key = SPM_MENU_CCT_OFF
+	}
+}
+
+defined_text = {
+	name = SPM_MENU_SST
+	text = {
+		trigger = { has_global_flag = sst_enabled }
+		localization_key = SPM_MENU_SST_ON
+	}
+	text = {
+		localization_key = SPM_MENU_SST_OFF
+	}
+}
+
+defined_text = {
+	name = TPT_RSS_NEG_OR_POS
+	text = {
+		trigger = { check_variable = { tpt_research_speed > -0.001 } }
+		localization_key = TPT_RSS_POSITIVE
+	}
+	text = {
+		localization_key = TPT_RSS_NEGATIVE
+	}
+}

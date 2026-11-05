@@ -1,0 +1,99 @@
+ideas = {
+	hidden_ideas = {
+		spm_add_land_combat_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.65
+				army_defence_factor = 0.65
+				breakthrough_factor = 0.7
+			}
+		}
+		spm_add_naval_combat_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_damage_factor = 0.4
+				naval_defense_factor = 0.4
+				submarine_attack = 0.25
+			}
+		}
+		spm_add_air_combat_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				air_attack_factor = 0.3
+				air_defence_factor = 0.3
+				air_cas_efficiency = 0.65
+			}
+		}
+		spm_add_civilian_production_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_speed_buildings_factor = 0.5
+				consumer_goods_factor = -0.3
+			}
+		}
+		spm_add_production_efficiency_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				production_factory_efficiency_gain_factor = 1.0
+				production_factory_max_efficiency_factor = 0.5
+				production_lack_of_resource_penalty_factor = -0.5
+				equipment_conversion_speed = 0.5
+				industrial_capacity_factory = 0.65
+				industrial_capacity_dockyard = 0.65
+			}
+		}
+		spm_add_compliance_growth_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				resistance_target = -0.5
+				compliance_growth_on_our_occupied_states = 0.1
+				required_garrison_factor = -0.5
+			}
+		}
+		spm_subject_integration_policy = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				autonomy_gain_global_factor = -0.5
+			}
+		}
+		spm_add_volunteer_reductions = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				send_volunteers_tension = -0.5
+				send_volunteer_factor = 0.5
+				send_volunteer_divisions_required = -0.99
+			}
+		}
+		spm_add_wargoal_reductions = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				generate_wargoal_tension = -1.0
+			}
+		}
+		spm_add_combat_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				army_attack_factor = 0.65
+				army_defence_factor = 0.65
+				breakthrough_factor = 0.7
+			}
+		}
+		spm_add_espionage_idea = {
+			allowed = { always = no }
+			removal_cost = -1
+			modifier = {
+				naval_damage_factor = 0.25
+			}
+		}
+	}
+}

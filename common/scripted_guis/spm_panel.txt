@@ -1,0 +1,933 @@
+scripted_gui = {
+	spm_panel = {
+		context_type = selected_state_context
+		window_name = "spm_panel"
+
+		visible = {
+			ROOT = {
+				is_ai = no
+				has_global_flag = spm_panel_enabled
+				OR = {
+					has_country_flag = tp_is_host
+					NOT = { has_global_flag = tp_is_multiplayer }
+				}
+			}
+		}
+
+		effects = {
+			spm_close_click = {
+				clr_global_flag = spm_panel_enabled
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_tab_fix_click = {
+				clr_global_flag = spm_tab_territory
+				clr_global_flag = spm_tab_subjects
+				clr_global_flag = spm_tab_politics
+				clr_global_flag = spm_tab_war
+				clr_global_flag = spm_tab_resources
+				clr_global_flag = spm_tab_advanced
+				set_global_flag = spm_tab_fix
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_fix_undo_lost_click = {
+				OWNER = {
+					fxt_undo_country_peace = yes
+				}
+			}
+			spm_fix_undo_pc_click = {
+				fxt_undo_peace_conference = yes
+			}
+			spm_fix_return_cores_click = {
+				OWNER = {
+					fxt_return_cores = yes
+				}
+			}
+			spm_fix_hand_back_click = {
+				OWNER = {
+					fxt_give_back_land = yes
+				}
+			}
+			spm_fix_save_ws_click = {
+				fxt_save_world = yes
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_fix_load_ws_click = {
+				if = {
+					limit = { has_global_flag = fxt_arm_restore }
+					clr_global_flag = fxt_arm_restore
+					fxt_restore_world = yes
+				}
+				else = {
+					set_global_flag = fxt_arm_restore
+				}
+			}
+			spm_fix_restore_one_click = {
+				OWNER = {
+					fxt_restore_country_from_world = yes
+				}
+			}
+			spm_fix_my_cores_click = {
+				ROOT = { fxt_return_cores = yes }
+			}
+			spm_tab_territory_click = {
+				clr_global_flag = spm_tab_fix
+				clr_global_flag = spm_tab_subjects
+				clr_global_flag = spm_tab_politics
+				clr_global_flag = spm_tab_war
+				clr_global_flag = spm_tab_resources
+				clr_global_flag = spm_tab_advanced
+				set_global_flag = spm_tab_territory
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_territory_give_me_click = {
+				ROOT = { transfer_state = PREV }
+			}
+			spm_territory_give_core_click = {
+				fxt_state_to_core_owner = yes
+			}
+			spm_territory_core_owner_click = {
+				add_core_of = OWNER
+			}
+			spm_territory_capital_click = {
+				OWNER = { set_capital = { state = PREV } }
+			}
+			spm_territory_mark_click = {
+				set_state_flag = smt_marked
+			}
+			spm_territory_unmark_click = {
+				clr_state_flag = smt_marked
+			}
+			spm_territory_mark_country_click = {
+				OWNER = {
+					every_owned_state = { set_state_flag = smt_marked }
+				}
+			}
+			spm_territory_send_marked_click = {
+				every_state = {
+					limit = { has_state_flag = smt_marked }
+					clr_state_flag = smt_marked
+					PREV.OWNER = { transfer_state = PREV }
+				}
+			}
+			spm_territory_clear_marks_click = {
+				every_state = { clr_state_flag = smt_marked }
+			}
+			spm_tab_subjects_click = {
+				clr_global_flag = spm_tab_fix
+				clr_global_flag = spm_tab_territory
+				clr_global_flag = spm_tab_politics
+				clr_global_flag = spm_tab_war
+				clr_global_flag = spm_tab_resources
+				clr_global_flag = spm_tab_advanced
+				set_global_flag = spm_tab_subjects
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_subjects_puppet_click = {
+				OWNER = {
+					if = {
+						limit = {
+							is_subject = yes
+							NOT = { is_subject_of = ROOT }
+						}
+						OVERLORD = { end_puppet = PREV }
+					}
+					if = {
+						limit = { NOT = { is_subject_of = ROOT } }
+						ROOT = { puppet = PREV }
+					}
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_puppet
+						}
+					}
+				}
+			}
+			spm_subjects_integrated_click = {
+				OWNER = {
+					if = {
+						limit = {
+							is_subject = yes
+							NOT = { is_subject_of = ROOT }
+						}
+						OVERLORD = { end_puppet = PREV }
+					}
+					if = {
+						limit = { NOT = { is_subject_of = ROOT } }
+						ROOT = { puppet = PREV }
+					}
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_integrated_puppet
+						}
+					}
+				}
+			}
+			spm_subjects_dominion_click = {
+				OWNER = {
+					if = {
+						limit = {
+							is_subject = yes
+							NOT = { is_subject_of = ROOT }
+						}
+						OVERLORD = { end_puppet = PREV }
+					}
+					if = {
+						limit = { NOT = { is_subject_of = ROOT } }
+						ROOT = { puppet = PREV }
+					}
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_dominion
+						}
+					}
+				}
+			}
+			spm_subjects_colony_click = {
+				OWNER = {
+					if = {
+						limit = {
+							is_subject = yes
+							NOT = { is_subject_of = ROOT }
+						}
+						OVERLORD = { end_puppet = PREV }
+					}
+					if = {
+						limit = { NOT = { is_subject_of = ROOT } }
+						ROOT = { puppet = PREV }
+					}
+					ROOT = {
+						set_autonomy = {
+							target = PREV
+							autonomy_state = autonomy_colony
+						}
+					}
+				}
+			}
+			spm_subjects_free_click = {
+				OWNER = {
+					OVERLORD = { end_puppet = PREV }
+				}
+			}
+			spm_subjects_free_subjects_click = {
+				OWNER = {
+					every_subject_country = {
+						PREV = { end_puppet = PREV }
+					}
+				}
+			}
+			spm_subjects_annex_click = {
+				OWNER = {
+					ROOT = {
+						annex_country = {
+							target = PREV
+							transfer_troops = yes
+						}
+					}
+				}
+			}
+			spm_subjects_annex_subjects_click = {
+				OWNER = {
+					every_subject_country = {
+						PREV = {
+							annex_country = {
+								target = PREV
+								transfer_troops = yes
+							}
+						}
+					}
+				}
+			}
+			spm_tab_politics_click = {
+				clr_global_flag = spm_tab_fix
+				clr_global_flag = spm_tab_territory
+				clr_global_flag = spm_tab_subjects
+				clr_global_flag = spm_tab_war
+				clr_global_flag = spm_tab_resources
+				clr_global_flag = spm_tab_advanced
+				set_global_flag = spm_tab_politics
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_politics_gov_democratic_click = {
+				OWNER = {
+					fxt_set_government_democratic = yes
+				}
+			}
+			spm_politics_gov_communism_click = {
+				OWNER = {
+					fxt_set_government_communism = yes
+				}
+			}
+			spm_politics_gov_fascism_click = {
+				OWNER = {
+					fxt_set_government_fascism = yes
+				}
+			}
+			spm_politics_gov_neutrality_click = {
+				OWNER = {
+					fxt_set_government_neutrality = yes
+				}
+			}
+			spm_politics_elections_on_click = {
+				OWNER = {
+					spm_set_elections_yes = yes
+				}
+			}
+			spm_politics_elections_off_click = {
+				OWNER = {
+					spm_set_elections_no = yes
+				}
+			}
+			spm_politics_purge_click = {
+				OWNER = {
+					if = {
+						limit = { has_government = democratic }
+						set_popularities = { democratic = 100 communism = 0 fascism = 0 neutrality = 0 }
+					}
+					if = {
+						limit = { has_government = communism }
+						set_popularities = { democratic = 0 communism = 100 fascism = 0 neutrality = 0 }
+					}
+					if = {
+						limit = { has_government = fascism }
+						set_popularities = { democratic = 0 communism = 0 fascism = 100 neutrality = 0 }
+					}
+					if = {
+						limit = { has_government = neutrality }
+						set_popularities = { democratic = 0 communism = 0 fascism = 0 neutrality = 100 }
+					}
+				}
+			}
+			spm_politics_stability_click = {
+				OWNER = {
+					add_stability = 0.10
+				}
+			}
+			spm_politics_war_support_click = {
+				OWNER = {
+					add_war_support = 0.10
+				}
+			}
+			spm_tab_war_click = {
+				clr_global_flag = spm_tab_fix
+				clr_global_flag = spm_tab_territory
+				clr_global_flag = spm_tab_subjects
+				clr_global_flag = spm_tab_politics
+				clr_global_flag = spm_tab_resources
+				clr_global_flag = spm_tab_advanced
+				set_global_flag = spm_tab_war
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_war_white_peace_click = {
+				OWNER = {
+					fxt_white_peace_all = yes
+				}
+			}
+			spm_war_win_cw_click = {
+				OWNER = {
+					fxt_end_civil_war = yes
+				}
+			}
+			spm_war_peace_me_click = {
+				OWNER = {
+					ROOT = { white_peace = PREV }
+				}
+			}
+			spm_war_war_me_click = {
+				OWNER = {
+					ROOT = {
+						declare_war_on = {
+							target = PREV
+							type = annex_everything
+						}
+					}
+				}
+			}
+			spm_war_join_mine_click = {
+				OWNER = {
+					ROOT = { add_to_faction = PREV }
+				}
+			}
+			spm_war_leave_faction_click = {
+				OWNER = {
+					if = {
+						limit = { is_faction_leader = yes }
+						dismantle_faction = yes
+					}
+					else = {
+						leave_faction = yes
+					}
+				}
+			}
+			spm_war_new_faction_click = {
+				OWNER = {
+					create_faction_from_template = faction_template_generic
+				}
+			}
+			spm_war_join_its_click = {
+				OWNER = {
+					add_to_faction = ROOT
+				}
+			}
+			spm_tab_resources_click = {
+				clr_global_flag = spm_tab_fix
+				clr_global_flag = spm_tab_territory
+				clr_global_flag = spm_tab_subjects
+				clr_global_flag = spm_tab_politics
+				clr_global_flag = spm_tab_war
+				clr_global_flag = spm_tab_advanced
+				set_global_flag = spm_tab_resources
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_resources_pp_click = {
+				OWNER = {
+					add_political_power = 100
+				}
+			}
+			spm_resources_manpower_click = {
+				OWNER = {
+					add_manpower = 100000
+				}
+			}
+			spm_resources_cp_click = {
+				OWNER = {
+					add_command_power = 50
+				}
+			}
+			spm_resources_equipment_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = infantry_equipment_1
+						amount = 1000
+					}
+				}
+			}
+			spm_resources_civ_click = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = industrial_complex
+					level = 1
+					instant_build = yes
+				}
+			}
+			spm_resources_mil_click = {
+				add_extra_state_shared_building_slots = 1
+				add_building_construction = {
+					type = arms_factory
+					level = 1
+					instant_build = yes
+				}
+			}
+			spm_resources_infra_click = {
+				add_building_construction = {
+					type = infrastructure
+					level = 1
+					instant_build = yes
+				}
+			}
+			spm_resources_air_click = {
+				add_building_construction = {
+					type = air_base
+					level = 1
+					instant_build = yes
+				}
+			}
+			spm_tab_advanced_click = {
+				clr_global_flag = spm_tab_fix
+				clr_global_flag = spm_tab_territory
+				clr_global_flag = spm_tab_subjects
+				clr_global_flag = spm_tab_politics
+				clr_global_flag = spm_tab_war
+				clr_global_flag = spm_tab_resources
+				set_global_flag = spm_tab_advanced
+				clr_global_flag = fxt_arm_restore
+			}
+			spm_advanced_tool_smt_click = {
+				if = {
+					limit = { has_global_flag = smt_enabled }
+					clr_global_flag = smt_enabled
+				}
+				else = {
+					set_global_flag = smt_enabled
+					bst_count_civf = yes
+				}
+			}
+			spm_advanced_tool_cat_click = {
+				if = {
+					limit = { has_global_flag = cat_enabled }
+					clr_global_flag = cat_enabled
+				}
+				else = {
+					set_global_flag = cat_enabled
+					bst_count_civf = yes
+				}
+			}
+			spm_advanced_tool_cpt_click = {
+				if = {
+					limit = { has_global_flag = cpt_enabled }
+					clr_global_flag = cpt_enabled
+				}
+				else = {
+					set_global_flag = cpt_enabled
+					if = {
+						limit = { NOT = { has_global_flag = cpt_window_b } }
+						set_global_flag = cpt_window_a
+					}
+				}
+			}
+			spm_advanced_tool_tpt_click = {
+				if = {
+					limit = { has_global_flag = tpt_enabled }
+					clr_global_flag = tpt_enabled
+					clr_global_flag = tpt_cw_window_open
+				}
+				else = {
+					set_global_flag = tpt_enabled
+					if = {
+						limit = {
+							NOT = { has_global_flag = tpt_window_b }
+							NOT = { has_global_flag = tpt_window_c }
+							NOT = { has_global_flag = tpt_window_d }
+						}
+						set_global_flag = tpt_window_a
+					}
+				}
+			}
+			spm_advanced_tool_dst_A_click = {
+				if = {
+					limit = { has_global_flag = dst_A_enabled }
+					clr_global_flag = dst_A_enabled
+				}
+				else = {
+					set_global_flag = dst_A_enabled
+				}
+			}
+			spm_advanced_tool_dst_B_click = {
+				if = {
+					limit = { has_global_flag = dst_B_enabled }
+					clr_global_flag = dst_B_enabled
+				}
+				else = {
+					set_global_flag = dst_B_enabled
+				}
+			}
+			spm_advanced_tool_bst_click = {
+				if = {
+					limit = { has_global_flag = bst_enabled }
+					clr_global_flag = bst_enabled
+				}
+				else = {
+					set_global_flag = bst_enabled
+					bst_count_buildings = yes
+				}
+			}
+			spm_advanced_tool_sst_click = {
+				if = {
+					limit = { has_global_flag = sst_enabled }
+					clr_global_flag = sst_enabled
+				}
+				else = {
+					set_global_flag = sst_enabled
+				}
+			}
+			spm_advanced_tool_mst_C_click = {
+				if = {
+					limit = { has_global_flag = mst_C_enabled }
+					clr_global_flag = mst_C_enabled
+				}
+				else = {
+					set_global_flag = mst_C_enabled
+				}
+			}
+			spm_advanced_tool_mst_S_click = {
+				if = {
+					limit = { has_global_flag = mst_S_enabled }
+					clr_global_flag = mst_S_enabled
+				}
+				else = {
+					set_global_flag = mst_S_enabled
+				}
+			}
+			spm_advanced_tool_rmt_click = {
+				if = {
+					limit = { has_global_flag = rmt_enabled }
+					clr_global_flag = rmt_enabled
+				}
+				else = {
+					set_global_flag = rmt_enabled
+				}
+			}
+			spm_advanced_tool_crt_click = {
+				if = {
+					limit = { has_global_flag = crt_enabled }
+					clr_global_flag = crt_enabled
+				}
+				else = {
+					set_global_flag = crt_enabled
+				}
+			}
+			spm_advanced_tool_ret_click = {
+				if = {
+					limit = { has_global_flag = ret_enabled }
+					clr_global_flag = ret_enabled
+				}
+				else = {
+					set_global_flag = ret_enabled
+					ret_load_releasable = yes
+				}
+			}
+			spm_advanced_tool_cct_click = {
+				if = {
+					limit = { has_global_flag = cct_enabled }
+					clr_global_flag = cct_enabled
+				}
+				else = {
+					set_global_flag = cct_enabled
+				}
+			}
+		}
+
+		triggers = {
+			spm_fix_label_50_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_undo_lost_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_undo_lost_click_enabled = {
+				OWNER = { has_variable = fxt_pc_id }
+			}
+			spm_fix_undo_pc_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_undo_pc_click_enabled = {
+				check_variable = { global.fxt_pc_cursor > 0 }
+			}
+			spm_fix_return_cores_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_return_cores_click_enabled = {
+				OWNER = { any_core_state = { NOT = { is_owned_by = PREV } } }
+			}
+			spm_fix_hand_back_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_hand_back_click_enabled = {
+				OWNER = { any_owned_state = { NOT = { is_core_of = PREV } } }
+			}
+			spm_fix_label_150_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_save_ws_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_load_ws_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_load_ws_click_enabled = {
+				has_global_flag = fxt_ws_saved
+			}
+			spm_fix_restore_one_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_restore_one_click_enabled = {
+				has_global_flag = fxt_ws_saved
+				OWNER = { check_variable = { fxt_ws_id = global.fxt_ws_counter } }
+			}
+			spm_fix_my_cores_visible = {
+				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			}
+			spm_fix_my_cores_click_enabled = {
+				ROOT = { any_core_state = { NOT = { is_owned_by = ROOT } } }
+			}
+			spm_territory_label_50_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_give_me_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_give_me_click_enabled = {
+				NOT = { is_owned_by = ROOT }
+			}
+			spm_territory_give_core_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_give_core_click_enabled = {
+				NOT = { is_core_of = OWNER }
+			}
+			spm_territory_core_owner_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_core_owner_click_enabled = {
+				NOT = { is_core_of = OWNER }
+			}
+			spm_territory_capital_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_capital_click_enabled = {
+				NOT = { is_capital = yes }
+			}
+			spm_territory_label_150_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_mark_visible = {
+				has_global_flag = spm_tab_territory
+				NOT = { has_state_flag = smt_marked }
+			}
+			spm_territory_unmark_visible = {
+				has_global_flag = spm_tab_territory
+				has_state_flag = smt_marked
+			}
+			spm_territory_mark_country_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_send_marked_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_send_marked_click_enabled = {
+				any_state = { has_state_flag = smt_marked }
+			}
+			spm_territory_clear_marks_visible = {
+				has_global_flag = spm_tab_territory
+			}
+			spm_territory_clear_marks_click_enabled = {
+				any_state = { has_state_flag = smt_marked }
+			}
+			spm_subjects_label_50_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_puppet_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_puppet_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_subjects_integrated_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_integrated_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_subjects_dominion_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_dominion_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_subjects_colony_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_colony_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_subjects_label_150_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_free_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_free_click_enabled = {
+				OWNER = { is_subject = yes }
+			}
+			spm_subjects_free_subjects_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_free_subjects_click_enabled = {
+				OWNER = { num_subjects > 0 }
+			}
+			spm_subjects_annex_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_annex_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_subjects_annex_subjects_visible = {
+				has_global_flag = spm_tab_subjects
+			}
+			spm_subjects_annex_subjects_click_enabled = {
+				OWNER = { num_subjects > 0 }
+			}
+			spm_politics_label_50_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_gov_democratic_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_gov_democratic_click_enabled = {
+				OWNER = { NOT = { has_government = democratic } }
+			}
+			spm_politics_gov_communism_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_gov_communism_click_enabled = {
+				OWNER = { NOT = { has_government = communism } }
+			}
+			spm_politics_gov_fascism_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_gov_fascism_click_enabled = {
+				OWNER = { NOT = { has_government = fascism } }
+			}
+			spm_politics_gov_neutrality_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_gov_neutrality_click_enabled = {
+				OWNER = { NOT = { has_government = neutrality } }
+			}
+			spm_politics_label_150_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_elections_on_visible = {
+				has_global_flag = spm_tab_politics
+				OWNER = { has_elections = no }
+			}
+			spm_politics_elections_off_visible = {
+				has_global_flag = spm_tab_politics
+				OWNER = { has_elections = yes }
+			}
+			spm_politics_purge_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_stability_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_politics_war_support_visible = {
+				has_global_flag = spm_tab_politics
+			}
+			spm_war_label_50_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_white_peace_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_white_peace_click_enabled = {
+				OWNER = { has_war = yes }
+			}
+			spm_war_win_cw_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_win_cw_click_enabled = {
+				OWNER = { has_civil_war = yes }
+			}
+			spm_war_peace_me_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_peace_me_click_enabled = {
+				OWNER = { has_war_with = ROOT }
+			}
+			spm_war_war_me_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_war_me_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+				OWNER = { NOT = { has_war_with = ROOT } }
+			}
+			spm_war_label_150_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_join_mine_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_join_mine_click_enabled = {
+				ROOT = { is_faction_leader = yes }
+				OWNER = { is_in_faction = no }
+			}
+			spm_war_leave_faction_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_leave_faction_click_enabled = {
+				OWNER = { is_in_faction = yes }
+			}
+			spm_war_new_faction_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_new_faction_click_enabled = {
+				OWNER = { is_in_faction = no }
+			}
+			spm_war_join_its_visible = {
+				has_global_flag = spm_tab_war
+			}
+			spm_war_join_its_click_enabled = {
+				OWNER = { is_faction_leader = yes }
+				ROOT = { is_in_faction = no }
+			}
+			spm_resources_label_50_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_pp_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_manpower_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_cp_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_equipment_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_label_150_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_civ_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_mil_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_infra_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_resources_air_visible = {
+				has_global_flag = spm_tab_resources
+			}
+			spm_advanced_label_50_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_smt_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_cat_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_cpt_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_tpt_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_dst_A_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_dst_B_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_bst_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_sst_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_mst_C_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_mst_S_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_rmt_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_crt_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_ret_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+			spm_advanced_tool_cct_visible = {
+				has_global_flag = spm_tab_advanced
+			}
+		}
+	}
+}

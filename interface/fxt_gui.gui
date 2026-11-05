@@ -1,0 +1,254 @@
+guiTypes = {
+	containerWindowType = {
+		name = "fxt_main_container"
+		position = { x = 0 y = 0 }
+		size = { width = 494 height = 436 }
+		orientation = CENTER
+		origo = center
+		moveable = yes
+		fade_time = 200
+		fade_type = linear
+
+		background = {
+			name = "Background"
+			spriteType = "GFX_dst_bg_big"
+		}
+
+		instantTextboxType = {
+			name = "fxt_title"
+			position = { x = 20 y = 12 }
+			font = "hoi_18mbs"
+			text = "FXT_TITLE"
+			maxWidth = 400
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "fxt_close"
+			position = { x = 456 y = 10 }
+			quadTextureSprite = "GFX_closebutton"
+			clicksound = click_ok
+		}
+		instantTextboxType = {
+			name = "fxt_head_left"
+			position = { x = 30 y = 44 }
+			font = "hoi_16mbs"
+			text = "FXT_HEAD_LEFT"
+			maxWidth = 210
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "fxt_head_right"
+			position = { x = 262 y = 44 }
+			font = "hoi_16mbs"
+			text = "FXT_HEAD_RIGHT"
+			maxWidth = 210
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "fxt_undo_peace"
+			position = { x = 30 y = 68 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_UNDO_PEACE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_UNDO_PEACE_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_return_cores"
+			position = { x = 30 y = 100 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_RETURN_CORES_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_RETURN_CORES_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_give_back"
+			position = { x = 30 y = 132 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_GIVE_BACK_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_GIVE_BACK_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_free"
+			position = { x = 30 y = 164 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_FREE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_FREE_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_free_subjects"
+			position = { x = 30 y = 196 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_FREE_SUBJECTS_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_FREE_SUBJECTS_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_puppet_me"
+			position = { x = 30 y = 228 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_PUPPET_ME_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_PUPPET_ME_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_white_peace"
+			position = { x = 30 y = 260 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_WHITE_PEACE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_WHITE_PEACE_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_end_cw"
+			position = { x = 30 y = 292 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_END_CW_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_END_CW_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_leave_faction"
+			position = { x = 30 y = 324 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_LEAVE_FACTION_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_LEAVE_FACTION_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_restore_ws_country"
+			position = { x = 30 y = 356 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_RESTORE_WS_COUNTRY_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_RESTORE_WS_COUNTRY_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_undo_pc"
+			position = { x = 262 y = 68 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_UNDO_PC_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_UNDO_PC_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_save_ws"
+			position = { x = 262 y = 100 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_SAVE_WS_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_SAVE_WS_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_restore_ws"
+			position = { x = 262 y = 132 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_RESTORE_WS_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_RESTORE_WS_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_take_my_cores"
+			position = { x = 262 y = 164 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_TAKE_MY_CORES_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_TAKE_MY_CORES_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_return_mine"
+			position = { x = 262 y = 196 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_RETURN_MINE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_RETURN_MINE_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_peace_with_me"
+			position = { x = 262 y = 228 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_PEACE_WITH_ME_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_PEACE_WITH_ME_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_free_from_me"
+			position = { x = 262 y = 260 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_FREE_FROM_ME_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_FREE_FROM_ME_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_annex_me"
+			position = { x = 262 y = 292 }
+			quadTextureSprite = "GFX_generic_text_bg_203"
+			buttonText = "FXT_ANNEX_ME_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "FXT_ANNEX_ME_TT"
+			clicksound = click_ok
+		}
+		instantTextboxType = {
+			name = "fxt_gov_label"
+			position = { x = 30 y = 398 }
+			font = "hoi_16mbs"
+			text = "FXT_GOV_LABEL"
+			maxWidth = 170
+			maxHeight = 23
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "fxt_gov_democratic"
+			position = { x = 200 y = 392 }
+			spriteType = "GFX_tpt_democratic_idea"
+			pdx_tooltip = "FXT_GOV_DEMOCRATIC_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_gov_communism"
+			position = { x = 244 y = 392 }
+			spriteType = "GFX_tpt_communism_idea"
+			pdx_tooltip = "FXT_GOV_COMMUNISM_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_gov_fascism"
+			position = { x = 288 y = 392 }
+			spriteType = "GFX_tpt_fascism_idea"
+			pdx_tooltip = "FXT_GOV_FASCISM_TT"
+			clicksound = click_ok
+		}
+		buttonType = {
+			name = "fxt_gov_neutrality"
+			position = { x = 332 y = 392 }
+			spriteType = "GFX_tpt_neutrality_idea"
+			pdx_tooltip = "FXT_GOV_NEUTRALITY_TT"
+			clicksound = click_ok
+		}
+	}
+}

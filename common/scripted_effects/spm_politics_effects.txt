@@ -1,0 +1,61 @@
+spm_set_elections_yes = {
+	if = {
+		limit = { has_government = democratic }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = yes
+		}
+	}
+	if = {
+		limit = { has_government = communism }
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = yes
+		}
+	}
+	if = {
+		limit = { has_government = fascism }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = yes
+		}
+	}
+	if = {
+		limit = { has_government = neutrality }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = yes
+		}
+	}
+}
+
+spm_set_elections_no = {
+	if = {
+		limit = { has_government = democratic }
+		set_politics = {
+			ruling_party = democratic
+			elections_allowed = no
+		}
+	}
+	if = {
+		limit = { has_government = communism }
+		set_politics = {
+			ruling_party = communism
+			elections_allowed = no
+		}
+	}
+	if = {
+		limit = { has_government = fascism }
+		set_politics = {
+			ruling_party = fascism
+			elections_allowed = no
+		}
+	}
+	if = {
+		limit = { has_government = neutrality }
+		set_politics = {
+			ruling_party = neutrality
+			elections_allowed = no
+		}
+	}
+}

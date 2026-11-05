@@ -1,0 +1,404 @@
+###########################################
+# SPM Fix Tool - snapshots and repairs    #
+###########################################
+
+fxt_snapshot_country_pc = {
+	clr_country_flag = fxt_pc_gov_democratic
+	clr_country_flag = fxt_pc_gov_communism
+	clr_country_flag = fxt_pc_gov_fascism
+	clr_country_flag = fxt_pc_gov_neutrality
+	if = { limit = { has_government = democratic } set_country_flag = fxt_pc_gov_democratic }
+	if = { limit = { has_government = communism } set_country_flag = fxt_pc_gov_communism }
+	if = { limit = { has_government = fascism } set_country_flag = fxt_pc_gov_fascism }
+	if = { limit = { has_government = neutrality } set_country_flag = fxt_pc_gov_neutrality }
+	clr_country_flag = fxt_pc_free
+	clear_variable = fxt_pc_overlord
+	if = {
+		limit = { is_subject = yes }
+		OVERLORD = {
+			PREV = { set_variable = { fxt_pc_overlord = PREV } }
+		}
+	}
+	else = {
+		set_country_flag = fxt_pc_free
+	}
+	set_variable = { fxt_pc_id = global.fxt_pc_counter }
+	every_owned_state = {
+		set_variable = { fxt_pc_owner = PREV }
+		set_variable = { fxt_pc_id = global.fxt_pc_counter }
+	}
+}
+
+fxt_restore_country_pc = {
+	if = {
+		limit = {
+			has_country_flag = fxt_pc_gov_democratic
+			NOT = { has_government = democratic }
+		}
+		set_politics = { ruling_party = democratic }
+		add_popularity = { ideology = democratic popularity = 0.30 }
+	}
+	if = {
+		limit = {
+			has_country_flag = fxt_pc_gov_communism
+			NOT = { has_government = communism }
+		}
+		set_politics = { ruling_party = communism }
+		add_popularity = { ideology = communism popularity = 0.30 }
+	}
+	if = {
+		limit = {
+			has_country_flag = fxt_pc_gov_fascism
+			NOT = { has_government = fascism }
+		}
+		set_politics = { ruling_party = fascism }
+		add_popularity = { ideology = fascism popularity = 0.30 }
+	}
+	if = {
+		limit = {
+			has_country_flag = fxt_pc_gov_neutrality
+			NOT = { has_government = neutrality }
+		}
+		set_politics = { ruling_party = neutrality }
+		add_popularity = { ideology = neutrality popularity = 0.30 }
+	}
+	set_country_flag = fxt_self
+	if = {
+		limit = { has_variable = fxt_pc_overlord }
+		if = {
+			limit = {
+				var:fxt_pc_overlord = {
+					exists = yes
+					NOT = { has_country_flag = fxt_self }
+					NOT = { any_subject_country = { has_country_flag = fxt_self } }
+				}
+			}
+			if = {
+				limit = { is_subject = yes }
+				OVERLORD = { end_puppet = PREV }
+			}
+			var:fxt_pc_overlord = { puppet = PREV }
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = fxt_pc_free
+			is_subject = yes
+		}
+		OVERLORD = { end_puppet = PREV }
+	}
+	clr_country_flag = fxt_self
+}
+
+fxt_snapshot_country_ws = {
+	clr_country_flag = fxt_ws_gov_democratic
+	clr_country_flag = fxt_ws_gov_communism
+	clr_country_flag = fxt_ws_gov_fascism
+	clr_country_flag = fxt_ws_gov_neutrality
+	if = { limit = { has_government = democratic } set_country_flag = fxt_ws_gov_democratic }
+	if = { limit = { has_government = communism } set_country_flag = fxt_ws_gov_communism }
+	if = { limit = { has_government = fascism } set_country_flag = fxt_ws_gov_fascism }
+	if = { limit = { has_government = neutrality } set_country_flag = fxt_ws_gov_neutrality }
+	clr_country_flag = fxt_ws_free
+	clear_variable = fxt_ws_overlord
+	if = {
+		limit = { is_subject = yes }
+		OVERLORD = {
+			PREV = { set_variable = { fxt_ws_overlord = PREV } }
+		}
+	}
+	else = {
+		set_country_flag = fxt_ws_free
+	}
+	set_variable = { fxt_ws_id = global.fxt_ws_counter }
+	every_owned_state = {
+		set_variable = { fxt_ws_owner = PREV }
+		set_variable = { fxt_ws_id = global.fxt_ws_counter }
+	}
+}
+
+fxt_restore_country_ws = {
+	if = {
+		limit = {
+			has_country_flag = fxt_ws_gov_democratic
+			NOT = { has_government = democratic }
+		}
+		set_politics = { ruling_party = democratic }
+		add_popularity = { ideology = democratic popularity = 0.30 }
+	}
+	if = {
+		limit = {
+			has_country_flag = fxt_ws_gov_communism
+			NOT = { has_government = communism }
+		}
+		set_politics = { ruling_party = communism }
+		add_popularity = { ideology = communism popularity = 0.30 }
+	}
+	if = {
+		limit = {
+			has_country_flag = fxt_ws_gov_fascism
+			NOT = { has_government = fascism }
+		}
+		set_politics = { ruling_party = fascism }
+		add_popularity = { ideology = fascism popularity = 0.30 }
+	}
+	if = {
+		limit = {
+			has_country_flag = fxt_ws_gov_neutrality
+			NOT = { has_government = neutrality }
+		}
+		set_politics = { ruling_party = neutrality }
+		add_popularity = { ideology = neutrality popularity = 0.30 }
+	}
+	set_country_flag = fxt_self
+	if = {
+		limit = { has_variable = fxt_ws_overlord }
+		if = {
+			limit = {
+				var:fxt_ws_overlord = {
+					exists = yes
+					NOT = { has_country_flag = fxt_self }
+					NOT = { any_subject_country = { has_country_flag = fxt_self } }
+				}
+			}
+			if = {
+				limit = { is_subject = yes }
+				OVERLORD = { end_puppet = PREV }
+			}
+			var:fxt_ws_overlord = { puppet = PREV }
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = fxt_ws_free
+			is_subject = yes
+		}
+		OVERLORD = { end_puppet = PREV }
+	}
+	clr_country_flag = fxt_self
+}
+
+# states flagged fxt_r go back to the owner stored in fxt_pc_owner
+fxt_restore_flagged_states_pc = {
+	every_state = {
+		limit = {
+			has_state_flag = fxt_r
+			has_variable = fxt_pc_owner
+		}
+		clr_state_flag = fxt_r
+		var:fxt_pc_owner = { transfer_state = PREV }
+	}
+}
+
+fxt_restore_flagged_states_ws = {
+	every_state = {
+		limit = {
+			has_state_flag = fxt_r
+			has_variable = fxt_ws_owner
+		}
+		clr_state_flag = fxt_r
+		var:fxt_ws_owner = { transfer_state = PREV }
+	}
+}
+
+# called from on_before_peace_conference_start with FROM = loser
+fxt_on_peace_conference = {
+	if = {
+		limit = { NOT = { has_global_flag = fxt_pc_open } }
+		set_global_flag = { flag = fxt_pc_open days = 1 }
+		add_to_variable = { global.fxt_pc_counter = 1 }
+		set_variable = { global.fxt_pc_cursor = global.fxt_pc_counter }
+	}
+	FROM = {
+		if = {
+			limit = { NOT = { check_variable = { fxt_pc_id = global.fxt_pc_counter } } }
+			fxt_snapshot_country_pc = yes
+		}
+	}
+}
+
+# global: undo the peace conference global.fxt_pc_cursor, then step the cursor back
+fxt_undo_peace_conference = {
+	every_state = {
+		limit = { check_variable = { fxt_pc_id = global.fxt_pc_cursor } }
+		set_state_flag = fxt_r
+	}
+	fxt_restore_flagged_states_pc = yes
+	every_country = {
+		limit = { check_variable = { fxt_pc_id = global.fxt_pc_cursor } }
+		fxt_restore_country_pc = yes
+	}
+	subtract_from_variable = { global.fxt_pc_cursor = 1 }
+}
+
+# country scope: undo the last peace deal this country lost
+fxt_undo_country_peace = {
+	set_country_flag = fxt_x
+	set_variable = { global.fxt_tmp_id = fxt_pc_id }
+	every_state = {
+		limit = {
+			has_variable = fxt_pc_owner
+			check_variable = { fxt_pc_id = global.fxt_tmp_id }
+			var:fxt_pc_owner = { has_country_flag = fxt_x }
+		}
+		set_state_flag = fxt_r
+	}
+	clr_country_flag = fxt_x
+	fxt_restore_flagged_states_pc = yes
+	fxt_restore_country_pc = yes
+}
+
+# global: save / restore the whole map
+fxt_save_world = {
+	add_to_variable = { global.fxt_ws_counter = 1 }
+	every_country = { fxt_snapshot_country_ws = yes }
+	set_global_flag = fxt_ws_saved
+}
+
+fxt_restore_world = {
+	every_state = {
+		limit = { has_variable = fxt_ws_owner }
+		set_state_flag = fxt_r
+	}
+	fxt_restore_flagged_states_ws = yes
+	every_country = {
+		limit = { check_variable = { fxt_ws_id = global.fxt_ws_counter } }
+		fxt_restore_country_ws = yes
+	}
+}
+
+# country scope: restore one country from the world snapshot
+fxt_restore_country_from_world = {
+	set_country_flag = fxt_x
+	every_state = {
+		limit = {
+			has_variable = fxt_ws_owner
+			var:fxt_ws_owner = { has_country_flag = fxt_x }
+		}
+		set_state_flag = fxt_r
+	}
+	clr_country_flag = fxt_x
+	fxt_restore_flagged_states_ws = yes
+	if = {
+		limit = { check_variable = { fxt_ws_id = global.fxt_ws_counter } }
+		fxt_restore_country_ws = yes
+	}
+}
+
+# country scope: every state that is a core of this country goes back to it
+fxt_return_cores = {
+	every_core_state = {
+		limit = { NOT = { is_owned_by = PREV } }
+		PREV = { transfer_state = PREV }
+	}
+}
+
+# country scope: land this country holds without a core goes to a country that has a core there
+# (countries that no longer exist come back)
+fxt_give_back_land = {
+	set_country_flag = fxt_x
+	every_owned_state = {
+		limit = { NOT = { is_core_of = PREV } }
+		set_state_flag = fxt_gb
+	}
+	every_possible_country = {
+		limit = {
+			NOT = { has_country_flag = fxt_x }
+			any_core_state = { has_state_flag = fxt_gb }
+		}
+		every_core_state = {
+			limit = { has_state_flag = fxt_gb }
+			clr_state_flag = fxt_gb
+			PREV = { transfer_state = PREV }
+		}
+	}
+	every_state = {
+		limit = { has_state_flag = fxt_gb }
+		clr_state_flag = fxt_gb
+	}
+	clr_country_flag = fxt_x
+}
+
+# country scope: white peace with every enemy except civil war opponents
+fxt_white_peace_all = {
+	every_enemy_country = {
+		limit = {
+			NOT = { civilwar_target = PREV }
+			PREV = { NOT = { civilwar_target = PREV } }
+		}
+		PREV = { white_peace = PREV }
+	}
+}
+
+# country scope: this side wins its civil war at once
+fxt_end_civil_war = {
+	every_other_country = {
+		limit = {
+			has_war_with = PREV
+			OR = {
+				civilwar_target = PREV
+				PREV = { civilwar_target = PREV }
+			}
+		}
+		PREV = {
+			annex_country = {
+				target = PREV
+				transfer_troops = yes
+			}
+		}
+	}
+}
+
+fxt_set_government_democratic = {
+	set_popularities = { democratic = 70 communism = 10 fascism = 10 neutrality = 10 }
+	set_politics = {
+		ruling_party = democratic
+		elections_allowed = yes
+	}
+}
+
+fxt_set_government_communism = {
+	set_popularities = { democratic = 10 communism = 70 fascism = 10 neutrality = 10 }
+	set_politics = {
+		ruling_party = communism
+		elections_allowed = no
+	}
+}
+
+fxt_set_government_fascism = {
+	set_popularities = { democratic = 10 communism = 10 fascism = 70 neutrality = 10 }
+	set_politics = {
+		ruling_party = fascism
+		elections_allowed = no
+	}
+}
+
+fxt_set_government_neutrality = {
+	set_popularities = { democratic = 10 communism = 10 fascism = 10 neutrality = 70 }
+	set_politics = {
+		ruling_party = neutrality
+		elections_allowed = no
+	}
+}
+
+# state scope: hand this state to a country that has a core on it (a wiped-out country comes back)
+fxt_state_to_core_owner = {
+	set_state_flag = fxt_gb
+	OWNER = { set_country_flag = fxt_x }
+	every_possible_country = {
+		limit = {
+			NOT = { has_country_flag = fxt_x }
+			any_core_state = { has_state_flag = fxt_gb }
+		}
+		every_core_state = {
+			limit = { has_state_flag = fxt_gb }
+			clr_state_flag = fxt_gb
+			PREV = { transfer_state = PREV }
+		}
+	}
+	every_country = {
+		limit = { has_country_flag = fxt_x }
+		clr_country_flag = fxt_x
+	}
+	clr_state_flag = fxt_gb
+}

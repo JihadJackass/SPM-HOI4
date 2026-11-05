@@ -1,115 +1,21 @@
 defined_text = {
-	name = SPM_TAB_FIX
-	text = {
-		trigger = {
-			OR = {
-		has_global_flag = spm_tab_fix
-		NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
-	}
-		}
-		localization_key = SPM_TAB_FIX_ON
-	}
-	text = {
-		localization_key = SPM_TAB_FIX_OFF
-	}
-}
-
-defined_text = {
-	name = SPM_TAB_TERRITORY
-	text = {
-		trigger = {
-			has_global_flag = spm_tab_territory
-		}
-		localization_key = SPM_TAB_TERRITORY_ON
-	}
-	text = {
-		localization_key = SPM_TAB_TERRITORY_OFF
-	}
-}
-
-defined_text = {
-	name = SPM_TAB_SUBJECTS
-	text = {
-		trigger = {
-			has_global_flag = spm_tab_subjects
-		}
-		localization_key = SPM_TAB_SUBJECTS_ON
-	}
-	text = {
-		localization_key = SPM_TAB_SUBJECTS_OFF
-	}
-}
-
-defined_text = {
-	name = SPM_TAB_POLITICS
-	text = {
-		trigger = {
-			has_global_flag = spm_tab_politics
-		}
-		localization_key = SPM_TAB_POLITICS_ON
-	}
-	text = {
-		localization_key = SPM_TAB_POLITICS_OFF
-	}
-}
-
-defined_text = {
-	name = SPM_TAB_WAR
-	text = {
-		trigger = {
-			has_global_flag = spm_tab_war
-		}
-		localization_key = SPM_TAB_WAR_ON
-	}
-	text = {
-		localization_key = SPM_TAB_WAR_OFF
-	}
-}
-
-defined_text = {
-	name = SPM_TAB_RESOURCES
-	text = {
-		trigger = {
-			has_global_flag = spm_tab_resources
-		}
-		localization_key = SPM_TAB_RESOURCES_ON
-	}
-	text = {
-		localization_key = SPM_TAB_RESOURCES_OFF
-	}
-}
-
-defined_text = {
-	name = SPM_TAB_ADVANCED
-	text = {
-		trigger = {
-			has_global_flag = spm_tab_advanced
-		}
-		localization_key = SPM_TAB_ADVANCED_ON
-	}
-	text = {
-		localization_key = SPM_TAB_ADVANCED_OFF
-	}
-}
-
-defined_text = {
-	name = SPM_B_UNDO_PC_LABEL
+	name = SPM_UNDO_PC_DT
 	text = {
 		trigger = { check_variable = { global.fxt_pc_cursor > 0 } }
-		localization_key = SPM_B_UNDO_PC_LABEL_N
+		localization_key = SPM_UNDO_PC_N
 	}
 	text = {
-		localization_key = SPM_B_UNDO_PC_LABEL_NONE
+		localization_key = SPM_UNDO_PC_NONE
 	}
 }
 
 defined_text = {
-	name = SPM_B_LOAD_WS_LABEL
+	name = SPM_LOAD_WS_DT
 	text = {
-		trigger = { has_global_flag = fxt_arm_restore }
-		localization_key = SPM_B_LOAD_WS_LABEL_ARM
+		trigger = { ROOT = { has_country_flag = fxt_arm_restore } }
+		localization_key = SPM_LOAD_WS_ARM
 	}
 	text = {
-		localization_key = SPM_B_LOAD_WS_LABEL_IDLE
+		localization_key = SPM_LOAD_WS_IDLE
 	}
 }

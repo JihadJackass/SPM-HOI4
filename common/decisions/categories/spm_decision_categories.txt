@@ -6,20 +6,20 @@ spm_decisions_categories = {
 	priority = { base = 510 }
 }
 
-spm_decisions_fixes = {
-	icon = spm
-	visible = {
-		is_ai = no
-		has_country_flag = spm_enabled
-	}
-	priority = { base = 509 }
-}
-
 spm_decisions_resources = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
+	}
+	priority = { base = 509 }
+}
+
+spm_decisions_political = {
+	icon = spm
+	visible = {
+		is_ai = no
+		has_country_flag = spm_show_decisions
 	}
 	priority = { base = 508 }
 }
@@ -28,98 +28,102 @@ spm_decisions_army = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
 	priority = { base = 507 }
 }
 
-spm_decisions_political = {
+spm_decisions_modifiers = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
 	priority = { base = 506 }
-}
-
-spm_decisions_state = {
-	icon = spm
-	visible = {
-		is_ai = no
-		has_country_flag = spm_enabled
-	}
-	priority = { base = 505 }
 }
 
 spm_decisions_equipment = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
-	priority = { base = 504 }
+	priority = { base = 505 }
 }
 
-spm_decisions_production = {
+spm_decisions_state = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
-	priority = { base = 503 }
+	priority = { base = 504 }
 }
 
 spm_decisions_war = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
-	priority = { base = 502 }
-}
-
-spm_decisions_wt = {
-	icon = spm
-	visible = {
-		is_ai = no
-		has_country_flag = spm_enabled
-	}
-	priority = { base = 501 }
+	priority = { base = 503 }
 }
 
 spm_decisions_subject = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
-	priority = { base = 500 }
+	priority = { base = 502 }
 }
 
 spm_decisions_factions = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
-	priority = { base = 499 }
+	priority = { base = 501 }
 }
 
 spm_decisions_gamerules = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
+		has_country_flag = spm_show_decisions
 	}
-	priority = { base = 498 }
+	priority = { base = 500 }
+}
+
+spm_decisions_wt = {
+	icon = spm
+	visible = {
+		is_ai = no
+		has_country_flag = spm_show_decisions
+	}
+	priority = { base = 499 }
 }
 
 spm_paranoia = {
 	icon = spm
 	visible = {
 		is_ai = no
-		has_country_flag = spm_enabled
-		has_country_flag = SOV_paranoia_system_active_flag
+		has_country_flag = spm_show_decisions
+		OR = {
+			has_country_flag = SOV_paranoia_system_active_flag
+			has_power_balance = { id = ITA_power_balance }
+		}
 	}
-	priority = { base = 497 }
+	priority = { base = 498 }
+}
+
+spm_decisions_fixes = {
+	icon = spm
+	visible = {
+		is_ai = no
+		has_country_flag = spm_show_decisions
+		has_country_flag = spm_show_fixes
+	}
+	priority = { base = 10 }
 }

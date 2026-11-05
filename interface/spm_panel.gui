@@ -1,8 +1,8 @@
 guiTypes = {
 	containerWindowType = {
 		name = "spm_panel"
-		position = { x = 20 y = -120 }
-		size = { width = 474 height = 358 }
+		position = { x = 20 y = -40 }
+		size = { width = 560 height = 440 }
 		orientation = CENTER_LEFT
 		origo = center_left
 		moveable = yes
@@ -16,859 +16,3419 @@ guiTypes = {
 
 		instantTextboxType = {
 			name = "spm_title"
-			position = { x = 16 y = 14 }
+			position = { x = 16 y = 12 }
 			font = "hoi_18mbs"
 			text = "SPM_TITLE"
-			maxWidth = 400
+			maxWidth = 330
 			maxHeight = 22
 			format = left
 			alwaystransparent = yes
 		}
 		buttonType = {
 			name = "spm_close"
-			position = { x = 434 y = 12 }
+			position = { x = 520 y = 10 }
 			spriteType = "GFX_closebutton"
 			pdx_tooltip = "SPM_CLOSE_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
+		instantTextboxType = {
+			name = "spm_dec_l"
+			position = { x = 350 y = 14 }
+			font = "hoi_16mbs"
+			text = "SPM_DEC_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
 		buttonType = {
-			name = "spm_tab_fix"
-			position = { x = 14 y = 50 }
+			name = "spm_dec_on"
+			position = { x = 484 y = 10 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_DEC_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_dec_off"
+			position = { x = 484 y = 10 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_DEC_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_state"
+			position = { x = 16 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_STATE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_STATE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_state_on"
+			position = { x = 16 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_STATE_ON"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_STATE_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_economy"
+			position = { x = 116 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_ECONOMY"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_ECONOMY_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_economy_on"
+			position = { x = 116 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_ECONOMY_ON"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_ECONOMY_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_country"
+			position = { x = 216 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_COUNTRY"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_COUNTRY_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_country_on"
+			position = { x = 216 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_COUNTRY_ON"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_COUNTRY_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_diplomacy"
+			position = { x = 316 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_DIPLOMACY"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_DIPLOMACY_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_diplomacy_on"
+			position = { x = 316 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_DIPLOMACY_ON"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_DIPLOMACY_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_military"
+			position = { x = 416 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_MILITARY"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_MILITARY_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_page_military_on"
+			position = { x = 416 y = 42 }
+			spriteType = "GFX_button_94x31"
+			buttonText = "SPM_PAGE_MILITARY_ON"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_PAGE_MILITARY_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_state_t16_84"
+			position = { x = 16 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_STATE_T16_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_state_give_me"
+			position = { x = 16 y = 106 }
 			spriteType = "GFX_button_123x34"
-			buttonText = "SPM_TAB_FIX_BTN"
+			buttonText = "SPM_STATE_GIVE_ME"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TAB_FIX_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_fix_label_50"
-			position = { x = 156 y = 52 }
-			font = "hoi_16mbs"
-			text = "SPM_L_FIX_50"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_fix_undo_lost"
-			position = { x = 152 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_UNDO_LOST"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_UNDO_LOST_TT"
+			pdx_tooltip = "SPM_STATE_GIVE_ME_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_fix_undo_pc"
-			position = { x = 312 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_UNDO_PC"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_UNDO_PC_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_fix_return_cores"
-			position = { x = 152 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_RETURN_CORES"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_RETURN_CORES_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_fix_hand_back"
-			position = { x = 312 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_HAND_BACK"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_HAND_BACK_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_fix_label_150"
-			position = { x = 156 y = 152 }
-			font = "hoi_16mbs"
-			text = "SPM_L_FIX_150"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_fix_save_ws"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_SAVE_WS"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_SAVE_WS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_fix_load_ws"
-			position = { x = 312 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_LOAD_WS"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_LOAD_WS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_fix_restore_one"
-			position = { x = 152 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_RESTORE_ONE"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_RESTORE_ONE_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_fix_my_cores"
-			position = { x = 312 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_FIX_MY_CORES"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_FIX_MY_CORES_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_tab_territory"
-			position = { x = 14 y = 88 }
+			name = "spm_state_give_core"
+			position = { x = 147 y = 106 }
 			spriteType = "GFX_button_123x34"
-			buttonText = "SPM_TAB_TERRITORY_BTN"
+			buttonText = "SPM_STATE_GIVE_CORE"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TAB_TERRITORY_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_territory_label_50"
-			position = { x = 156 y = 52 }
-			font = "hoi_16mbs"
-			text = "SPM_L_TERRITORY_50"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_territory_give_me"
-			position = { x = 152 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_GIVE_ME"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_GIVE_ME_TT"
+			pdx_tooltip = "SPM_STATE_GIVE_CORE_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_territory_give_core"
-			position = { x = 312 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_GIVE_CORE"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_GIVE_CORE_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_territory_core_owner"
-			position = { x = 152 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_CORE_OWNER"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_CORE_OWNER_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_territory_capital"
-			position = { x = 312 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_CAPITAL"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_CAPITAL_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_territory_label_150"
-			position = { x = 156 y = 152 }
-			font = "hoi_16mbs"
-			text = "SPM_L_TERRITORY_150"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_territory_mark"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_MARK"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_MARK_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_territory_unmark"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_UNMARK"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_UNMARK_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_territory_mark_country"
-			position = { x = 312 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_MARK_COUNTRY"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_MARK_COUNTRY_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_territory_send_marked"
-			position = { x = 152 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_SEND_MARKED"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_SEND_MARKED_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_territory_clear_marks"
-			position = { x = 312 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_TERRITORY_CLEAR_MARKS"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_TERRITORY_CLEAR_MARKS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_tab_subjects"
-			position = { x = 14 y = 126 }
+			name = "spm_state_control_me"
+			position = { x = 16 y = 142 }
 			spriteType = "GFX_button_123x34"
-			buttonText = "SPM_TAB_SUBJECTS_BTN"
+			buttonText = "SPM_STATE_CONTROL_ME"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TAB_SUBJECTS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_subjects_label_50"
-			position = { x = 156 y = 52 }
-			font = "hoi_16mbs"
-			text = "SPM_L_SUBJECTS_50"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_subjects_puppet"
-			position = { x = 152 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_PUPPET"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_PUPPET_TT"
+			pdx_tooltip = "SPM_STATE_CONTROL_ME_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_subjects_integrated"
-			position = { x = 312 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_INTEGRATED"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_INTEGRATED_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_subjects_dominion"
-			position = { x = 152 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_DOMINION"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_DOMINION_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_subjects_colony"
-			position = { x = 312 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_COLONY"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_COLONY_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_subjects_label_150"
-			position = { x = 156 y = 152 }
-			font = "hoi_16mbs"
-			text = "SPM_L_SUBJECTS_150"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_subjects_free"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_FREE"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_FREE_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_subjects_free_subjects"
-			position = { x = 312 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_FREE_SUBJECTS"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_FREE_SUBJECTS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_subjects_annex"
-			position = { x = 152 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_ANNEX"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_ANNEX_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_subjects_annex_subjects"
-			position = { x = 312 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_SUBJECTS_ANNEX_SUBJECTS"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_SUBJECTS_ANNEX_SUBJECTS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_tab_politics"
-			position = { x = 14 y = 164 }
+			name = "spm_state_capital"
+			position = { x = 147 y = 142 }
 			spriteType = "GFX_button_123x34"
-			buttonText = "SPM_TAB_POLITICS_BTN"
+			buttonText = "SPM_STATE_CAPITAL"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TAB_POLITICS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_politics_label_50"
-			position = { x = 156 y = 52 }
-			font = "hoi_16mbs"
-			text = "SPM_L_POLITICS_50"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_politics_gov_democratic"
-			position = { x = 152 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_GOV_DEMOCRATIC"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_GOV_DEMOCRATIC_TT"
+			pdx_tooltip = "SPM_STATE_CAPITAL_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_politics_gov_communism"
-			position = { x = 312 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_GOV_COMMUNISM"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_GOV_COMMUNISM_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_politics_gov_fascism"
-			position = { x = 152 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_GOV_FASCISM"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_GOV_FASCISM_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_politics_gov_neutrality"
-			position = { x = 312 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_GOV_NEUTRALITY"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_GOV_NEUTRALITY_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_politics_label_150"
-			position = { x = 156 y = 152 }
-			font = "hoi_16mbs"
-			text = "SPM_L_POLITICS_150"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_politics_elections_on"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_ELECTIONS_ON"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_ELECTIONS_ON_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_politics_elections_off"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_ELECTIONS_OFF"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_ELECTIONS_OFF_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_politics_purge"
-			position = { x = 312 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_PURGE"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_PURGE_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_politics_stability"
-			position = { x = 152 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_STABILITY"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_STABILITY_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_politics_war_support"
-			position = { x = 312 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_POLITICS_WAR_SUPPORT"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_POLITICS_WAR_SUPPORT_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_tab_war"
-			position = { x = 14 y = 202 }
+			name = "spm_state_core"
+			position = { x = 16 y = 178 }
 			spriteType = "GFX_button_123x34"
-			buttonText = "SPM_TAB_WAR_BTN"
+			buttonText = "SPM_STATE_CORE"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TAB_WAR_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_war_label_50"
-			position = { x = 156 y = 52 }
-			font = "hoi_16mbs"
-			text = "SPM_L_WAR_50"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_war_white_peace"
-			position = { x = 152 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_WHITE_PEACE"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_WHITE_PEACE_TT"
+			pdx_tooltip = "SPM_STATE_CORE_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_war_win_cw"
-			position = { x = 312 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_WIN_CW"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_WIN_CW_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_war_peace_me"
-			position = { x = 152 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_PEACE_ME"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_PEACE_ME_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_war_war_me"
-			position = { x = 312 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_WAR_ME"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_WAR_ME_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_war_label_150"
-			position = { x = 156 y = 152 }
-			font = "hoi_16mbs"
-			text = "SPM_L_WAR_150"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_war_join_mine"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_JOIN_MINE"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_JOIN_MINE_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_war_leave_faction"
-			position = { x = 312 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_LEAVE_FACTION"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_LEAVE_FACTION_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_war_new_faction"
-			position = { x = 152 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_NEW_FACTION"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_NEW_FACTION_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_war_join_its"
-			position = { x = 312 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_WAR_JOIN_ITS"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_WAR_JOIN_ITS_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_tab_resources"
-			position = { x = 14 y = 240 }
+			name = "spm_state_uncore"
+			position = { x = 16 y = 178 }
 			spriteType = "GFX_button_123x34"
-			buttonText = "SPM_TAB_RESOURCES_BTN"
+			buttonText = "SPM_STATE_UNCORE"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TAB_RESOURCES_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_resources_label_50"
-			position = { x = 156 y = 52 }
-			font = "hoi_16mbs"
-			text = "SPM_L_RESOURCES_50"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_resources_pp"
-			position = { x = 152 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_PP"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_PP_TT"
+			pdx_tooltip = "SPM_STATE_UNCORE_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_resources_manpower"
-			position = { x = 312 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_MANPOWER"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_MANPOWER_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_resources_cp"
-			position = { x = 152 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_CP"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_CP_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_resources_equipment"
-			position = { x = 312 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_EQUIPMENT"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_EQUIPMENT_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		instantTextboxType = {
-			name = "spm_resources_label_150"
-			position = { x = 156 y = 152 }
-			font = "hoi_16mbs"
-			text = "SPM_L_RESOURCES_150"
-			maxWidth = 300
-			maxHeight = 22
-			format = left
-			alwaystransparent = yes
-		}
-		buttonType = {
-			name = "spm_resources_civ"
-			position = { x = 152 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_CIV"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_CIV_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_resources_mil"
-			position = { x = 312 y = 174 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_MIL"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_MIL_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_resources_infra"
-			position = { x = 152 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_INFRA"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_INFRA_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_resources_air"
-			position = { x = 312 y = 212 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_RESOURCES_AIR"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_B_RESOURCES_AIR_TT"
-			clicksound = click_ok
-			oversound = ui_menu_over
-		}
-		buttonType = {
-			name = "spm_tab_advanced"
-			position = { x = 14 y = 278 }
+			name = "spm_state_claim"
+			position = { x = 147 y = 178 }
 			spriteType = "GFX_button_123x34"
-			buttonText = "SPM_TAB_ADVANCED_BTN"
+			buttonText = "SPM_STATE_CLAIM"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TAB_ADVANCED_TT"
+			pdx_tooltip = "SPM_STATE_CLAIM_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_state_unclaim"
+			position = { x = 147 y = 178 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_STATE_UNCLAIM"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_STATE_UNCLAIM_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		instantTextboxType = {
-			name = "spm_advanced_label_50"
-			position = { x = 156 y = 52 }
+			name = "spm_state_hint"
+			position = { x = 20 y = 220 }
 			font = "hoi_16mbs"
-			text = "SPM_L_ADVANCED_50"
-			maxWidth = 300
+			text = "SPM_STATE_HINT"
+			maxWidth = 254
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_state_t290_84"
+			position = { x = 290 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_STATE_T290_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_state_ctrl"
+			position = { x = 294 y = 108 }
+			font = "hoi_16mbs"
+			text = "SPM_STATE_CTRL"
+			maxWidth = 254
 			maxHeight = 22
 			format = left
 			alwaystransparent = yes
 		}
 		buttonType = {
-			name = "spm_advanced_tool_smt"
-			position = { x = 152 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_SMT"
+			name = "spm_state_demil"
+			position = { x = 290 y = 130 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_STATE_DEMIL"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_SMT"
+			pdx_tooltip = "SPM_STATE_DEMIL_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_cat"
-			position = { x = 312 y = 74 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_CAT"
+			name = "spm_state_remil"
+			position = { x = 290 y = 130 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_STATE_REMIL"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_CAT"
+			pdx_tooltip = "SPM_STATE_REMIL_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_cpt"
-			position = { x = 152 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_CPT"
+			name = "spm_state_resource_rights"
+			position = { x = 421 y = 130 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_STATE_RESOURCE_RIGHTS"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_CPT"
+			pdx_tooltip = "SPM_STATE_RESOURCE_RIGHTS_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_state_compliance_l"
+			position = { x = 294 y = 172 }
+			font = "hoi_16mbs"
+			text = "SPM_STATE_COMPLIANCE_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_state_compliance_v"
+			position = { x = 420 y = 172 }
+			font = "hoi_16mbs"
+			text = "SPM_STATE_COMPLIANCE_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_state_compliance_sub10"
+			position = { x = 492 y = 169 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_STATE_COMPLIANCE_SUB10_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_tpt"
-			position = { x = 312 y = 112 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_TPT"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_TPT"
+			name = "spm_state_compliance_add10"
+			position = { x = 516 y = 169 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_STATE_COMPLIANCE_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_state_resistance_l"
+			position = { x = 294 y = 198 }
+			font = "hoi_16mbs"
+			text = "SPM_STATE_RESISTANCE_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_state_resistance_v"
+			position = { x = 420 y = 198 }
+			font = "hoi_16mbs"
+			text = "SPM_STATE_RESISTANCE_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_state_resistance_sub10"
+			position = { x = 492 y = 195 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_STATE_RESISTANCE_SUB10_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_dst_A"
-			position = { x = 152 y = 150 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_DST_A"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_DST_A"
+			name = "spm_state_resistance_add10"
+			position = { x = 516 y = 195 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_STATE_RESISTANCE_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_t16_84"
+			position = { x = 16 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_T16_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_pop_l"
+			position = { x = 20 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_POP_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_pop_v"
+			position = { x = 146 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_POP_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_pop_sub100"
+			position = { x = 218 y = 107 }
+			spriteType = "GFX_tp_sub_100"
+			pdx_tooltip = "SPM_ECONOMY_POP_SUB100_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_dst_B"
-			position = { x = 312 y = 150 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_DST_B"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_DST_B"
+			name = "spm_economy_pop_add100"
+			position = { x = 242 y = 107 }
+			spriteType = "GFX_tp_add_100"
+			pdx_tooltip = "SPM_ECONOMY_POP_ADD100_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_bst"
-			position = { x = 152 y = 188 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_BST"
+			name = "spm_economy_size_up"
+			position = { x = 16 y = 134 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ECONOMY_SIZE_UP"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_BST"
+			pdx_tooltip = "SPM_ECONOMY_SIZE_UP_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_sst"
-			position = { x = 312 y = 188 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_SST"
+			name = "spm_economy_size_down"
+			position = { x = 147 y = 134 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ECONOMY_SIZE_DOWN"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_SST"
+			pdx_tooltip = "SPM_ECONOMY_SIZE_DOWN_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_t16_174"
+			position = { x = 16 y = 176 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_T16_174"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_oil_l"
+			position = { x = 20 y = 200 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_OIL_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_oil_v"
+			position = { x = 146 y = 200 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_OIL_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_res_oil_sub1"
+			position = { x = 218 y = 197 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_OIL_SUB1_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_mst_C"
-			position = { x = 152 y = 226 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_MST_C"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_MST_C"
+			name = "spm_economy_res_oil_add1"
+			position = { x = 242 y = 197 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_OIL_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_steel_l"
+			position = { x = 20 y = 222 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_STEEL_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_steel_v"
+			position = { x = 146 y = 222 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_STEEL_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_res_steel_sub1"
+			position = { x = 218 y = 219 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_STEEL_SUB1_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_mst_S"
-			position = { x = 312 y = 226 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_MST_S"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_MST_S"
+			name = "spm_economy_res_steel_add1"
+			position = { x = 242 y = 219 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_STEEL_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_aluminium_l"
+			position = { x = 20 y = 244 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_ALUMINIUM_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_aluminium_v"
+			position = { x = 146 y = 244 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_ALUMINIUM_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_res_aluminium_sub1"
+			position = { x = 218 y = 241 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_ALUMINIUM_SUB1_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_rmt"
-			position = { x = 152 y = 264 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_RMT"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_RMT"
+			name = "spm_economy_res_aluminium_add1"
+			position = { x = 242 y = 241 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_ALUMINIUM_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_rubber_l"
+			position = { x = 20 y = 266 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_RUBBER_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_rubber_v"
+			position = { x = 146 y = 266 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_RUBBER_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_res_rubber_sub1"
+			position = { x = 218 y = 263 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_RUBBER_SUB1_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_crt"
-			position = { x = 312 y = 264 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_CRT"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_CRT"
+			name = "spm_economy_res_rubber_add1"
+			position = { x = 242 y = 263 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_RUBBER_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_tungsten_l"
+			position = { x = 20 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_TUNGSTEN_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_tungsten_v"
+			position = { x = 146 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_TUNGSTEN_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_res_tungsten_sub1"
+			position = { x = 218 y = 285 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_TUNGSTEN_SUB1_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_ret"
-			position = { x = 152 y = 302 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_RET"
-			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_RET"
+			name = "spm_economy_res_tungsten_add1"
+			position = { x = 242 y = 285 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_TUNGSTEN_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_chromium_l"
+			position = { x = 20 y = 310 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_CHROMIUM_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_res_chromium_v"
+			position = { x = 146 y = 310 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_RES_CHROMIUM_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_res_chromium_sub1"
+			position = { x = 218 y = 307 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_CHROMIUM_SUB1_TT"
+			scale = 0.85
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}
 		buttonType = {
-			name = "spm_advanced_tool_cct"
-			position = { x = 312 y = 302 }
-			spriteType = "GFX_button_148x34"
-			buttonText = "SPM_B_ADVANCED_TOOL_CCT"
+			name = "spm_economy_res_chromium_add1"
+			position = { x = 242 y = 307 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_RES_CHROMIUM_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_t16_332"
+			position = { x = 16 y = 334 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_T16_332"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_max_infra"
+			position = { x = 16 y = 354 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ECONOMY_MAX_INFRA"
 			buttonFont = "hoi_16mbs"
-			pdx_tooltip = "SPM_TIP_CCT"
+			pdx_tooltip = "SPM_ECONOMY_MAX_INFRA_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_factories5"
+			position = { x = 147 y = 354 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ECONOMY_FACTORIES5"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ECONOMY_FACTORIES5_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_t290_84"
+			position = { x = 290 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_T290_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_infrastructure_l"
+			position = { x = 294 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_INFRASTRUCTURE_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_infrastructure_v"
+			position = { x = 420 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_INFRASTRUCTURE_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_infrastructure_sub1"
+			position = { x = 492 y = 107 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_INFRASTRUCTURE_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_infrastructure_add1"
+			position = { x = 516 y = 107 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_INFRASTRUCTURE_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_industrial_complex_l"
+			position = { x = 294 y = 131 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_INDUSTRIAL_COMPLEX_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_industrial_complex_v"
+			position = { x = 420 y = 131 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_INDUSTRIAL_COMPLEX_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_industrial_complex_sub1"
+			position = { x = 492 y = 128 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_INDUSTRIAL_COMPLEX_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_industrial_complex_add1"
+			position = { x = 516 y = 128 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_INDUSTRIAL_COMPLEX_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_arms_factory_l"
+			position = { x = 294 y = 152 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_ARMS_FACTORY_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_arms_factory_v"
+			position = { x = 420 y = 152 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_ARMS_FACTORY_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_arms_factory_sub1"
+			position = { x = 492 y = 149 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_ARMS_FACTORY_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_arms_factory_add1"
+			position = { x = 516 y = 149 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_ARMS_FACTORY_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_dockyard_l"
+			position = { x = 294 y = 173 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_DOCKYARD_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_dockyard_v"
+			position = { x = 420 y = 173 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_DOCKYARD_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_dockyard_sub1"
+			position = { x = 492 y = 170 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_DOCKYARD_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_dockyard_add1"
+			position = { x = 516 y = 170 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_DOCKYARD_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_air_base_l"
+			position = { x = 294 y = 194 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_AIR_BASE_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_air_base_v"
+			position = { x = 420 y = 194 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_AIR_BASE_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_air_base_sub1"
+			position = { x = 492 y = 191 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_AIR_BASE_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_air_base_add1"
+			position = { x = 516 y = 191 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_AIR_BASE_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_naval_base_l"
+			position = { x = 294 y = 215 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_NAVAL_BASE_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_naval_base_v"
+			position = { x = 420 y = 215 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_NAVAL_BASE_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_naval_base_sub1"
+			position = { x = 492 y = 212 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_NAVAL_BASE_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_naval_base_add1"
+			position = { x = 516 y = 212 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_NAVAL_BASE_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_anti_air_building_l"
+			position = { x = 294 y = 236 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_ANTI_AIR_BUILDING_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_anti_air_building_v"
+			position = { x = 420 y = 236 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_ANTI_AIR_BUILDING_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_anti_air_building_sub1"
+			position = { x = 492 y = 233 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_ANTI_AIR_BUILDING_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_anti_air_building_add1"
+			position = { x = 516 y = 233 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_ANTI_AIR_BUILDING_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_radar_station_l"
+			position = { x = 294 y = 257 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_RADAR_STATION_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_radar_station_v"
+			position = { x = 420 y = 257 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_RADAR_STATION_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_radar_station_sub1"
+			position = { x = 492 y = 254 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_RADAR_STATION_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_radar_station_add1"
+			position = { x = 516 y = 254 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_RADAR_STATION_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_synthetic_refinery_l"
+			position = { x = 294 y = 278 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_SYNTHETIC_REFINERY_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_synthetic_refinery_v"
+			position = { x = 420 y = 278 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_SYNTHETIC_REFINERY_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_synthetic_refinery_sub1"
+			position = { x = 492 y = 275 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_SYNTHETIC_REFINERY_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_synthetic_refinery_add1"
+			position = { x = 516 y = 275 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_SYNTHETIC_REFINERY_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_fuel_silo_l"
+			position = { x = 294 y = 299 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_FUEL_SILO_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_fuel_silo_v"
+			position = { x = 420 y = 299 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_FUEL_SILO_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_fuel_silo_sub1"
+			position = { x = 492 y = 296 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_FUEL_SILO_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_fuel_silo_add1"
+			position = { x = 516 y = 296 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_FUEL_SILO_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_bunker_l"
+			position = { x = 294 y = 320 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_BUNKER_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_bunker_v"
+			position = { x = 420 y = 320 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_BUNKER_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_bunker_sub1"
+			position = { x = 492 y = 317 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_BUNKER_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_bunker_add1"
+			position = { x = 516 y = 317 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_BUNKER_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_coastal_bunker_l"
+			position = { x = 294 y = 341 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_COASTAL_BUNKER_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_coastal_bunker_v"
+			position = { x = 420 y = 341 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_COASTAL_BUNKER_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_coastal_bunker_sub1"
+			position = { x = 492 y = 338 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_COASTAL_BUNKER_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_coastal_bunker_add1"
+			position = { x = 516 y = 338 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_COASTAL_BUNKER_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_rocket_site_l"
+			position = { x = 294 y = 362 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_ROCKET_SITE_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_rocket_site_v"
+			position = { x = 420 y = 362 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_ROCKET_SITE_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_rocket_site_sub1"
+			position = { x = 492 y = 359 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_ROCKET_SITE_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_rocket_site_add1"
+			position = { x = 516 y = 359 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_ROCKET_SITE_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_nuclear_reactor_l"
+			position = { x = 294 y = 383 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_NUCLEAR_REACTOR_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_economy_b_nuclear_reactor_v"
+			position = { x = 420 y = 383 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_B_NUCLEAR_REACTOR_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_economy_b_nuclear_reactor_sub1"
+			position = { x = 492 y = 380 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_ECONOMY_B_NUCLEAR_REACTOR_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_b_nuclear_reactor_add1"
+			position = { x = 516 y = 380 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_ECONOMY_B_NUCLEAR_REACTOR_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_marked_on"
+			position = { x = 290 y = 406 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_ECONOMY_MARKED_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_economy_marked_off"
+			position = { x = 290 y = 406 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_ECONOMY_MARKED_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_economy_marked_l"
+			position = { x = 322 y = 412 }
+			font = "hoi_16mbs"
+			text = "SPM_ECONOMY_MARKED_L"
+			maxWidth = 210
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_t16_84"
+			position = { x = 16 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_T16_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_gov_democratic"
+			position = { x = 16 y = 106 }
+			spriteType = "GFX_tpt_democratic_idea"
+			pdx_tooltip = "SPM_COUNTRY_GOV_DEMOCRATIC_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_democratic_l"
+			position = { x = 52 y = 112 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_DEMOCRATIC_L"
+			maxWidth = 110
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_democratic_v"
+			position = { x = 158 y = 112 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_DEMOCRATIC_V"
+			maxWidth = 54
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_pop_democratic_sub10"
+			position = { x = 218 y = 109 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_DEMOCRATIC_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_pop_democratic_add10"
+			position = { x = 242 y = 109 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_DEMOCRATIC_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_gov_communism"
+			position = { x = 16 y = 134 }
+			spriteType = "GFX_tpt_communism_idea"
+			pdx_tooltip = "SPM_COUNTRY_GOV_COMMUNISM_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_communism_l"
+			position = { x = 52 y = 140 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_COMMUNISM_L"
+			maxWidth = 110
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_communism_v"
+			position = { x = 158 y = 140 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_COMMUNISM_V"
+			maxWidth = 54
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_pop_communism_sub10"
+			position = { x = 218 y = 137 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_COMMUNISM_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_pop_communism_add10"
+			position = { x = 242 y = 137 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_COMMUNISM_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_gov_fascism"
+			position = { x = 16 y = 162 }
+			spriteType = "GFX_tpt_fascism_idea"
+			pdx_tooltip = "SPM_COUNTRY_GOV_FASCISM_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_fascism_l"
+			position = { x = 52 y = 168 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_FASCISM_L"
+			maxWidth = 110
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_fascism_v"
+			position = { x = 158 y = 168 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_FASCISM_V"
+			maxWidth = 54
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_pop_fascism_sub10"
+			position = { x = 218 y = 165 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_FASCISM_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_pop_fascism_add10"
+			position = { x = 242 y = 165 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_FASCISM_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_gov_neutrality"
+			position = { x = 16 y = 190 }
+			spriteType = "GFX_tpt_neutrality_idea"
+			pdx_tooltip = "SPM_COUNTRY_GOV_NEUTRALITY_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_neutrality_l"
+			position = { x = 52 y = 196 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_NEUTRALITY_L"
+			maxWidth = 110
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_pop_neutrality_v"
+			position = { x = 158 y = 196 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_POP_NEUTRALITY_V"
+			maxWidth = 54
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_pop_neutrality_sub10"
+			position = { x = 218 y = 193 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_NEUTRALITY_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_pop_neutrality_add10"
+			position = { x = 242 y = 193 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_COUNTRY_POP_NEUTRALITY_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_elect_on"
+			position = { x = 16 y = 220 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_ELECT_ON"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_ELECT_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_elect_off"
+			position = { x = 16 y = 220 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_ELECT_OFF"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_ELECT_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_purge"
+			position = { x = 147 y = 220 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_PURGE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_PURGE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_stab_l"
+			position = { x = 20 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_STAB_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_stab_v"
+			position = { x = 146 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_STAB_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_stab_sub10"
+			position = { x = 218 y = 259 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_COUNTRY_STAB_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_stab_add10"
+			position = { x = 242 y = 259 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_COUNTRY_STAB_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_ws_l"
+			position = { x = 20 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_WS_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_ws_v"
+			position = { x = 146 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_WS_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_ws_sub10"
+			position = { x = 218 y = 285 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_COUNTRY_WS_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_ws_add10"
+			position = { x = 242 y = 285 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_COUNTRY_WS_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_pp_l"
+			position = { x = 20 y = 314 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_PP_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_pp_v"
+			position = { x = 146 y = 314 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_PP_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_pp_sub100"
+			position = { x = 218 y = 311 }
+			spriteType = "GFX_tp_sub_100"
+			pdx_tooltip = "SPM_COUNTRY_PP_SUB100_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_pp_add100"
+			position = { x = 242 y = 311 }
+			spriteType = "GFX_tp_add_100"
+			pdx_tooltip = "SPM_COUNTRY_PP_ADD100_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rs_l"
+			position = { x = 20 y = 340 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_RS_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_rs_v"
+			position = { x = 146 y = 340 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_RS_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rs_sub1"
+			position = { x = 218 y = 337 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_COUNTRY_RS_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rs_add1"
+			position = { x = 242 y = 337 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_COUNTRY_RS_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_major_on"
+			position = { x = 16 y = 366 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_MAJOR_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_major_off"
+			position = { x = 16 y = 366 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_MAJOR_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_major_l"
+			position = { x = 48 y = 372 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_MAJOR_L"
+			maxWidth = 200
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_t290_84"
+			position = { x = 290 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_T290_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_cw_ideo_l"
+			position = { x = 294 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_CW_IDEO_L"
+			maxWidth = 60
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_cw_ideo_prev"
+			position = { x = 354 y = 108 }
+			quadTextureSprite = "yearslider_leftbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_cw_ideo_next"
+			position = { x = 518 y = 108 }
+			quadTextureSprite = "yearslider_rightbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_cw_ideo_v0"
+			position = { x = 378 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_CW_IDEO_0"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_cw_ideo_v1"
+			position = { x = 378 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_CW_IDEO_1"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_cw_ideo_v2"
+			position = { x = 378 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_CW_IDEO_2"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_cw_ideo_v3"
+			position = { x = 378 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_CW_IDEO_3"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_start_cw"
+			position = { x = 290 y = 134 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_START_CW"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_START_CW_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_win_cw"
+			position = { x = 421 y = 134 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_WIN_CW"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_WIN_CW_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_t290_174"
+			position = { x = 290 y = 176 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_T290_174"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_join_factions_on"
+			position = { x = 290 y = 196 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_JOIN_FACTIONS_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_join_factions_off"
+			position = { x = 290 y = 196 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_JOIN_FACTIONS_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_join_factions_l"
+			position = { x = 322 y = 202 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_JOIN_FACTIONS"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_create_factions_on"
+			position = { x = 416 y = 196 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_CREATE_FACTIONS_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_create_factions_off"
+			position = { x = 416 y = 196 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_CREATE_FACTIONS_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_create_factions_l"
+			position = { x = 448 y = 202 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_CREATE_FACTIONS"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_puppet_on"
+			position = { x = 290 y = 222 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_PUPPET_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_puppet_off"
+			position = { x = 290 y = 222 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_PUPPET_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_puppet_l"
+			position = { x = 322 y = 228 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_PUPPET"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_force_government_on"
+			position = { x = 416 y = 222 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_FORCE_GOVERNMENT_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_force_government_off"
+			position = { x = 416 y = 222 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_FORCE_GOVERNMENT_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_force_government_l"
+			position = { x = 448 y = 228 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_FORCE_GOVERNMENT"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_send_volunteers_on"
+			position = { x = 290 y = 248 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_SEND_VOLUNTEERS_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_send_volunteers_off"
+			position = { x = 290 y = 248 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_SEND_VOLUNTEERS_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_send_volunteers_l"
+			position = { x = 322 y = 254 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_SEND_VOLUNTEERS"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_boost_other_ideologies_on"
+			position = { x = 416 y = 248 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_BOOST_OTHER_IDEOLOGIES_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_boost_other_ideologies_off"
+			position = { x = 416 y = 248 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_BOOST_OTHER_IDEOLOGIES_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_boost_other_ideologies_l"
+			position = { x = 448 y = 254 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_BOOST_OTHER_IDEOLOGIES"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_guarantee_other_ideologies_on"
+			position = { x = 290 y = 274 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_GUARANTEE_OTHER_IDEOLOGIES_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_guarantee_other_ideologies_off"
+			position = { x = 290 y = 274 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_GUARANTEE_OTHER_IDEOLOGIES_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_guarantee_other_ideologies_l"
+			position = { x = 322 y = 280 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_GUARANTEE_OTHER_IDEOLOGIES"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_declare_war_on_same_ideology_on"
+			position = { x = 416 y = 274 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_DECLARE_WAR_ON_SAME_IDEOLOGY_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_declare_war_on_same_ideology_off"
+			position = { x = 416 y = 274 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_DECLARE_WAR_ON_SAME_IDEOLOGY_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_declare_war_on_same_ideology_l"
+			position = { x = 448 y = 280 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_DECLARE_WAR_ON_SAME_IDEOLOGY"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_use_kamikaze_pilots_on"
+			position = { x = 290 y = 300 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_USE_KAMIKAZE_PILOTS_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_use_kamikaze_pilots_off"
+			position = { x = 290 y = 300 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_USE_KAMIKAZE_PILOTS_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_use_kamikaze_pilots_l"
+			position = { x = 322 y = 306 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_USE_KAMIKAZE_PILOTS"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_rule_can_generate_female_aces_on"
+			position = { x = 416 y = 300 }
+			spriteType = "GFX_cat_button_on"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_GENERATE_FEMALE_ACES_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_rule_can_generate_female_aces_off"
+			position = { x = 416 y = 300 }
+			spriteType = "GFX_cat_button_off"
+			pdx_tooltip = "SPM_COUNTRY_RULE_CAN_GENERATE_FEMALE_ACES_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_country_rule_can_generate_female_aces_l"
+			position = { x = 448 y = 306 }
+			font = "hoi_16mbs"
+			text = "SPM_RULE_CAN_GENERATE_FEMALE_ACES"
+			maxWidth = 92
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_country_t290_328"
+			position = { x = 290 y = 330 }
+			font = "hoi_16mbs"
+			text = "SPM_COUNTRY_T290_328"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_country_look_democratic"
+			position = { x = 290 y = 350 }
+			spriteType = "GFX_tpt_democratic_idea"
+			pdx_tooltip = "SPM_COUNTRY_LOOK_DEMOCRATIC_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_look_communism"
+			position = { x = 322 y = 350 }
+			spriteType = "GFX_tpt_communism_idea"
+			pdx_tooltip = "SPM_COUNTRY_LOOK_COMMUNISM_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_look_fascism"
+			position = { x = 354 y = 350 }
+			spriteType = "GFX_tpt_fascism_idea"
+			pdx_tooltip = "SPM_COUNTRY_LOOK_FASCISM_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_look_neutrality"
+			position = { x = 386 y = 350 }
+			spriteType = "GFX_tpt_neutrality_idea"
+			pdx_tooltip = "SPM_COUNTRY_LOOK_NEUTRALITY_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_look_clear"
+			position = { x = 420 y = 350 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_LOOK_CLEAR"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_LOOK_CLEAR_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_look_remember"
+			position = { x = 290 y = 386 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_LOOK_REMEMBER"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_LOOK_REMEMBER_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_country_look_copy"
+			position = { x = 421 y = 386 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_COUNTRY_LOOK_COPY"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_COUNTRY_LOOK_COPY_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_t16_84"
+			position = { x = 16 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_T16_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_l"
+			position = { x = 20 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_AUTONOMY_L"
+			maxWidth = 36
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_autonomy_prev"
+			position = { x = 56 y = 108 }
+			quadTextureSprite = "yearslider_leftbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_autonomy_next"
+			position = { x = 244 y = 108 }
+			quadTextureSprite = "yearslider_rightbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v0"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_0"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v1"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_1"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v2"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_2"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v3"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_3"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v4"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_4"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v5"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_5"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v6"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_6"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v7"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_7"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v8"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_8"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v9"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_9"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_v10"
+			position = { x = 80 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_AUTONOMY_10"
+			maxWidth = 160
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_make_subject"
+			position = { x = 16 y = 134 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_MAKE_SUBJECT"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_MAKE_SUBJECT_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_free"
+			position = { x = 147 y = 134 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_FREE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_FREE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_score_l"
+			position = { x = 20 y = 176 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_AUTONOMY_SCORE_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_autonomy_score_v"
+			position = { x = 146 y = 176 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_AUTONOMY_SCORE_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_autonomy_score_sub500"
+			position = { x = 218 y = 173 }
+			spriteType = "GFX_tp_sub_500"
+			pdx_tooltip = "SPM_DIPLOMACY_AUTONOMY_SCORE_SUB500_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_autonomy_score_add500"
+			position = { x = 242 y = 173 }
+			spriteType = "GFX_tp_add_500"
+			pdx_tooltip = "SPM_DIPLOMACY_AUTONOMY_SCORE_ADD500_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_annex"
+			position = { x = 16 y = 202 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_ANNEX"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_ANNEX_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_free_subjects"
+			position = { x = 147 y = 202 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_FREE_SUBJECTS"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_FREE_SUBJECTS_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_t16_242"
+			position = { x = 16 y = 244 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_T16_242"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_undo_lost"
+			position = { x = 16 y = 264 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_UNDO_LOST"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_UNDO_LOST_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_undo_pc"
+			position = { x = 147 y = 264 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_UNDO_PC"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_UNDO_PC_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_return_cores"
+			position = { x = 16 y = 300 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_RETURN_CORES"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_RETURN_CORES_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_hand_back"
+			position = { x = 147 y = 300 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_HAND_BACK"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_HAND_BACK_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_t290_84"
+			position = { x = 290 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_T290_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_white_peace"
+			position = { x = 290 y = 106 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_WHITE_PEACE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_WHITE_PEACE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_war"
+			position = { x = 421 y = 106 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_WAR"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_WAR_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_peace"
+			position = { x = 421 y = 106 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_PEACE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_PEACE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_t290_144"
+			position = { x = 290 y = 146 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_T290_144"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_guarantee"
+			position = { x = 290 y = 166 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_GUARANTEE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_GUARANTEE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_nap"
+			position = { x = 421 y = 166 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_NAP"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_NAP_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_access"
+			position = { x = 290 y = 202 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_ACCESS"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_ACCESS_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_its_guarantee"
+			position = { x = 421 y = 202 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_ITS_GUARANTEE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_ITS_GUARANTEE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_opinion_l"
+			position = { x = 294 y = 244 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_OPINION_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_opinion_v"
+			position = { x = 420 y = 244 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_OPINION_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_opinion_sub10"
+			position = { x = 492 y = 241 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_DIPLOMACY_OPINION_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_opinion_add10"
+			position = { x = 516 y = 241 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_DIPLOMACY_OPINION_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_diplomacy_t290_270"
+			position = { x = 290 y = 272 }
+			font = "hoi_16mbs"
+			text = "SPM_DIPLOMACY_T290_270"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_diplomacy_join_mine"
+			position = { x = 290 y = 292 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_JOIN_MINE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_JOIN_MINE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_leave"
+			position = { x = 290 y = 292 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_LEAVE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_LEAVE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_found"
+			position = { x = 421 y = 292 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_FOUND"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_FOUND_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_diplomacy_join_its"
+			position = { x = 421 y = 292 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_DIPLOMACY_JOIN_ITS"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_DIPLOMACY_JOIN_ITS_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_t16_84"
+			position = { x = 16 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_T16_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_l"
+			position = { x = 20 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_DIV_TYPE_L"
+			maxWidth = 60
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_div_type_prev"
+			position = { x = 80 y = 108 }
+			quadTextureSprite = "yearslider_leftbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_div_type_next"
+			position = { x = 244 y = 108 }
+			quadTextureSprite = "yearslider_rightbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v0"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_0"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v1"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_1"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v2"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_2"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v3"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_3"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v4"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_4"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v5"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_5"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v6"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_6"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_type_v7"
+			position = { x = 104 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_DIV_TYPE_7"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_count_l"
+			position = { x = 20 y = 136 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_DIV_COUNT_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_div_count_v"
+			position = { x = 146 y = 136 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_DIV_COUNT_V"
+			maxWidth = 18
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_div_count_sub1"
+			position = { x = 170 y = 133 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_MILITARY_DIV_COUNT_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_div_count_add1"
+			position = { x = 194 y = 133 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_MILITARY_DIV_COUNT_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_div_count_sub10"
+			position = { x = 218 y = 133 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_MILITARY_DIV_COUNT_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_div_count_add10"
+			position = { x = 242 y = 133 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_MILITARY_DIV_COUNT_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_vet_on"
+			position = { x = 16 y = 160 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_VET_ON"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_VET_ON_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_vet_off"
+			position = { x = 16 y = 160 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_VET_OFF"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_VET_OFF_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_spawn_div"
+			position = { x = 147 y = 160 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_SPAWN_DIV"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_SPAWN_DIV_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_del_type"
+			position = { x = 16 y = 196 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_DEL_TYPE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_DEL_TYPE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_del_all"
+			position = { x = 147 y = 196 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_DEL_ALL"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_DEL_ALL_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_del_all_arm"
+			position = { x = 147 y = 196 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_DEL_ALL_ARM"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_DEL_ALL_ARM_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_t16_236"
+			position = { x = 16 y = 238 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_T16_236"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_l"
+			position = { x = 20 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_SHIP_TYPE_L"
+			maxWidth = 60
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_ship_type_prev"
+			position = { x = 80 y = 260 }
+			quadTextureSprite = "yearslider_leftbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_ship_type_next"
+			position = { x = 244 y = 260 }
+			quadTextureSprite = "yearslider_rightbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_v0"
+			position = { x = 104 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_TYPE_0"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_v1"
+			position = { x = 104 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_TYPE_1"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_v2"
+			position = { x = 104 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_TYPE_2"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_v3"
+			position = { x = 104 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_TYPE_3"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_v4"
+			position = { x = 104 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_TYPE_4"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_v5"
+			position = { x = 104 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_TYPE_5"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_type_v6"
+			position = { x = 104 y = 262 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_TYPE_6"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_era_l"
+			position = { x = 20 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_SHIP_ERA_L"
+			maxWidth = 60
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_ship_era_prev"
+			position = { x = 80 y = 286 }
+			quadTextureSprite = "yearslider_leftbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_ship_era_next"
+			position = { x = 244 y = 286 }
+			quadTextureSprite = "yearslider_rightbutton"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_era_v0"
+			position = { x = 104 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_ERA_0"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_era_v1"
+			position = { x = 104 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_ERA_1"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_era_v2"
+			position = { x = 104 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_ERA_2"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_era_v3"
+			position = { x = 104 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_ERA_3"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_era_v4"
+			position = { x = 104 y = 288 }
+			font = "hoi_16mbs"
+			text = "SPM_SEL_SHIP_ERA_4"
+			maxWidth = 136
+			maxHeight = 22
+			format = center
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_count_l"
+			position = { x = 20 y = 314 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_SHIP_COUNT_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_ship_count_v"
+			position = { x = 146 y = 314 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_SHIP_COUNT_V"
+			maxWidth = 18
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_ship_count_sub1"
+			position = { x = 170 y = 311 }
+			spriteType = "GFX_tp_sub_1"
+			pdx_tooltip = "SPM_MILITARY_SHIP_COUNT_SUB1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_ship_count_add1"
+			position = { x = 194 y = 311 }
+			spriteType = "GFX_tp_add_1"
+			pdx_tooltip = "SPM_MILITARY_SHIP_COUNT_ADD1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_ship_count_sub10"
+			position = { x = 218 y = 311 }
+			spriteType = "GFX_tp_sub_10"
+			pdx_tooltip = "SPM_MILITARY_SHIP_COUNT_SUB10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_ship_count_add10"
+			position = { x = 242 y = 311 }
+			spriteType = "GFX_tp_add_10"
+			pdx_tooltip = "SPM_MILITARY_SHIP_COUNT_ADD10_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_del_ships"
+			position = { x = 16 y = 338 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_DEL_SHIPS"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_DEL_SHIPS_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_spawn_ship"
+			position = { x = 147 y = 338 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_SPAWN_SHIP"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_SPAWN_SHIP_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_t290_84"
+			position = { x = 290 y = 86 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_T290_84"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_axp_l"
+			position = { x = 294 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_AXP_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_axp_v"
+			position = { x = 420 y = 110 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_AXP_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_axp_sub50"
+			position = { x = 492 y = 107 }
+			spriteType = "GFX_tp_sub_50"
+			pdx_tooltip = "SPM_MILITARY_AXP_SUB50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_axp_add50"
+			position = { x = 516 y = 107 }
+			spriteType = "GFX_tp_add_50"
+			pdx_tooltip = "SPM_MILITARY_AXP_ADD50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_nxp_l"
+			position = { x = 294 y = 136 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_NXP_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_nxp_v"
+			position = { x = 420 y = 136 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_NXP_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_nxp_sub50"
+			position = { x = 492 y = 133 }
+			spriteType = "GFX_tp_sub_50"
+			pdx_tooltip = "SPM_MILITARY_NXP_SUB50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_nxp_add50"
+			position = { x = 516 y = 133 }
+			spriteType = "GFX_tp_add_50"
+			pdx_tooltip = "SPM_MILITARY_NXP_ADD50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_fxp_l"
+			position = { x = 294 y = 162 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_FXP_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_fxp_v"
+			position = { x = 420 y = 162 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_FXP_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_fxp_sub50"
+			position = { x = 492 y = 159 }
+			spriteType = "GFX_tp_sub_50"
+			pdx_tooltip = "SPM_MILITARY_FXP_SUB50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_fxp_add50"
+			position = { x = 516 y = 159 }
+			spriteType = "GFX_tp_add_50"
+			pdx_tooltip = "SPM_MILITARY_FXP_ADD50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_cp_l"
+			position = { x = 294 y = 188 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_CP_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_cp_v"
+			position = { x = 420 y = 188 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_CP_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_cp_sub50"
+			position = { x = 492 y = 185 }
+			spriteType = "GFX_tp_sub_50"
+			pdx_tooltip = "SPM_MILITARY_CP_SUB50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_cp_add50"
+			position = { x = 516 y = 185 }
+			spriteType = "GFX_tp_add_50"
+			pdx_tooltip = "SPM_MILITARY_CP_ADD50_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_mp_l"
+			position = { x = 294 y = 214 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_MP_L"
+			maxWidth = 130
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_mp_v"
+			position = { x = 420 y = 214 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_MP_V"
+			maxWidth = 66
+			maxHeight = 22
+			format = right
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_mp_sub100"
+			position = { x = 492 y = 211 }
+			spriteType = "GFX_tp_sub_100"
+			pdx_tooltip = "SPM_MILITARY_MP_SUB100_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_mp_add100"
+			position = { x = 516 y = 211 }
+			spriteType = "GFX_tp_add_100"
+			pdx_tooltip = "SPM_MILITARY_MP_ADD100_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_t290_238"
+			position = { x = 290 y = 240 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_T290_238"
+			maxWidth = 258
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_military_eq0_l"
+			position = { x = 294 y = 264 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ0_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq0"
+			position = { x = 386 y = 261 }
+			spriteType = "GFX_tp_add_1000"
+			pdx_tooltip = "SPM_MILITARY_EQ0_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_eq1_l"
+			position = { x = 420 y = 264 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ1_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq1"
+			position = { x = 512 y = 261 }
+			spriteType = "GFX_tp_add_100"
+			pdx_tooltip = "SPM_MILITARY_EQ1_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_eq2_l"
+			position = { x = 294 y = 290 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ2_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq2"
+			position = { x = 386 y = 287 }
+			spriteType = "GFX_tp_add_100"
+			pdx_tooltip = "SPM_MILITARY_EQ2_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_eq3_l"
+			position = { x = 420 y = 290 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ3_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq3"
+			position = { x = 512 y = 287 }
+			spriteType = "GFX_tp_add_500"
+			pdx_tooltip = "SPM_MILITARY_EQ3_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_eq4_l"
+			position = { x = 294 y = 316 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ4_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq4"
+			position = { x = 386 y = 313 }
+			spriteType = "GFX_tp_add_100"
+			pdx_tooltip = "SPM_MILITARY_EQ4_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_eq5_l"
+			position = { x = 420 y = 316 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ5_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq5"
+			position = { x = 512 y = 313 }
+			spriteType = "GFX_tp_add_100"
+			pdx_tooltip = "SPM_MILITARY_EQ5_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_eq6_l"
+			position = { x = 294 y = 342 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ6_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq6"
+			position = { x = 386 y = 339 }
+			spriteType = "GFX_tp_add_20"
+			pdx_tooltip = "SPM_MILITARY_EQ6_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		instantTextboxType = {
+			name = "spm_military_eq7_l"
+			position = { x = 420 y = 342 }
+			font = "hoi_16mbs"
+			text = "SPM_MILITARY_EQ7_L"
+			maxWidth = 90
+			maxHeight = 22
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_military_eq7"
+			position = { x = 512 y = 339 }
+			spriteType = "GFX_tp_add_50"
+			pdx_tooltip = "SPM_MILITARY_EQ7_TT"
+			scale = 0.85
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_military_unlock"
+			position = { x = 290 y = 368 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_MILITARY_UNLOCK"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_MILITARY_UNLOCK_TT"
 			clicksound = click_ok
 			oversound = ui_menu_over
 		}

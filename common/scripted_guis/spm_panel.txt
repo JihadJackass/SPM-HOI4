@@ -6,281 +6,2108 @@ scripted_gui = {
 		visible = {
 			ROOT = {
 				is_ai = no
-				has_global_flag = spm_panel_enabled
+				ROOT = { has_country_flag = spm_panel_enabled }
 				OR = {
-					has_country_flag = tp_is_host
 					NOT = { has_global_flag = tp_is_multiplayer }
+					has_global_flag = spm_everyone
+					has_country_flag = tp_is_host
+					NOT = { any_country = { has_country_flag = tp_is_host } }
 				}
 			}
 		}
 
 		effects = {
 			spm_close_click = {
-				clr_global_flag = spm_panel_enabled
-				clr_global_flag = fxt_arm_restore
+				ROOT = { clr_country_flag = spm_panel_enabled }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_tab_fix_click = {
-				clr_global_flag = spm_tab_territory
-				clr_global_flag = spm_tab_subjects
-				clr_global_flag = spm_tab_politics
-				clr_global_flag = spm_tab_war
-				clr_global_flag = spm_tab_resources
-				clr_global_flag = spm_tab_advanced
-				set_global_flag = spm_tab_fix
-				clr_global_flag = fxt_arm_restore
+			spm_dec_on_click = {
+				ROOT = { clr_country_flag = spm_show_decisions }
 			}
-			spm_fix_undo_lost_click = {
-				OWNER = {
-					fxt_undo_country_peace = yes
-				}
+			spm_dec_off_click = {
+				ROOT = { set_country_flag = spm_show_decisions }
 			}
-			spm_fix_undo_pc_click = {
-				fxt_undo_peace_conference = yes
+			spm_page_state_click = {
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_fix_return_cores_click = {
-				OWNER = {
-					fxt_return_cores = yes
-				}
+			spm_page_state_on_click = {
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_fix_hand_back_click = {
-				OWNER = {
-					fxt_give_back_land = yes
-				}
+			spm_page_economy_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { set_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_fix_save_ws_click = {
-				fxt_save_world = yes
-				clr_global_flag = fxt_arm_restore
+			spm_page_economy_on_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { set_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_fix_load_ws_click = {
-				if = {
-					limit = { has_global_flag = fxt_arm_restore }
-					clr_global_flag = fxt_arm_restore
-					fxt_restore_world = yes
-				}
-				else = {
-					set_global_flag = fxt_arm_restore
-				}
+			spm_page_country_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { set_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_fix_restore_one_click = {
-				OWNER = {
-					fxt_restore_country_from_world = yes
-				}
+			spm_page_country_on_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { set_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_fix_my_cores_click = {
-				ROOT = { fxt_return_cores = yes }
+			spm_page_diplomacy_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { set_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_tab_territory_click = {
-				clr_global_flag = spm_tab_fix
-				clr_global_flag = spm_tab_subjects
-				clr_global_flag = spm_tab_politics
-				clr_global_flag = spm_tab_war
-				clr_global_flag = spm_tab_resources
-				clr_global_flag = spm_tab_advanced
-				set_global_flag = spm_tab_territory
-				clr_global_flag = fxt_arm_restore
+			spm_page_diplomacy_on_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_military }
+				ROOT = { set_country_flag = spm_page_diplomacy }
+				ROOT = { clr_country_flag = fxt_arm_restore }
 			}
-			spm_territory_give_me_click = {
+			spm_page_military_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { set_country_flag = spm_page_military }
+				ROOT = { clr_country_flag = fxt_arm_restore }
+			}
+			spm_page_military_on_click = {
+				ROOT = { clr_country_flag = spm_page_state }
+				ROOT = { clr_country_flag = spm_page_economy }
+				ROOT = { clr_country_flag = spm_page_country }
+				ROOT = { clr_country_flag = spm_page_diplomacy }
+				ROOT = { set_country_flag = spm_page_military }
+				ROOT = { clr_country_flag = fxt_arm_restore }
+			}
+			spm_state_give_me_click = {
 				ROOT = { transfer_state = PREV }
 			}
-			spm_territory_give_core_click = {
+			spm_state_give_core_click = {
 				fxt_state_to_core_owner = yes
 			}
-			spm_territory_core_owner_click = {
-				add_core_of = OWNER
+			spm_state_control_me_click = {
+				ROOT = { set_state_controller = PREV }
 			}
-			spm_territory_capital_click = {
+			spm_state_capital_click = {
 				OWNER = { set_capital = { state = PREV } }
 			}
-			spm_territory_mark_click = {
-				set_state_flag = smt_marked
+			spm_state_core_click = {
+				add_core_of = OWNER
 			}
-			spm_territory_unmark_click = {
-				clr_state_flag = smt_marked
+			spm_state_uncore_click = {
+				remove_core_of = OWNER
 			}
-			spm_territory_mark_country_click = {
+			spm_state_claim_click = {
+				add_claim_by = ROOT
+			}
+			spm_state_unclaim_click = {
+				remove_claim_by = ROOT
+			}
+			spm_state_demil_click = {
+				set_demilitarized_zone = yes
+			}
+			spm_state_remil_click = {
+				set_demilitarized_zone = no
+			}
+			spm_state_resource_rights_click = {
 				OWNER = {
-					every_owned_state = { set_state_flag = smt_marked }
-				}
-			}
-			spm_territory_send_marked_click = {
-				every_state = {
-					limit = { has_state_flag = smt_marked }
-					clr_state_flag = smt_marked
-					PREV.OWNER = { transfer_state = PREV }
-				}
-			}
-			spm_territory_clear_marks_click = {
-				every_state = { clr_state_flag = smt_marked }
-			}
-			spm_tab_subjects_click = {
-				clr_global_flag = spm_tab_fix
-				clr_global_flag = spm_tab_territory
-				clr_global_flag = spm_tab_politics
-				clr_global_flag = spm_tab_war
-				clr_global_flag = spm_tab_resources
-				clr_global_flag = spm_tab_advanced
-				set_global_flag = spm_tab_subjects
-				clr_global_flag = fxt_arm_restore
-			}
-			spm_subjects_puppet_click = {
-				OWNER = {
-					if = {
-						limit = {
-							is_subject = yes
-							NOT = { is_subject_of = ROOT }
-						}
-						OVERLORD = { end_puppet = PREV }
-					}
-					if = {
-						limit = { NOT = { is_subject_of = ROOT } }
-						ROOT = { puppet = PREV }
-					}
-					ROOT = {
-						set_autonomy = {
-							target = PREV
-							autonomy_state = autonomy_puppet
-						}
+					give_resource_rights = {
+						receiver = ROOT
+						state = PREV
 					}
 				}
 			}
-			spm_subjects_integrated_click = {
-				OWNER = {
-					if = {
-						limit = {
-							is_subject = yes
-							NOT = { is_subject_of = ROOT }
-						}
-						OVERLORD = { end_puppet = PREV }
+			spm_state_compliance_sub10_click = {
+				add_compliance = -10
+			}
+			spm_state_compliance_add10_click = {
+				add_compliance = 10
+			}
+			spm_state_resistance_sub10_click = {
+				add_resistance = -10
+			}
+			spm_state_resistance_add10_click = {
+				add_resistance = 10
+			}
+			spm_economy_pop_sub100_click = {
+				add_manpower = -100000
+			}
+			spm_economy_pop_add100_click = {
+				add_manpower = 100000
+			}
+			spm_economy_size_up_click = {
+				spm_state_size_up = yes
+			}
+			spm_economy_size_down_click = {
+				spm_state_size_down = yes
+			}
+			spm_economy_res_oil_sub1_click = {
+				add_resource = {
+					type = oil
+					amount = -1
+				}
+			}
+			spm_economy_res_oil_sub1_shift_click = {
+				add_resource = {
+					type = oil
+					amount = -10
+				}
+			}
+			spm_economy_res_oil_add1_click = {
+				add_resource = {
+					type = oil
+					amount = 1
+				}
+			}
+			spm_economy_res_oil_add1_shift_click = {
+				add_resource = {
+					type = oil
+					amount = 10
+				}
+			}
+			spm_economy_res_steel_sub1_click = {
+				add_resource = {
+					type = steel
+					amount = -1
+				}
+			}
+			spm_economy_res_steel_sub1_shift_click = {
+				add_resource = {
+					type = steel
+					amount = -10
+				}
+			}
+			spm_economy_res_steel_add1_click = {
+				add_resource = {
+					type = steel
+					amount = 1
+				}
+			}
+			spm_economy_res_steel_add1_shift_click = {
+				add_resource = {
+					type = steel
+					amount = 10
+				}
+			}
+			spm_economy_res_aluminium_sub1_click = {
+				add_resource = {
+					type = aluminium
+					amount = -1
+				}
+			}
+			spm_economy_res_aluminium_sub1_shift_click = {
+				add_resource = {
+					type = aluminium
+					amount = -10
+				}
+			}
+			spm_economy_res_aluminium_add1_click = {
+				add_resource = {
+					type = aluminium
+					amount = 1
+				}
+			}
+			spm_economy_res_aluminium_add1_shift_click = {
+				add_resource = {
+					type = aluminium
+					amount = 10
+				}
+			}
+			spm_economy_res_rubber_sub1_click = {
+				add_resource = {
+					type = rubber
+					amount = -1
+				}
+			}
+			spm_economy_res_rubber_sub1_shift_click = {
+				add_resource = {
+					type = rubber
+					amount = -10
+				}
+			}
+			spm_economy_res_rubber_add1_click = {
+				add_resource = {
+					type = rubber
+					amount = 1
+				}
+			}
+			spm_economy_res_rubber_add1_shift_click = {
+				add_resource = {
+					type = rubber
+					amount = 10
+				}
+			}
+			spm_economy_res_tungsten_sub1_click = {
+				add_resource = {
+					type = tungsten
+					amount = -1
+				}
+			}
+			spm_economy_res_tungsten_sub1_shift_click = {
+				add_resource = {
+					type = tungsten
+					amount = -10
+				}
+			}
+			spm_economy_res_tungsten_add1_click = {
+				add_resource = {
+					type = tungsten
+					amount = 1
+				}
+			}
+			spm_economy_res_tungsten_add1_shift_click = {
+				add_resource = {
+					type = tungsten
+					amount = 10
+				}
+			}
+			spm_economy_res_chromium_sub1_click = {
+				add_resource = {
+					type = chromium
+					amount = -1
+				}
+			}
+			spm_economy_res_chromium_sub1_shift_click = {
+				add_resource = {
+					type = chromium
+					amount = -10
+				}
+			}
+			spm_economy_res_chromium_add1_click = {
+				add_resource = {
+					type = chromium
+					amount = 1
+				}
+			}
+			spm_economy_res_chromium_add1_shift_click = {
+				add_resource = {
+					type = chromium
+					amount = 10
+				}
+			}
+			spm_economy_max_infra_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
 					}
-					if = {
-						limit = { NOT = { is_subject_of = ROOT } }
-						ROOT = { puppet = PREV }
-					}
-					ROOT = {
-						set_autonomy = {
-							target = PREV
-							autonomy_state = autonomy_integrated_puppet
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
 						}
 					}
 				}
-			}
-			spm_subjects_dominion_click = {
-				OWNER = {
-					if = {
-						limit = {
-							is_subject = yes
-							NOT = { is_subject_of = ROOT }
-						}
-						OVERLORD = { end_puppet = PREV }
-					}
-					if = {
-						limit = { NOT = { is_subject_of = ROOT } }
-						ROOT = { puppet = PREV }
-					}
-					ROOT = {
-						set_autonomy = {
-							target = PREV
-							autonomy_state = autonomy_dominion
-						}
+				else = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
 					}
 				}
 			}
-			spm_subjects_colony_click = {
-				OWNER = {
-					if = {
-						limit = {
-							is_subject = yes
-							NOT = { is_subject_of = ROOT }
+			spm_economy_factories5_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_extra_state_shared_building_slots = 10
+						add_building_construction = {
+							type = industrial_complex
+							level = 5
+							instant_build = yes
 						}
-						OVERLORD = { end_puppet = PREV }
-					}
-					if = {
-						limit = { NOT = { is_subject_of = ROOT } }
-						ROOT = { puppet = PREV }
-					}
-					ROOT = {
-						set_autonomy = {
-							target = PREV
-							autonomy_state = autonomy_colony
-						}
-					}
-				}
-			}
-			spm_subjects_free_click = {
-				OWNER = {
-					OVERLORD = { end_puppet = PREV }
-				}
-			}
-			spm_subjects_free_subjects_click = {
-				OWNER = {
-					every_subject_country = {
-						PREV = { end_puppet = PREV }
-					}
-				}
-			}
-			spm_subjects_annex_click = {
-				OWNER = {
-					ROOT = {
-						annex_country = {
-							target = PREV
-							transfer_troops = yes
+						add_building_construction = {
+							type = arms_factory
+							level = 5
+							instant_build = yes
 						}
 					}
 				}
+				else = {
+					add_extra_state_shared_building_slots = 10
+					add_building_construction = {
+						type = industrial_complex
+						level = 5
+						instant_build = yes
+					}
+					add_building_construction = {
+						type = arms_factory
+						level = 5
+						instant_build = yes
+					}
+				}
 			}
-			spm_subjects_annex_subjects_click = {
-				OWNER = {
-					every_subject_country = {
-						PREV = {
-							annex_country = {
-								target = PREV
-								transfer_troops = yes
+			spm_economy_b_infrastructure_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = infrastructure
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = infrastructure
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_infrastructure_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = infrastructure
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = infrastructure
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_infrastructure_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = infrastructure
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = infrastructure
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_infrastructure_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = infrastructure
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = infrastructure
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_infrastructure_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = infrastructure
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = infrastructure
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_industrial_complex_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = industrial_complex
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = industrial_complex
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_industrial_complex_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = industrial_complex
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = industrial_complex
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_industrial_complex_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = industrial_complex
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = industrial_complex
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_industrial_complex_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = industrial_complex
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = industrial_complex
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_industrial_complex_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = industrial_complex
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = industrial_complex
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_arms_factory_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = arms_factory
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = arms_factory
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_arms_factory_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = arms_factory
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = arms_factory
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_arms_factory_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = arms_factory
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = arms_factory
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_arms_factory_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = arms_factory
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = arms_factory
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_arms_factory_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = arms_factory
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = arms_factory
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_dockyard_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = dockyard
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = dockyard
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_dockyard_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = dockyard
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = dockyard
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_dockyard_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = dockyard
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = dockyard
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_dockyard_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = dockyard
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = dockyard
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_dockyard_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = dockyard
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = dockyard
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_air_base_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = air_base
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = air_base
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_air_base_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = air_base
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = air_base
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_air_base_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = air_base
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = air_base
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_air_base_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = air_base
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = air_base
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_air_base_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = air_base
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = air_base
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_naval_base_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = naval_base
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = naval_base
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_naval_base_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = naval_base
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = naval_base
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_naval_base_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = naval_base
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = naval_base
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_naval_base_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = naval_base
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = yes
+								limit_to_naval_base = yes
 							}
 						}
 					}
 				}
+				else = {
+					add_building_construction = {
+						type = naval_base
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+					}
+				}
 			}
-			spm_tab_politics_click = {
-				clr_global_flag = spm_tab_fix
-				clr_global_flag = spm_tab_territory
-				clr_global_flag = spm_tab_subjects
-				clr_global_flag = spm_tab_war
-				clr_global_flag = spm_tab_resources
-				clr_global_flag = spm_tab_advanced
-				set_global_flag = spm_tab_politics
-				clr_global_flag = fxt_arm_restore
+			spm_economy_b_naval_base_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = naval_base
+							level = 5
+							instant_build = yes
+							province = {
+								all_provinces = yes
+								limit_to_naval_base = yes
+							}
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = naval_base
+						level = 5
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_naval_base = yes
+						}
+					}
+				}
 			}
-			spm_politics_gov_democratic_click = {
+			spm_economy_b_anti_air_building_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = anti_air_building
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = anti_air_building
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_anti_air_building_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = anti_air_building
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = anti_air_building
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_anti_air_building_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = anti_air_building
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = anti_air_building
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_anti_air_building_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = anti_air_building
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_anti_air_building_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = anti_air_building
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = anti_air_building
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_radar_station_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = radar_station
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = radar_station
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_radar_station_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = radar_station
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = radar_station
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_radar_station_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = radar_station
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = radar_station
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_radar_station_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { radio_detection = 1 popup = no }
+						}
+						add_building_construction = {
+							type = radar_station
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { radio_detection = 1 popup = no }
+					}
+					add_building_construction = {
+						type = radar_station
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_radar_station_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { radio_detection = 1 popup = no }
+						}
+						add_building_construction = {
+							type = radar_station
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { radio_detection = 1 popup = no }
+					}
+					add_building_construction = {
+						type = radar_station
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_synthetic_refinery_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = synthetic_refinery
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = synthetic_refinery
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_synthetic_refinery_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = synthetic_refinery
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = synthetic_refinery
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_synthetic_refinery_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = synthetic_refinery
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = synthetic_refinery
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_synthetic_refinery_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { synth_oil_experiments = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = synthetic_refinery
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { synth_oil_experiments = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_synthetic_refinery_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { synth_oil_experiments = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = synthetic_refinery
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { synth_oil_experiments = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = synthetic_refinery
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_fuel_silo_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = fuel_silo
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = fuel_silo
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_fuel_silo_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = fuel_silo
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = fuel_silo
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_fuel_silo_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = fuel_silo
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = fuel_silo
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_fuel_silo_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { fuel_silos = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = fuel_silo
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { fuel_silos = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = fuel_silo
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_fuel_silo_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { fuel_silos = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = fuel_silo
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { fuel_silos = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = fuel_silo
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_bunker_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = bunker
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = bunker
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_bunker_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = bunker
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = bunker
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_bunker_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = bunker
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = bunker
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_bunker_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = yes
+								limit_to_border = yes
+							}
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+					}
+				}
+			}
+			spm_economy_b_bunker_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = bunker
+							level = 5
+							instant_build = yes
+							province = {
+								all_provinces = yes
+								limit_to_border = yes
+							}
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = bunker
+						level = 5
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_border = yes
+						}
+					}
+				}
+			}
+			spm_economy_b_coastal_bunker_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = coastal_bunker
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = coastal_bunker
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_coastal_bunker_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = coastal_bunker
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = coastal_bunker
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_coastal_bunker_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = coastal_bunker
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = coastal_bunker
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_coastal_bunker_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = coastal_bunker
+							level = 1
+							instant_build = yes
+							province = {
+								all_provinces = yes
+								limit_to_coastal = yes
+							}
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = coastal_bunker
+						level = 1
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_coastal = yes
+						}
+					}
+				}
+			}
+			spm_economy_b_coastal_bunker_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						add_building_construction = {
+							type = coastal_bunker
+							level = 5
+							instant_build = yes
+							province = {
+								all_provinces = yes
+								limit_to_coastal = yes
+							}
+						}
+					}
+				}
+				else = {
+					add_building_construction = {
+						type = coastal_bunker
+						level = 5
+						instant_build = yes
+						province = {
+							all_provinces = yes
+							limit_to_coastal = yes
+						}
+					}
+				}
+			}
+			spm_economy_b_rocket_site_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = rocket_site
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = rocket_site
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_rocket_site_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = rocket_site
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = rocket_site
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_rocket_site_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = rocket_site
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = rocket_site
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_rocket_site_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { experimental_rockets = 1 rocket_engines = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = rocket_site
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { experimental_rockets = 1 rocket_engines = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = rocket_site
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_rocket_site_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { experimental_rockets = 1 rocket_engines = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = rocket_site
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { experimental_rockets = 1 rocket_engines = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = rocket_site
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_nuclear_reactor_sub1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = nuclear_reactor
+							level = 1
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = nuclear_reactor
+						level = 1
+					}
+				}
+			}
+			spm_economy_b_nuclear_reactor_sub1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = nuclear_reactor
+							level = 5
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = nuclear_reactor
+						level = 5
+					}
+				}
+			}
+			spm_economy_b_nuclear_reactor_sub1_right_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						remove_building = {
+							type = nuclear_reactor
+							level = 30
+						}
+					}
+				}
+				else = {
+					remove_building = {
+						type = nuclear_reactor
+						level = 30
+					}
+				}
+			}
+			spm_economy_b_nuclear_reactor_add1_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { nuclear_reactor = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 1
+						add_building_construction = {
+							type = nuclear_reactor
+							level = 1
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { nuclear_reactor = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 1
+					add_building_construction = {
+						type = nuclear_reactor
+						level = 1
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_b_nuclear_reactor_add1_shift_click = {
+				if = {
+					limit = {
+						ROOT = { has_country_flag = spm_build_marked }
+						any_state = { has_state_flag = smt_marked }
+					}
+					every_state = {
+						limit = { has_state_flag = smt_marked }
+						OWNER = {
+							set_technology = { nuclear_reactor = 1 popup = no }
+						}
+						add_extra_state_shared_building_slots = 5
+						add_building_construction = {
+							type = nuclear_reactor
+							level = 5
+							instant_build = yes
+						}
+					}
+				}
+				else = {
+					OWNER = {
+						set_technology = { nuclear_reactor = 1 popup = no }
+					}
+					add_extra_state_shared_building_slots = 5
+					add_building_construction = {
+						type = nuclear_reactor
+						level = 5
+						instant_build = yes
+					}
+				}
+			}
+			spm_economy_marked_on_click = {
+				ROOT = { clr_country_flag = spm_build_marked }
+			}
+			spm_economy_marked_off_click = {
+				ROOT = { set_country_flag = spm_build_marked }
+			}
+			spm_country_gov_democratic_click = {
 				OWNER = {
 					fxt_set_government_democratic = yes
 				}
 			}
-			spm_politics_gov_communism_click = {
+			spm_country_pop_democratic_sub10_click = {
+				OWNER = {
+					add_popularity = { ideology = democratic popularity = -0.10 }
+				}
+			}
+			spm_country_pop_democratic_add10_click = {
+				OWNER = {
+					add_popularity = { ideology = democratic popularity = 0.10 }
+				}
+			}
+			spm_country_gov_communism_click = {
 				OWNER = {
 					fxt_set_government_communism = yes
 				}
 			}
-			spm_politics_gov_fascism_click = {
+			spm_country_pop_communism_sub10_click = {
+				OWNER = {
+					add_popularity = { ideology = communism popularity = -0.10 }
+				}
+			}
+			spm_country_pop_communism_add10_click = {
+				OWNER = {
+					add_popularity = { ideology = communism popularity = 0.10 }
+				}
+			}
+			spm_country_gov_fascism_click = {
 				OWNER = {
 					fxt_set_government_fascism = yes
 				}
 			}
-			spm_politics_gov_neutrality_click = {
+			spm_country_pop_fascism_sub10_click = {
+				OWNER = {
+					add_popularity = { ideology = fascism popularity = -0.10 }
+				}
+			}
+			spm_country_pop_fascism_add10_click = {
+				OWNER = {
+					add_popularity = { ideology = fascism popularity = 0.10 }
+				}
+			}
+			spm_country_gov_neutrality_click = {
 				OWNER = {
 					fxt_set_government_neutrality = yes
 				}
 			}
-			spm_politics_elections_on_click = {
+			spm_country_pop_neutrality_sub10_click = {
+				OWNER = {
+					add_popularity = { ideology = neutrality popularity = -0.10 }
+				}
+			}
+			spm_country_pop_neutrality_add10_click = {
+				OWNER = {
+					add_popularity = { ideology = neutrality popularity = 0.10 }
+				}
+			}
+			spm_country_elect_on_click = {
 				OWNER = {
 					spm_set_elections_yes = yes
 				}
 			}
-			spm_politics_elections_off_click = {
+			spm_country_elect_off_click = {
 				OWNER = {
 					spm_set_elections_no = yes
 				}
 			}
-			spm_politics_purge_click = {
+			spm_country_purge_click = {
 				OWNER = {
 					if = {
 						limit = { has_government = democratic }
@@ -300,42 +2127,613 @@ scripted_gui = {
 					}
 				}
 			}
-			spm_politics_stability_click = {
+			spm_country_stab_sub10_click = {
+				OWNER = {
+					add_stability = -0.10
+				}
+			}
+			spm_country_stab_add10_click = {
 				OWNER = {
 					add_stability = 0.10
 				}
 			}
-			spm_politics_war_support_click = {
+			spm_country_ws_sub10_click = {
+				OWNER = {
+					add_war_support = -0.10
+				}
+			}
+			spm_country_ws_add10_click = {
 				OWNER = {
 					add_war_support = 0.10
 				}
 			}
-			spm_tab_war_click = {
-				clr_global_flag = spm_tab_fix
-				clr_global_flag = spm_tab_territory
-				clr_global_flag = spm_tab_subjects
-				clr_global_flag = spm_tab_politics
-				clr_global_flag = spm_tab_resources
-				clr_global_flag = spm_tab_advanced
-				set_global_flag = spm_tab_war
-				clr_global_flag = fxt_arm_restore
-			}
-			spm_war_white_peace_click = {
+			spm_country_pp_sub100_click = {
 				OWNER = {
-					fxt_white_peace_all = yes
+					add_political_power = -100
 				}
 			}
-			spm_war_win_cw_click = {
+			spm_country_pp_add100_click = {
+				OWNER = {
+					add_political_power = 100
+				}
+			}
+			spm_country_rs_sub1_click = {
+				OWNER = {
+					add_research_slot = -1
+				}
+			}
+			spm_country_rs_add1_click = {
+				OWNER = {
+					add_research_slot = 1
+				}
+			}
+			spm_country_major_on_click = {
+				OWNER = {
+					set_major = no
+				}
+			}
+			spm_country_major_off_click = {
+				OWNER = {
+					set_major = yes
+				}
+			}
+			spm_country_cw_ideo_prev_click = {
+				subtract_from_variable = { ROOT.spm_cw_ideo = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_cw_ideo < 0 } }
+					set_variable = { ROOT.spm_cw_ideo = 3 }
+				}
+			}
+			spm_country_cw_ideo_next_click = {
+				add_to_variable = { ROOT.spm_cw_ideo = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_cw_ideo > 3 } }
+					set_variable = { ROOT.spm_cw_ideo = 0 }
+				}
+			}
+			spm_country_start_cw_click = {
+				if = {
+					limit = { check_variable = { ROOT.spm_cw_ideo = 0 } }
+					OWNER = {
+						start_civil_war = {
+							ideology = democratic
+							size = 0.5
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_cw_ideo = 1 } }
+					OWNER = {
+						start_civil_war = {
+							ideology = communism
+							size = 0.5
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_cw_ideo = 2 } }
+					OWNER = {
+						start_civil_war = {
+							ideology = fascism
+							size = 0.5
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_cw_ideo = 3 } }
+					OWNER = {
+						start_civil_war = {
+							ideology = neutrality
+							size = 0.5
+						}
+					}
+				}
+			}
+			spm_country_win_cw_click = {
 				OWNER = {
 					fxt_end_civil_war = yes
 				}
 			}
-			spm_war_peace_me_click = {
+			spm_country_rule_can_join_factions_on_click = {
 				OWNER = {
-					ROOT = { white_peace = PREV }
+					clear_rule = { can_join_factions = yes }
+					clr_country_flag = spm_rule_can_join_factions
 				}
 			}
-			spm_war_war_me_click = {
+			spm_country_rule_can_join_factions_off_click = {
+				OWNER = {
+					set_rule = { can_join_factions = yes }
+					set_country_flag = spm_rule_can_join_factions
+				}
+			}
+			spm_country_rule_can_create_factions_on_click = {
+				OWNER = {
+					clear_rule = { can_create_factions = yes }
+					clr_country_flag = spm_rule_can_create_factions
+				}
+			}
+			spm_country_rule_can_create_factions_off_click = {
+				OWNER = {
+					set_rule = { can_create_factions = yes }
+					set_country_flag = spm_rule_can_create_factions
+				}
+			}
+			spm_country_rule_can_puppet_on_click = {
+				OWNER = {
+					clear_rule = { can_puppet = yes }
+					clr_country_flag = spm_rule_can_puppet
+				}
+			}
+			spm_country_rule_can_puppet_off_click = {
+				OWNER = {
+					set_rule = { can_puppet = yes }
+					set_country_flag = spm_rule_can_puppet
+				}
+			}
+			spm_country_rule_can_force_government_on_click = {
+				OWNER = {
+					clear_rule = { can_force_government = yes }
+					clr_country_flag = spm_rule_can_force_government
+				}
+			}
+			spm_country_rule_can_force_government_off_click = {
+				OWNER = {
+					set_rule = { can_force_government = yes }
+					set_country_flag = spm_rule_can_force_government
+				}
+			}
+			spm_country_rule_can_send_volunteers_on_click = {
+				OWNER = {
+					clear_rule = { can_send_volunteers = yes }
+					clr_country_flag = spm_rule_can_send_volunteers
+				}
+			}
+			spm_country_rule_can_send_volunteers_off_click = {
+				OWNER = {
+					set_rule = { can_send_volunteers = yes }
+					set_country_flag = spm_rule_can_send_volunteers
+				}
+			}
+			spm_country_rule_can_boost_other_ideologies_on_click = {
+				OWNER = {
+					clear_rule = { can_boost_other_ideologies = yes }
+					clr_country_flag = spm_rule_can_boost_other_ideologies
+				}
+			}
+			spm_country_rule_can_boost_other_ideologies_off_click = {
+				OWNER = {
+					set_rule = { can_boost_other_ideologies = yes }
+					set_country_flag = spm_rule_can_boost_other_ideologies
+				}
+			}
+			spm_country_rule_can_guarantee_other_ideologies_on_click = {
+				OWNER = {
+					clear_rule = { can_guarantee_other_ideologies = yes }
+					clr_country_flag = spm_rule_can_guarantee_other_ideologies
+				}
+			}
+			spm_country_rule_can_guarantee_other_ideologies_off_click = {
+				OWNER = {
+					set_rule = { can_guarantee_other_ideologies = yes }
+					set_country_flag = spm_rule_can_guarantee_other_ideologies
+				}
+			}
+			spm_country_rule_can_declare_war_on_same_ideology_on_click = {
+				OWNER = {
+					clear_rule = { can_declare_war_on_same_ideology = yes }
+					clr_country_flag = spm_rule_can_declare_war_on_same_ideology
+				}
+			}
+			spm_country_rule_can_declare_war_on_same_ideology_off_click = {
+				OWNER = {
+					set_rule = { can_declare_war_on_same_ideology = yes }
+					set_country_flag = spm_rule_can_declare_war_on_same_ideology
+				}
+			}
+			spm_country_rule_can_use_kamikaze_pilots_on_click = {
+				OWNER = {
+					clear_rule = { can_use_kamikaze_pilots = yes }
+					clr_country_flag = spm_rule_can_use_kamikaze_pilots
+				}
+			}
+			spm_country_rule_can_use_kamikaze_pilots_off_click = {
+				OWNER = {
+					set_rule = { can_use_kamikaze_pilots = yes }
+					set_country_flag = spm_rule_can_use_kamikaze_pilots
+				}
+			}
+			spm_country_rule_can_generate_female_aces_on_click = {
+				OWNER = {
+					clear_rule = { can_generate_female_aces = yes }
+					clr_country_flag = spm_rule_can_generate_female_aces
+				}
+			}
+			spm_country_rule_can_generate_female_aces_off_click = {
+				OWNER = {
+					set_rule = { can_generate_female_aces = yes }
+					set_country_flag = spm_rule_can_generate_female_aces
+				}
+			}
+			spm_country_look_democratic_click = {
+				OWNER = {
+					meta_effect = {
+						text = {
+							set_cosmetic_tag = [TAG]_democratic
+						}
+						TAG = "[THIS.GetTag]"
+					}
+				}
+			}
+			spm_country_look_communism_click = {
+				OWNER = {
+					meta_effect = {
+						text = {
+							set_cosmetic_tag = [TAG]_communism
+						}
+						TAG = "[THIS.GetTag]"
+					}
+				}
+			}
+			spm_country_look_fascism_click = {
+				OWNER = {
+					meta_effect = {
+						text = {
+							set_cosmetic_tag = [TAG]_fascism
+						}
+						TAG = "[THIS.GetTag]"
+					}
+				}
+			}
+			spm_country_look_neutrality_click = {
+				OWNER = {
+					meta_effect = {
+						text = {
+							set_cosmetic_tag = [TAG]_neutrality
+						}
+						TAG = "[THIS.GetTag]"
+					}
+				}
+			}
+			spm_country_look_clear_click = {
+				OWNER = {
+					drop_cosmetic_tag = yes
+				}
+			}
+			spm_country_look_remember_click = {
+				OWNER = { set_variable = { ROOT.spm_look_target = THIS } }
+			}
+			spm_country_look_copy_click = {
+				OWNER = {
+					hidden_effect = {
+						meta_effect = {
+							text = {
+								set_cosmetic_tag = [TARGET]
+							}
+							TARGET = "[?ROOT.spm_look_target.GetTag]"
+						}
+					}
+				}
+			}
+			spm_diplomacy_autonomy_prev_click = {
+				subtract_from_variable = { ROOT.spm_autonomy = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy < 0 } }
+					set_variable = { ROOT.spm_autonomy = 10 }
+				}
+			}
+			spm_diplomacy_autonomy_next_click = {
+				add_to_variable = { ROOT.spm_autonomy = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy > 10 } }
+					set_variable = { ROOT.spm_autonomy = 0 }
+				}
+			}
+			spm_diplomacy_make_subject_click = {
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 0 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_dominion
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 1 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_puppet
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 2 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_colony
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 3 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_integrated_puppet
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 4 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_satellite
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 5 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_supervised_state
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 6 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_personal_union
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 7 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_collaboration_government
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 8 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_reichskommissariat
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 9 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_reichsprotectorate
+							}
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_autonomy = 10 } }
+					OWNER = {
+						if = {
+							limit = {
+								is_subject = yes
+								NOT = { is_subject_of = ROOT }
+							}
+							OVERLORD = { end_puppet = PREV }
+						}
+						if = {
+							limit = { NOT = { is_subject_of = ROOT } }
+							ROOT = { puppet = PREV }
+						}
+						ROOT = {
+							set_autonomy = {
+								target = PREV
+								autonomy_state = autonomy_wtt_imperial_protectorate
+							}
+						}
+					}
+				}
+			}
+			spm_diplomacy_free_click = {
+				OWNER = {
+					OVERLORD = { end_puppet = PREV }
+				}
+			}
+			spm_diplomacy_autonomy_score_sub500_click = {
+				OWNER = {
+					add_autonomy_score = {
+						value = -500
+						localization = SPM_TOOLPACK_SOURCE
+					}
+				}
+			}
+			spm_diplomacy_autonomy_score_add500_click = {
+				OWNER = {
+					add_autonomy_score = {
+						value = 500
+						localization = SPM_TOOLPACK_SOURCE
+					}
+				}
+			}
+			spm_diplomacy_annex_click = {
+				OWNER = {
+					ROOT = {
+						annex_country = {
+							target = PREV
+							transfer_troops = yes
+						}
+					}
+				}
+			}
+			spm_diplomacy_free_subjects_click = {
+				OWNER = {
+					every_subject_country = {
+						PREV = { end_puppet = PREV }
+					}
+				}
+			}
+			spm_diplomacy_undo_lost_click = {
+				OWNER = {
+					fxt_undo_country_peace = yes
+				}
+			}
+			spm_diplomacy_undo_pc_click = {
+				fxt_undo_peace_conference = yes
+			}
+			spm_diplomacy_return_cores_click = {
+				OWNER = {
+					fxt_return_cores = yes
+				}
+			}
+			spm_diplomacy_hand_back_click = {
+				OWNER = {
+					fxt_give_back_land = yes
+				}
+			}
+			spm_diplomacy_white_peace_click = {
+				OWNER = {
+					fxt_white_peace_all = yes
+				}
+			}
+			spm_diplomacy_war_click = {
 				OWNER = {
 					ROOT = {
 						declare_war_on = {
@@ -345,12 +2743,55 @@ scripted_gui = {
 					}
 				}
 			}
-			spm_war_join_mine_click = {
+			spm_diplomacy_peace_click = {
+				OWNER = {
+					ROOT = { white_peace = PREV }
+				}
+			}
+			spm_diplomacy_guarantee_click = {
+				OWNER = {
+					ROOT = { give_guarantee = PREV }
+				}
+			}
+			spm_diplomacy_nap_click = {
+				OWNER = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = non_aggression_pact
+						active = yes
+					}
+				}
+			}
+			spm_diplomacy_access_click = {
+				OWNER = {
+					diplomatic_relation = {
+						country = ROOT
+						relation = military_access
+						active = yes
+					}
+				}
+			}
+			spm_diplomacy_its_guarantee_click = {
+				OWNER = {
+					give_guarantee = ROOT
+				}
+			}
+			spm_diplomacy_opinion_sub10_click = {
+				OWNER = {
+					add_opinion_modifier = { target = ROOT modifier = TPT_neg_10_tno }
+				}
+			}
+			spm_diplomacy_opinion_add10_click = {
+				OWNER = {
+					add_opinion_modifier = { target = ROOT modifier = TPT_pos_10_tno }
+				}
+			}
+			spm_diplomacy_join_mine_click = {
 				OWNER = {
 					ROOT = { add_to_faction = PREV }
 				}
 			}
-			spm_war_leave_faction_click = {
+			spm_diplomacy_leave_click = {
 				OWNER = {
 					if = {
 						limit = { is_faction_leader = yes }
@@ -361,42 +2802,737 @@ scripted_gui = {
 					}
 				}
 			}
-			spm_war_new_faction_click = {
+			spm_diplomacy_found_click = {
 				OWNER = {
-					create_faction_from_template = faction_template_generic
+					create_faction_from_template = {
+						template = faction_template_defensive_democratic
+						name = SPM_FACTION_DEFENSIVE_DEMOCRATIC
+					}
 				}
 			}
-			spm_war_join_its_click = {
+			spm_diplomacy_join_its_click = {
 				OWNER = {
 					add_to_faction = ROOT
 				}
 			}
-			spm_tab_resources_click = {
-				clr_global_flag = spm_tab_fix
-				clr_global_flag = spm_tab_territory
-				clr_global_flag = spm_tab_subjects
-				clr_global_flag = spm_tab_politics
-				clr_global_flag = spm_tab_war
-				clr_global_flag = spm_tab_advanced
-				set_global_flag = spm_tab_resources
-				clr_global_flag = fxt_arm_restore
-			}
-			spm_resources_pp_click = {
-				OWNER = {
-					add_political_power = 100
+			spm_military_div_type_prev_click = {
+				subtract_from_variable = { ROOT.spm_div_type = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type < 0 } }
+					set_variable = { ROOT.spm_div_type = 7 }
 				}
 			}
-			spm_resources_manpower_click = {
-				OWNER = {
-					add_manpower = 100000
+			spm_military_div_type_next_click = {
+				add_to_variable = { ROOT.spm_div_type = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type > 7 } }
+					set_variable = { ROOT.spm_div_type = 0 }
 				}
 			}
-			spm_resources_cp_click = {
+			spm_military_div_count_sub1_click = {
+				subtract_from_variable = { ROOT.spm_div_count = 1 }
+				clamp_variable = { var = ROOT.spm_div_count min = 1 max = 100 }
+			}
+			spm_military_div_count_add1_click = {
+				add_to_variable = { ROOT.spm_div_count = 1 }
+				clamp_variable = { var = ROOT.spm_div_count min = 1 max = 100 }
+			}
+			spm_military_div_count_sub10_click = {
+				subtract_from_variable = { ROOT.spm_div_count = 10 }
+				clamp_variable = { var = ROOT.spm_div_count min = 1 max = 100 }
+			}
+			spm_military_div_count_add10_click = {
+				add_to_variable = { ROOT.spm_div_count = 10 }
+				clamp_variable = { var = ROOT.spm_div_count min = 1 max = 100 }
+			}
+			spm_military_vet_on_click = {
+				ROOT = { clr_country_flag = spm_div_veteran }
+			}
+			spm_military_vet_off_click = {
+				ROOT = { set_country_flag = spm_div_veteran }
+			}
+			spm_military_spawn_div_click = {
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 0 } }
+					OWNER = {
+
+						if = {
+							limit = { NOT = { has_template = "SPM Infantry" } }
+							division_template = {
+								name = "SPM Infantry"
+								regiments = {
+									infantry = { x = 0 y = 0 }
+									infantry = { x = 0 y = 1 }
+									infantry = { x = 0 y = 2 }
+									infantry = { x = 1 y = 0 }
+									infantry = { x = 1 y = 1 }
+									infantry = { x = 1 y = 2 }
+									infantry = { x = 2 y = 0 }
+									infantry = { x = 2 y = 1 }
+									infantry = { x = 2 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Infantry\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Infantry\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ROOT.spm_div_type = 1 } }
+					OWNER = {
+						if = {
+							limit = { NOT = { has_tech = motorised_infantry } }
+							set_technology = { motorised_infantry = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_template = "SPM Motorized" } }
+							division_template = {
+								name = "SPM Motorized"
+								regiments = {
+									motorized = { x = 0 y = 0 }
+									motorized = { x = 0 y = 1 }
+									motorized = { x = 0 y = 2 }
+									motorized = { x = 1 y = 0 }
+									motorized = { x = 1 y = 1 }
+									motorized = { x = 1 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Motorized\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Motorized\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ROOT.spm_div_type = 2 } }
+					OWNER = {
+						if = {
+							limit = { NOT = { has_tech = motorised_infantry } }
+							set_technology = { motorised_infantry = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = mechanised_infantry } }
+							set_technology = { mechanised_infantry = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_template = "SPM Mechanized" } }
+							division_template = {
+								name = "SPM Mechanized"
+								regiments = {
+									mechanized = { x = 0 y = 0 }
+									mechanized = { x = 0 y = 1 }
+									mechanized = { x = 0 y = 2 }
+									mechanized = { x = 1 y = 0 }
+									mechanized = { x = 1 y = 1 }
+									mechanized = { x = 1 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Mechanized\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Mechanized\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ROOT.spm_div_type = 3 } }
+					OWNER = {
+						if = {
+							limit = { NOT = { has_tech = motorised_infantry } }
+							set_technology = { motorised_infantry = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = gwtank } }
+							set_technology = { gwtank = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = gwtank_chassis } }
+							set_technology = { gwtank_chassis = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_template = "SPM Light Armor" } }
+							division_template = {
+								name = "SPM Light Armor"
+								regiments = {
+									light_armor = { x = 0 y = 0 }
+									light_armor = { x = 0 y = 1 }
+									light_armor = { x = 0 y = 2 }
+									motorized = { x = 1 y = 0 }
+									motorized = { x = 1 y = 1 }
+									motorized = { x = 1 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Light Armor\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Light Armor\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ROOT.spm_div_type = 4 } }
+					OWNER = {
+						if = {
+							limit = { NOT = { has_tech = motorised_infantry } }
+							set_technology = { motorised_infantry = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = mechanised_infantry } }
+							set_technology = { mechanised_infantry = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = gwtank } }
+							set_technology = { gwtank = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = basic_medium_tank } }
+							set_technology = { basic_medium_tank = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = gwtank_chassis } }
+							set_technology = { gwtank_chassis = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_tech = basic_medium_tank_chassis } }
+							set_technology = { basic_medium_tank_chassis = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_template = "SPM Medium Armor" } }
+							division_template = {
+								name = "SPM Medium Armor"
+								regiments = {
+									medium_armor = { x = 0 y = 0 }
+									medium_armor = { x = 0 y = 1 }
+									medium_armor = { x = 0 y = 2 }
+									medium_armor = { x = 0 y = 3 }
+									mechanized = { x = 1 y = 0 }
+									mechanized = { x = 1 y = 1 }
+									mechanized = { x = 1 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Medium Armor\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Medium Armor\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ROOT.spm_div_type = 5 } }
+					OWNER = {
+
+						if = {
+							limit = { NOT = { has_template = "SPM Cavalry" } }
+							division_template = {
+								name = "SPM Cavalry"
+								regiments = {
+									cavalry = { x = 0 y = 0 }
+									cavalry = { x = 0 y = 1 }
+									cavalry = { x = 0 y = 2 }
+									cavalry = { x = 1 y = 0 }
+									cavalry = { x = 1 y = 1 }
+									cavalry = { x = 1 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Cavalry\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Cavalry\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ROOT.spm_div_type = 6 } }
+					OWNER = {
+						if = {
+							limit = { NOT = { has_tech = tech_mountaineers } }
+							set_technology = { tech_mountaineers = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_template = "SPM Mountaineers" } }
+							division_template = {
+								name = "SPM Mountaineers"
+								regiments = {
+									mountaineers = { x = 0 y = 0 }
+									mountaineers = { x = 0 y = 1 }
+									mountaineers = { x = 0 y = 2 }
+									mountaineers = { x = 1 y = 0 }
+									mountaineers = { x = 1 y = 1 }
+									mountaineers = { x = 1 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Mountaineers\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Mountaineers\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+				else_if = {
+					limit = { check_variable = { ROOT.spm_div_type = 7 } }
+					OWNER = {
+						if = {
+							limit = { NOT = { has_tech = paratroopers } }
+							set_technology = { paratroopers = 1 popup = no }
+						}
+						if = {
+							limit = { NOT = { has_template = "SPM Paratroopers" } }
+							division_template = {
+								name = "SPM Paratroopers"
+								regiments = {
+									paratrooper = { x = 0 y = 0 }
+									paratrooper = { x = 0 y = 1 }
+									paratrooper = { x = 0 y = 2 }
+									paratrooper = { x = 1 y = 0 }
+									paratrooper = { x = 1 y = 1 }
+									paratrooper = { x = 1 y = 2 }
+								}
+							}
+						}
+					}
+					for_loop_effect = {
+						end = ROOT.spm_div_count
+						if = {
+							limit = { ROOT = { has_country_flag = spm_div_veteran } }
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Paratroopers\" start_experience_factor = 1 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+						else = {
+							OWNER = {
+								PREV = {
+									create_unit = {
+										division = "division_template = \"SPM Paratroopers\" start_experience_factor = 0.3 start_equipment_factor = 1"
+										owner = PREV
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+			spm_military_del_type_click = {
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 0 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Infantry" }
+							delete_unit_template_and_units = { division_template = "SPM Infantry" disband = yes }
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 1 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Motorized" }
+							delete_unit_template_and_units = { division_template = "SPM Motorized" disband = yes }
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 2 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Mechanized" }
+							delete_unit_template_and_units = { division_template = "SPM Mechanized" disband = yes }
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 3 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Light Armor" }
+							delete_unit_template_and_units = { division_template = "SPM Light Armor" disband = yes }
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 4 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Medium Armor" }
+							delete_unit_template_and_units = { division_template = "SPM Medium Armor" disband = yes }
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 5 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Cavalry" }
+							delete_unit_template_and_units = { division_template = "SPM Cavalry" disband = yes }
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 6 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Mountaineers" }
+							delete_unit_template_and_units = { division_template = "SPM Mountaineers" disband = yes }
+						}
+					}
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_div_type = 7 } }
+					OWNER = {
+						if = {
+							limit = { has_template = "SPM Paratroopers" }
+							delete_unit_template_and_units = { division_template = "SPM Paratroopers" disband = yes }
+						}
+					}
+				}
+			}
+			spm_military_del_all_click = {
+				ROOT = { set_country_flag = spm_arm_delete }
+			}
+			spm_military_del_all_arm_click = {
+				ROOT = { clr_country_flag = spm_arm_delete }
+				OWNER = { delete_unit = { disband = yes } }
+			}
+			spm_military_ship_type_prev_click = {
+				subtract_from_variable = { ROOT.spm_ship_type = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type < 0 } }
+					set_variable = { ROOT.spm_ship_type = 6 }
+				}
+			}
+			spm_military_ship_type_next_click = {
+				add_to_variable = { ROOT.spm_ship_type = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type > 6 } }
+					set_variable = { ROOT.spm_ship_type = 0 }
+				}
+			}
+			spm_military_ship_era_prev_click = {
+				subtract_from_variable = { ROOT.spm_ship_era = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_era < 0 } }
+					set_variable = { ROOT.spm_ship_era = 4 }
+				}
+			}
+			spm_military_ship_era_next_click = {
+				add_to_variable = { ROOT.spm_ship_era = 1 }
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_era > 4 } }
+					set_variable = { ROOT.spm_ship_era = 0 }
+				}
+			}
+			spm_military_ship_count_sub1_click = {
+				subtract_from_variable = { ROOT.spm_ship_count = 1 }
+				clamp_variable = { var = ROOT.spm_ship_count min = 1 max = 50 }
+			}
+			spm_military_ship_count_add1_click = {
+				add_to_variable = { ROOT.spm_ship_count = 1 }
+				clamp_variable = { var = ROOT.spm_ship_count min = 1 max = 50 }
+			}
+			spm_military_ship_count_sub10_click = {
+				subtract_from_variable = { ROOT.spm_ship_count = 10 }
+				clamp_variable = { var = ROOT.spm_ship_count min = 1 max = 50 }
+			}
+			spm_military_ship_count_add10_click = {
+				add_to_variable = { ROOT.spm_ship_count = 10 }
+				clamp_variable = { var = ROOT.spm_ship_count min = 1 max = 50 }
+			}
+			spm_military_del_ships_click = {
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 0 } }
+					OWNER = { destroy_ships = { type = ship_hull_light count = all } }
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 1 } }
+					OWNER = { destroy_ships = { type = ship_hull_cruiser count = all } }
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 2 } }
+					OWNER = { destroy_ships = { type = ship_hull_cruiser count = all } }
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 3 } }
+					OWNER = { destroy_ships = { type = ship_hull_heavy count = all } }
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 4 } }
+					OWNER = { destroy_ships = { type = ship_hull_heavy count = all } }
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 5 } }
+					OWNER = { destroy_ships = { type = ship_hull_carrier count = all } }
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 6 } }
+					OWNER = { destroy_ships = { type = ship_hull_submarine count = all } }
+				}
+			}
+			spm_military_spawn_ship_click = {
+				clr_global_flag = sst_destroyer_enabled
+				clr_global_flag = sst_lc_enabled
+				clr_global_flag = sst_hc_enabled
+				clr_global_flag = sst_bc_enabled
+				clr_global_flag = sst_bs_enabled
+				clr_global_flag = sst_carrier_enabled
+				clr_global_flag = sst_sub_enabled
+				clr_global_flag = sst_y1_enabled
+				clr_global_flag = sst_y2_enabled
+				clr_global_flag = sst_y3_enabled
+				clr_global_flag = sst_y4_enabled
+				clr_global_flag = sst_y5_enabled
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 0 } }
+					set_global_flag = sst_destroyer_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 1 } }
+					set_global_flag = sst_lc_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 2 } }
+					set_global_flag = sst_hc_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 3 } }
+					set_global_flag = sst_bc_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 4 } }
+					set_global_flag = sst_bs_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 5 } }
+					set_global_flag = sst_carrier_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_type = 6 } }
+					set_global_flag = sst_sub_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_era = 0 } }
+					set_global_flag = sst_y1_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_era = 1 } }
+					set_global_flag = sst_y2_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_era = 2 } }
+					set_global_flag = sst_y3_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_era = 3 } }
+					set_global_flag = sst_y4_enabled
+				}
+				if = {
+					limit = { check_variable = { ROOT.spm_ship_era = 4 } }
+					set_global_flag = sst_y5_enabled
+				}
+				OWNER = {
+					for_loop_effect = {
+						end = ROOT.spm_ship_count
+						sst_spawn_ship = yes
+					}
+				}
+			}
+			spm_military_axp_sub50_click = {
+				OWNER = {
+					army_experience = -50
+				}
+			}
+			spm_military_axp_add50_click = {
+				OWNER = {
+					army_experience = 50
+				}
+			}
+			spm_military_nxp_sub50_click = {
+				OWNER = {
+					navy_experience = -50
+				}
+			}
+			spm_military_nxp_add50_click = {
+				OWNER = {
+					navy_experience = 50
+				}
+			}
+			spm_military_fxp_sub50_click = {
+				OWNER = {
+					air_experience = -50
+				}
+			}
+			spm_military_fxp_add50_click = {
+				OWNER = {
+					air_experience = 50
+				}
+			}
+			spm_military_cp_sub50_click = {
+				OWNER = {
+					add_command_power = -50
+				}
+			}
+			spm_military_cp_add50_click = {
 				OWNER = {
 					add_command_power = 50
 				}
 			}
-			spm_resources_equipment_click = {
+			spm_military_mp_sub100_click = {
+				OWNER = {
+					add_manpower = -100000
+				}
+			}
+			spm_military_mp_add100_click = {
+				OWNER = {
+					add_manpower = 100000
+				}
+			}
+			spm_military_eq0_click = {
 				OWNER = {
 					add_equipment_to_stockpile = {
 						type = infantry_equipment_1
@@ -404,529 +3540,1332 @@ scripted_gui = {
 					}
 				}
 			}
-			spm_resources_civ_click = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = industrial_complex
-					level = 1
-					instant_build = yes
-				}
-			}
-			spm_resources_mil_click = {
-				add_extra_state_shared_building_slots = 1
-				add_building_construction = {
-					type = arms_factory
-					level = 1
-					instant_build = yes
-				}
-			}
-			spm_resources_infra_click = {
-				add_building_construction = {
-					type = infrastructure
-					level = 1
-					instant_build = yes
-				}
-			}
-			spm_resources_air_click = {
-				add_building_construction = {
-					type = air_base
-					level = 1
-					instant_build = yes
-				}
-			}
-			spm_tab_advanced_click = {
-				clr_global_flag = spm_tab_fix
-				clr_global_flag = spm_tab_territory
-				clr_global_flag = spm_tab_subjects
-				clr_global_flag = spm_tab_politics
-				clr_global_flag = spm_tab_war
-				clr_global_flag = spm_tab_resources
-				set_global_flag = spm_tab_advanced
-				clr_global_flag = fxt_arm_restore
-			}
-			spm_advanced_tool_smt_click = {
-				if = {
-					limit = { has_global_flag = smt_enabled }
-					clr_global_flag = smt_enabled
-				}
-				else = {
-					set_global_flag = smt_enabled
-					bst_count_civf = yes
-				}
-			}
-			spm_advanced_tool_cat_click = {
-				if = {
-					limit = { has_global_flag = cat_enabled }
-					clr_global_flag = cat_enabled
-				}
-				else = {
-					set_global_flag = cat_enabled
-					bst_count_civf = yes
-				}
-			}
-			spm_advanced_tool_cpt_click = {
-				if = {
-					limit = { has_global_flag = cpt_enabled }
-					clr_global_flag = cpt_enabled
-				}
-				else = {
-					set_global_flag = cpt_enabled
-					if = {
-						limit = { NOT = { has_global_flag = cpt_window_b } }
-						set_global_flag = cpt_window_a
+			spm_military_eq1_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = support_equipment_1
+						amount = 100
 					}
 				}
 			}
-			spm_advanced_tool_tpt_click = {
-				if = {
-					limit = { has_global_flag = tpt_enabled }
-					clr_global_flag = tpt_enabled
-					clr_global_flag = tpt_cw_window_open
-				}
-				else = {
-					set_global_flag = tpt_enabled
-					if = {
-						limit = {
-							NOT = { has_global_flag = tpt_window_b }
-							NOT = { has_global_flag = tpt_window_c }
-							NOT = { has_global_flag = tpt_window_d }
-						}
-						set_global_flag = tpt_window_a
+			spm_military_eq2_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = artillery_equipment_1
+						amount = 100
 					}
 				}
 			}
-			spm_advanced_tool_dst_A_click = {
-				if = {
-					limit = { has_global_flag = dst_A_enabled }
-					clr_global_flag = dst_A_enabled
-				}
-				else = {
-					set_global_flag = dst_A_enabled
-				}
-			}
-			spm_advanced_tool_dst_B_click = {
-				if = {
-					limit = { has_global_flag = dst_B_enabled }
-					clr_global_flag = dst_B_enabled
-				}
-				else = {
-					set_global_flag = dst_B_enabled
+			spm_military_eq3_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = motorized_equipment_1
+						amount = 500
+					}
 				}
 			}
-			spm_advanced_tool_bst_click = {
-				if = {
-					limit = { has_global_flag = bst_enabled }
-					clr_global_flag = bst_enabled
-				}
-				else = {
-					set_global_flag = bst_enabled
-					bst_count_buildings = yes
+			spm_military_eq4_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = light_tank_chassis_1
+						amount = 100
+					}
 				}
 			}
-			spm_advanced_tool_sst_click = {
-				if = {
-					limit = { has_global_flag = sst_enabled }
-					clr_global_flag = sst_enabled
-				}
-				else = {
-					set_global_flag = sst_enabled
-				}
-			}
-			spm_advanced_tool_mst_C_click = {
-				if = {
-					limit = { has_global_flag = mst_C_enabled }
-					clr_global_flag = mst_C_enabled
-				}
-				else = {
-					set_global_flag = mst_C_enabled
+			spm_military_eq5_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = small_plane_airframe_1
+						amount = 100
+					}
 				}
 			}
-			spm_advanced_tool_mst_S_click = {
-				if = {
-					limit = { has_global_flag = mst_S_enabled }
-					clr_global_flag = mst_S_enabled
-				}
-				else = {
-					set_global_flag = mst_S_enabled
-				}
-			}
-			spm_advanced_tool_rmt_click = {
-				if = {
-					limit = { has_global_flag = rmt_enabled }
-					clr_global_flag = rmt_enabled
-				}
-				else = {
-					set_global_flag = rmt_enabled
+			spm_military_eq6_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = train_equipment_1
+						amount = 20
+					}
 				}
 			}
-			spm_advanced_tool_crt_click = {
-				if = {
-					limit = { has_global_flag = crt_enabled }
-					clr_global_flag = crt_enabled
-				}
-				else = {
-					set_global_flag = crt_enabled
-				}
-			}
-			spm_advanced_tool_ret_click = {
-				if = {
-					limit = { has_global_flag = ret_enabled }
-					clr_global_flag = ret_enabled
-				}
-				else = {
-					set_global_flag = ret_enabled
-					ret_load_releasable = yes
+			spm_military_eq7_click = {
+				OWNER = {
+					add_equipment_to_stockpile = {
+						type = convoy_1
+						amount = 50
+					}
 				}
 			}
-			spm_advanced_tool_cct_click = {
-				if = {
-					limit = { has_global_flag = cct_enabled }
-					clr_global_flag = cct_enabled
-				}
-				else = {
-					set_global_flag = cct_enabled
+			spm_military_unlock_click = {
+				OWNER = {
+					tpt_remove_template_lock = yes
 				}
 			}
 		}
 
 		triggers = {
-			spm_fix_label_50_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_dec_on_visible = {
+				ROOT = { has_country_flag = spm_show_decisions }
 			}
-			spm_fix_undo_lost_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_dec_off_visible = {
+				NOT = { ROOT = { has_country_flag = spm_show_decisions } }
 			}
-			spm_fix_undo_lost_click_enabled = {
-				OWNER = { has_variable = fxt_pc_id }
+			spm_page_state_visible = {
+				NOT = { NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } } }
 			}
-			spm_fix_undo_pc_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_page_state_on_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_fix_undo_pc_click_enabled = {
-				check_variable = { global.fxt_pc_cursor > 0 }
+			spm_page_economy_visible = {
+				NOT = { ROOT = { has_country_flag = spm_page_economy } }
 			}
-			spm_fix_return_cores_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_page_economy_on_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_fix_return_cores_click_enabled = {
-				OWNER = { any_core_state = { NOT = { is_owned_by = PREV } } }
+			spm_page_country_visible = {
+				NOT = { ROOT = { has_country_flag = spm_page_country } }
 			}
-			spm_fix_hand_back_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_page_country_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_fix_hand_back_click_enabled = {
-				OWNER = { any_owned_state = { NOT = { is_core_of = PREV } } }
+			spm_page_diplomacy_visible = {
+				NOT = { ROOT = { has_country_flag = spm_page_diplomacy } }
 			}
-			spm_fix_label_150_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_page_diplomacy_on_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
 			}
-			spm_fix_save_ws_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_page_military_visible = {
+				NOT = { ROOT = { has_country_flag = spm_page_military } }
 			}
-			spm_fix_load_ws_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_page_military_on_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_fix_load_ws_click_enabled = {
-				has_global_flag = fxt_ws_saved
+			spm_state_t16_84_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_fix_restore_one_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
+			spm_state_give_me_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_fix_restore_one_click_enabled = {
-				has_global_flag = fxt_ws_saved
-				OWNER = { check_variable = { fxt_ws_id = global.fxt_ws_counter } }
-			}
-			spm_fix_my_cores_visible = {
-				NOT = { OR = { has_global_flag = spm_tab_territory has_global_flag = spm_tab_subjects has_global_flag = spm_tab_politics has_global_flag = spm_tab_war has_global_flag = spm_tab_resources has_global_flag = spm_tab_advanced } }
-			}
-			spm_fix_my_cores_click_enabled = {
-				ROOT = { any_core_state = { NOT = { is_owned_by = ROOT } } }
-			}
-			spm_territory_label_50_visible = {
-				has_global_flag = spm_tab_territory
-			}
-			spm_territory_give_me_visible = {
-				has_global_flag = spm_tab_territory
-			}
-			spm_territory_give_me_click_enabled = {
+			spm_state_give_me_click_enabled = {
 				NOT = { is_owned_by = ROOT }
 			}
-			spm_territory_give_core_visible = {
-				has_global_flag = spm_tab_territory
+			spm_state_give_core_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_territory_give_core_click_enabled = {
+			spm_state_give_core_click_enabled = {
 				NOT = { is_core_of = OWNER }
 			}
-			spm_territory_core_owner_visible = {
-				has_global_flag = spm_tab_territory
+			spm_state_control_me_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_territory_core_owner_click_enabled = {
+			spm_state_control_me_click_enabled = {
+				NOT = { is_controlled_by = ROOT }
+			}
+			spm_state_capital_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
+			}
+			spm_state_capital_click_enabled = {
+				is_capital = no
+			}
+			spm_state_core_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 				NOT = { is_core_of = OWNER }
 			}
-			spm_territory_capital_visible = {
-				has_global_flag = spm_tab_territory
+			spm_state_uncore_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
+				is_core_of = OWNER
 			}
-			spm_territory_capital_click_enabled = {
-				NOT = { is_capital = yes }
+			spm_state_claim_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
+				NOT = { is_claimed_by = ROOT }
 			}
-			spm_territory_label_150_visible = {
-				has_global_flag = spm_tab_territory
+			spm_state_claim_click_enabled = {
+				NOT = { is_owned_by = ROOT }
 			}
-			spm_territory_mark_visible = {
-				has_global_flag = spm_tab_territory
-				NOT = { has_state_flag = smt_marked }
+			spm_state_unclaim_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
+				is_claimed_by = ROOT
 			}
-			spm_territory_unmark_visible = {
-				has_global_flag = spm_tab_territory
-				has_state_flag = smt_marked
+			spm_state_hint_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_territory_mark_country_visible = {
-				has_global_flag = spm_tab_territory
+			spm_state_t290_84_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_territory_send_marked_visible = {
-				has_global_flag = spm_tab_territory
+			spm_state_ctrl_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_territory_send_marked_click_enabled = {
-				any_state = { has_state_flag = smt_marked }
+			spm_state_demil_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
+				is_demilitarized_zone = no
 			}
-			spm_territory_clear_marks_visible = {
-				has_global_flag = spm_tab_territory
+			spm_state_remil_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
+				is_demilitarized_zone = yes
 			}
-			spm_territory_clear_marks_click_enabled = {
-				any_state = { has_state_flag = smt_marked }
+			spm_state_resource_rights_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_label_50_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_state_resource_rights_click_enabled = {
+				NOT = { is_owned_by = ROOT }
 			}
-			spm_subjects_puppet_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_state_compliance_l_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_puppet_click_enabled = {
-				OWNER = { NOT = { tag = ROOT } }
+			spm_state_compliance_v_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_integrated_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_state_compliance_sub10_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_integrated_click_enabled = {
-				OWNER = { NOT = { tag = ROOT } }
+			spm_state_compliance_add10_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_dominion_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_state_resistance_l_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_dominion_click_enabled = {
-				OWNER = { NOT = { tag = ROOT } }
+			spm_state_resistance_v_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_colony_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_state_resistance_sub10_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_colony_click_enabled = {
-				OWNER = { NOT = { tag = ROOT } }
+			spm_state_resistance_add10_visible = {
+				NOT = { OR = { ROOT = { has_country_flag = spm_page_economy } ROOT = { has_country_flag = spm_page_country } ROOT = { has_country_flag = spm_page_diplomacy } ROOT = { has_country_flag = spm_page_military } } }
 			}
-			spm_subjects_label_150_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_economy_t16_84_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_subjects_free_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_economy_pop_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_subjects_free_click_enabled = {
-				OWNER = { is_subject = yes }
+			spm_economy_pop_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_subjects_free_subjects_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_economy_pop_sub100_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_subjects_free_subjects_click_enabled = {
-				OWNER = { num_subjects > 0 }
+			spm_economy_pop_add100_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_subjects_annex_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_economy_size_up_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_subjects_annex_click_enabled = {
-				OWNER = { NOT = { tag = ROOT } }
+			spm_economy_size_up_click_enabled = {
+				NOT = { has_state_category = megalopolis }
 			}
-			spm_subjects_annex_subjects_visible = {
-				has_global_flag = spm_tab_subjects
+			spm_economy_size_down_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_subjects_annex_subjects_click_enabled = {
-				OWNER = { num_subjects > 0 }
+			spm_economy_size_down_click_enabled = {
+				NOT = { has_state_category = wasteland }
 			}
-			spm_politics_label_50_visible = {
-				has_global_flag = spm_tab_politics
+			spm_economy_t16_174_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_politics_gov_democratic_visible = {
-				has_global_flag = spm_tab_politics
+			spm_economy_res_oil_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
 			}
-			spm_politics_gov_democratic_click_enabled = {
+			spm_economy_res_oil_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_oil_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_oil_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_steel_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_steel_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_steel_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_steel_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_aluminium_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_aluminium_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_aluminium_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_aluminium_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_rubber_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_rubber_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_rubber_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_rubber_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_tungsten_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_tungsten_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_tungsten_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_tungsten_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_chromium_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_chromium_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_chromium_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_res_chromium_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_t16_332_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_max_infra_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_factories5_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_t290_84_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_infrastructure_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_infrastructure_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_infrastructure_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_infrastructure_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_industrial_complex_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_industrial_complex_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_industrial_complex_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_industrial_complex_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_arms_factory_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_arms_factory_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_arms_factory_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_arms_factory_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_dockyard_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_dockyard_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_dockyard_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_dockyard_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_air_base_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_air_base_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_air_base_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_air_base_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_naval_base_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_naval_base_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_naval_base_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_naval_base_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_anti_air_building_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_anti_air_building_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_anti_air_building_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_anti_air_building_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_radar_station_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_radar_station_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_radar_station_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_radar_station_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_synthetic_refinery_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_synthetic_refinery_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_synthetic_refinery_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_synthetic_refinery_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_fuel_silo_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_fuel_silo_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_fuel_silo_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_fuel_silo_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_bunker_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_bunker_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_bunker_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_bunker_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_coastal_bunker_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_coastal_bunker_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_coastal_bunker_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_coastal_bunker_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_rocket_site_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_rocket_site_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_rocket_site_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_rocket_site_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_nuclear_reactor_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_nuclear_reactor_v_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_nuclear_reactor_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_b_nuclear_reactor_add1_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_economy_marked_on_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+				ROOT = { has_country_flag = spm_build_marked }
+			}
+			spm_economy_marked_off_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+				NOT = { ROOT = { has_country_flag = spm_build_marked } }
+			}
+			spm_economy_marked_l_visible = {
+				ROOT = { has_country_flag = spm_page_economy }
+			}
+			spm_country_t16_84_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_democratic_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_democratic_click_enabled = {
 				OWNER = { NOT = { has_government = democratic } }
 			}
-			spm_politics_gov_communism_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_pop_democratic_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_politics_gov_communism_click_enabled = {
+			spm_country_pop_democratic_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_democratic_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_democratic_add10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_communism_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_communism_click_enabled = {
 				OWNER = { NOT = { has_government = communism } }
 			}
-			spm_politics_gov_fascism_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_pop_communism_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_politics_gov_fascism_click_enabled = {
+			spm_country_pop_communism_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_communism_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_communism_add10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_fascism_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_fascism_click_enabled = {
 				OWNER = { NOT = { has_government = fascism } }
 			}
-			spm_politics_gov_neutrality_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_pop_fascism_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_politics_gov_neutrality_click_enabled = {
+			spm_country_pop_fascism_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_fascism_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_fascism_add10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_neutrality_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_gov_neutrality_click_enabled = {
 				OWNER = { NOT = { has_government = neutrality } }
 			}
-			spm_politics_label_150_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_pop_neutrality_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_politics_elections_on_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_pop_neutrality_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_neutrality_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pop_neutrality_add10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_elect_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 				OWNER = { has_elections = no }
 			}
-			spm_politics_elections_off_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_elect_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 				OWNER = { has_elections = yes }
 			}
-			spm_politics_purge_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_purge_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_politics_stability_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_stab_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_politics_war_support_visible = {
-				has_global_flag = spm_tab_politics
+			spm_country_stab_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_war_label_50_visible = {
-				has_global_flag = spm_tab_war
+			spm_country_stab_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_war_white_peace_visible = {
-				has_global_flag = spm_tab_war
+			spm_country_stab_add10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_war_white_peace_click_enabled = {
-				OWNER = { has_war = yes }
+			spm_country_ws_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_war_win_cw_visible = {
-				has_global_flag = spm_tab_war
+			spm_country_ws_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_war_win_cw_click_enabled = {
+			spm_country_ws_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_ws_add10_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pp_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pp_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pp_sub100_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_pp_add100_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rs_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rs_v_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rs_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rs_add1_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_major_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { is_major = yes }
+			}
+			spm_country_major_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { is_major = yes } }
+			}
+			spm_country_major_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_t290_84_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_cw_ideo_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_cw_ideo_prev_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_cw_ideo_next_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_cw_ideo_v0_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				check_variable = { ROOT.spm_cw_ideo = 0 }
+			}
+			spm_country_cw_ideo_v1_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				check_variable = { ROOT.spm_cw_ideo = 1 }
+			}
+			spm_country_cw_ideo_v2_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				check_variable = { ROOT.spm_cw_ideo = 2 }
+			}
+			spm_country_cw_ideo_v3_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				check_variable = { ROOT.spm_cw_ideo = 3 }
+			}
+			spm_country_start_cw_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_start_cw_click_enabled = {
+				OR = {
+					AND = {
+						check_variable = { ROOT.spm_cw_ideo = 0 }
+						OWNER = { NOT = { has_government = democratic } }
+					}
+					AND = {
+						check_variable = { ROOT.spm_cw_ideo = 1 }
+						OWNER = { NOT = { has_government = communism } }
+					}
+					AND = {
+						check_variable = { ROOT.spm_cw_ideo = 2 }
+						OWNER = { NOT = { has_government = fascism } }
+					}
+					AND = {
+						check_variable = { ROOT.spm_cw_ideo = 3 }
+						OWNER = { NOT = { has_government = neutrality } }
+					}
+				}
+				OWNER = { has_civil_war = no }
+			}
+			spm_country_win_cw_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_win_cw_click_enabled = {
 				OWNER = { has_civil_war = yes }
 			}
-			spm_war_peace_me_visible = {
-				has_global_flag = spm_tab_war
+			spm_country_t290_174_visible = {
+				ROOT = { has_country_flag = spm_page_country }
 			}
-			spm_war_peace_me_click_enabled = {
-				OWNER = { has_war_with = ROOT }
+			spm_country_rule_can_join_factions_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_join_factions }
 			}
-			spm_war_war_me_visible = {
-				has_global_flag = spm_tab_war
+			spm_country_rule_can_join_factions_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_join_factions } }
 			}
-			spm_war_war_me_click_enabled = {
+			spm_country_rule_can_join_factions_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_create_factions_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_create_factions }
+			}
+			spm_country_rule_can_create_factions_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_create_factions } }
+			}
+			spm_country_rule_can_create_factions_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_puppet_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_puppet }
+			}
+			spm_country_rule_can_puppet_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_puppet } }
+			}
+			spm_country_rule_can_puppet_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_force_government_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_force_government }
+			}
+			spm_country_rule_can_force_government_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_force_government } }
+			}
+			spm_country_rule_can_force_government_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_send_volunteers_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_send_volunteers }
+			}
+			spm_country_rule_can_send_volunteers_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_send_volunteers } }
+			}
+			spm_country_rule_can_send_volunteers_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_boost_other_ideologies_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_boost_other_ideologies }
+			}
+			spm_country_rule_can_boost_other_ideologies_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_boost_other_ideologies } }
+			}
+			spm_country_rule_can_boost_other_ideologies_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_guarantee_other_ideologies_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_guarantee_other_ideologies }
+			}
+			spm_country_rule_can_guarantee_other_ideologies_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_guarantee_other_ideologies } }
+			}
+			spm_country_rule_can_guarantee_other_ideologies_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_declare_war_on_same_ideology_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_declare_war_on_same_ideology }
+			}
+			spm_country_rule_can_declare_war_on_same_ideology_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_declare_war_on_same_ideology } }
+			}
+			spm_country_rule_can_declare_war_on_same_ideology_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_use_kamikaze_pilots_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_use_kamikaze_pilots }
+			}
+			spm_country_rule_can_use_kamikaze_pilots_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_use_kamikaze_pilots } }
+			}
+			spm_country_rule_can_use_kamikaze_pilots_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_rule_can_generate_female_aces_on_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				OWNER = { has_country_flag = spm_rule_can_generate_female_aces }
+			}
+			spm_country_rule_can_generate_female_aces_off_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+				NOT = { OWNER = { has_country_flag = spm_rule_can_generate_female_aces } }
+			}
+			spm_country_rule_can_generate_female_aces_l_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_t290_328_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_democratic_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_communism_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_fascism_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_neutrality_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_clear_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_remember_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_copy_visible = {
+				ROOT = { has_country_flag = spm_page_country }
+			}
+			spm_country_look_copy_click_enabled = {
+				ROOT = { has_variable = spm_look_target }
+			}
+			spm_diplomacy_t16_84_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_autonomy_l_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_autonomy_prev_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_autonomy_next_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_autonomy_v0_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 0 }
+			}
+			spm_diplomacy_autonomy_v1_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 1 }
+			}
+			spm_diplomacy_autonomy_v2_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 2 }
+			}
+			spm_diplomacy_autonomy_v3_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 3 }
+			}
+			spm_diplomacy_autonomy_v4_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 4 }
+			}
+			spm_diplomacy_autonomy_v5_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 5 }
+			}
+			spm_diplomacy_autonomy_v6_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 6 }
+			}
+			spm_diplomacy_autonomy_v7_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 7 }
+			}
+			spm_diplomacy_autonomy_v8_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 8 }
+			}
+			spm_diplomacy_autonomy_v9_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 9 }
+			}
+			spm_diplomacy_autonomy_v10_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				check_variable = { ROOT.spm_autonomy = 10 }
+			}
+			spm_diplomacy_make_subject_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_make_subject_click_enabled = {
 				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_diplomacy_free_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_free_click_enabled = {
+				OWNER = { is_subject = yes }
+			}
+			spm_diplomacy_autonomy_score_l_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_autonomy_score_v_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_autonomy_score_sub500_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_autonomy_score_add500_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_annex_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_annex_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_diplomacy_free_subjects_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_free_subjects_click_enabled = {
+				OWNER = { num_subjects > 0 }
+			}
+			spm_diplomacy_t16_242_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_undo_lost_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_undo_lost_click_enabled = {
+				OWNER = { has_variable = fxt_pc_id }
+			}
+			spm_diplomacy_undo_pc_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_undo_pc_click_enabled = {
+				check_variable = { global.fxt_pc_cursor > 0 }
+			}
+			spm_diplomacy_return_cores_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_return_cores_click_enabled = {
+				OWNER = { any_core_state = { NOT = { is_owned_by = PREV } } }
+			}
+			spm_diplomacy_hand_back_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_hand_back_click_enabled = {
+				OWNER = { any_owned_state = { NOT = { is_core_of = PREV } } }
+			}
+			spm_diplomacy_t290_84_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_white_peace_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_white_peace_click_enabled = {
+				OWNER = { has_war = yes }
+			}
+			spm_diplomacy_war_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
 				OWNER = { NOT = { has_war_with = ROOT } }
 			}
-			spm_war_label_150_visible = {
-				has_global_flag = spm_tab_war
+			spm_diplomacy_war_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
 			}
-			spm_war_join_mine_visible = {
-				has_global_flag = spm_tab_war
+			spm_diplomacy_peace_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				OWNER = { has_war_with = ROOT }
 			}
-			spm_war_join_mine_click_enabled = {
-				ROOT = { is_faction_leader = yes }
+			spm_diplomacy_t290_144_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_guarantee_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_guarantee_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_diplomacy_nap_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_nap_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_diplomacy_access_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_access_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_diplomacy_its_guarantee_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_its_guarantee_click_enabled = {
+				OWNER = { NOT = { tag = ROOT } }
+			}
+			spm_diplomacy_opinion_l_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_opinion_v_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_opinion_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_opinion_add10_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_t290_270_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+			}
+			spm_diplomacy_join_mine_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
 				OWNER = { is_in_faction = no }
 			}
-			spm_war_leave_faction_visible = {
-				has_global_flag = spm_tab_war
+			spm_diplomacy_join_mine_click_enabled = {
+				ROOT = { is_faction_leader = yes }
 			}
-			spm_war_leave_faction_click_enabled = {
+			spm_diplomacy_leave_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
 				OWNER = { is_in_faction = yes }
 			}
-			spm_war_new_faction_visible = {
-				has_global_flag = spm_tab_war
-			}
-			spm_war_new_faction_click_enabled = {
+			spm_diplomacy_found_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
 				OWNER = { is_in_faction = no }
 			}
-			spm_war_join_its_visible = {
-				has_global_flag = spm_tab_war
+			spm_diplomacy_join_its_visible = {
+				ROOT = { has_country_flag = spm_page_diplomacy }
+				OWNER = { is_in_faction = yes }
 			}
-			spm_war_join_its_click_enabled = {
+			spm_diplomacy_join_its_click_enabled = {
 				OWNER = { is_faction_leader = yes }
 				ROOT = { is_in_faction = no }
 			}
-			spm_resources_label_50_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_t16_84_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_resources_pp_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_resources_manpower_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_prev_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_resources_cp_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_next_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_resources_equipment_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_v0_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 0 }
 			}
-			spm_resources_label_150_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_v1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 1 }
 			}
-			spm_resources_civ_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_v2_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 2 }
 			}
-			spm_resources_mil_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_v3_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 3 }
 			}
-			spm_resources_infra_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_v4_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 4 }
 			}
-			spm_resources_air_visible = {
-				has_global_flag = spm_tab_resources
+			spm_military_div_type_v5_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 5 }
 			}
-			spm_advanced_label_50_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_type_v6_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 6 }
 			}
-			spm_advanced_tool_smt_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_type_v7_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_div_type = 7 }
 			}
-			spm_advanced_tool_cat_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_count_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_cpt_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_count_v_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_tpt_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_count_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_dst_A_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_count_add1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_dst_B_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_count_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_bst_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_div_count_add10_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_sst_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_vet_on_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				ROOT = { has_country_flag = spm_div_veteran }
 			}
-			spm_advanced_tool_mst_C_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_vet_off_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				NOT = { ROOT = { has_country_flag = spm_div_veteran } }
 			}
-			spm_advanced_tool_mst_S_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_spawn_div_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_rmt_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_del_type_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
-			spm_advanced_tool_crt_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_del_all_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				NOT = { ROOT = { has_country_flag = spm_arm_delete } }
 			}
-			spm_advanced_tool_ret_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_del_all_arm_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				ROOT = { has_country_flag = spm_arm_delete }
 			}
-			spm_advanced_tool_cct_visible = {
-				has_global_flag = spm_tab_advanced
+			spm_military_t16_236_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_type_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_type_prev_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_type_next_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_type_v0_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_type = 0 }
+			}
+			spm_military_ship_type_v1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_type = 1 }
+			}
+			spm_military_ship_type_v2_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_type = 2 }
+			}
+			spm_military_ship_type_v3_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_type = 3 }
+			}
+			spm_military_ship_type_v4_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_type = 4 }
+			}
+			spm_military_ship_type_v5_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_type = 5 }
+			}
+			spm_military_ship_type_v6_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_type = 6 }
+			}
+			spm_military_ship_era_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_era_prev_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_era_next_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_era_v0_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_era = 0 }
+			}
+			spm_military_ship_era_v1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_era = 1 }
+			}
+			spm_military_ship_era_v2_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_era = 2 }
+			}
+			spm_military_ship_era_v3_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_era = 3 }
+			}
+			spm_military_ship_era_v4_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+				check_variable = { ROOT.spm_ship_era = 4 }
+			}
+			spm_military_ship_count_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_count_v_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_count_sub1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_count_add1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_count_sub10_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_ship_count_add10_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_del_ships_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_spawn_ship_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_t290_84_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_axp_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_axp_v_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_axp_sub50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_axp_add50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_nxp_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_nxp_v_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_nxp_sub50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_nxp_add50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_fxp_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_fxp_v_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_fxp_sub50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_fxp_add50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_cp_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_cp_v_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_cp_sub50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_cp_add50_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_mp_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_mp_v_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_mp_sub100_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_mp_add100_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_t290_238_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq0_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq0_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq1_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq1_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq2_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq2_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq3_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq3_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq4_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq4_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq5_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq5_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq6_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq6_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq7_l_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_eq7_visible = {
+				ROOT = { has_country_flag = spm_page_military }
+			}
+			spm_military_unlock_visible = {
+				ROOT = { has_country_flag = spm_page_military }
 			}
 		}
 	}

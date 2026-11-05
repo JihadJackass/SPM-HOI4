@@ -1,0 +1,10 @@
+defined_text = {
+	name = SPM_ST_TOGGLE
+	text = {
+		trigger = { ROOT = { has_country_flag = spm_st_enabled } }
+		localization_key = SPM_ST_TOGGLE_ON
+	}
+	text = {
+		localization_key = SPM_ST_TOGGLE_OFF
+	}
+}

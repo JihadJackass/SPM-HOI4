@@ -1,0 +1,146 @@
+guiTypes = {
+	containerWindowType = {
+		name = "spm_st_topbar"
+		position = { x = 1040 y = 2 }
+		size = { width = 150 height = 34 }
+		orientation = UPPER_LEFT
+
+		buttonType = {
+			name = "spm_st_toggle"
+			position = { x = 0 y = 0 }
+			spriteType = "GFX_button_148x34"
+			buttonText = "SPM_ST_TOGGLE_BTN"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_TOGGLE_TT"
+			shortcut = "ctrl+shift+t"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+	}
+
+	containerWindowType = {
+		name = "spm_st_window"
+		position = { x = 1040 y = 96 }
+		size = { width = 290 height = 196 }
+		orientation = UPPER_LEFT
+		moveable = yes
+		fade_time = 100
+		fade_type = linear
+
+		background = {
+			name = "Background"
+			spriteType = "GFX_tiled_window_1b_border"
+		}
+
+		instantTextboxType = {
+			name = "spm_st_title"
+			position = { x = 14 y = 10 }
+			font = "hoi_16mbs"
+			text = "SPM_ST_TITLE"
+			maxWidth = 262
+			maxHeight = 20
+			format = left
+			alwaystransparent = yes
+		}
+		instantTextboxType = {
+			name = "spm_st_count"
+			position = { x = 14 y = 30 }
+			font = "hoi_16mbs"
+			text = "SPM_ST_COUNT"
+			maxWidth = 262
+			maxHeight = 20
+			format = left
+			alwaystransparent = yes
+		}
+		buttonType = {
+			name = "spm_st_mark"
+			position = { x = 14 y = 56 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_MARK"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_MARK_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_unmark"
+			position = { x = 14 y = 56 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_UNMARK"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_UNMARK_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_mark_all"
+			position = { x = 145 y = 56 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_MARK_ALL"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_MARK_ALL_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_mark_col"
+			position = { x = 14 y = 90 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_MARK_COL"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_MARK_COL_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_clear"
+			position = { x = 145 y = 90 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_CLEAR"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_CLEAR_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_send"
+			position = { x = 14 y = 124 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_SEND"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_SEND_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_send_core"
+			position = { x = 145 y = 124 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_SEND_CORE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_SEND_CORE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_core"
+			position = { x = 14 y = 158 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_CORE"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_CORE_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+		buttonType = {
+			name = "spm_st_give_me"
+			position = { x = 145 y = 158 }
+			spriteType = "GFX_button_123x34"
+			buttonText = "SPM_ST_GIVE_ME"
+			buttonFont = "hoi_16mbs"
+			pdx_tooltip = "SPM_ST_GIVE_ME_TT"
+			clicksound = click_ok
+			oversound = ui_menu_over
+		}
+	}
+}

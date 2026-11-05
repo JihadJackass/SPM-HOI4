@@ -1,0 +1,15 @@
+infrastructure
+dockyard
+air_base
+naval_base
+anti_air_building
+radar_station
+fuel_silo
+bunker
+coastal_bunker
+rocket_site
+nuclear_reactor
+steel
+rubber
+tungsten
+chromium

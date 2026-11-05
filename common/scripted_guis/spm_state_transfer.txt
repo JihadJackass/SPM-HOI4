@@ -1,0 +1,137 @@
+scripted_gui = {
+	spm_st_window = {
+		context_type = selected_state_context
+		window_name = "spm_st_window"
+		visible = {
+			ROOT = {
+				is_ai = no
+				ROOT = { has_country_flag = spm_st_enabled }
+				OR = {
+					has_country_flag = tp_is_host
+					NOT = { has_global_flag = tp_is_multiplayer }
+					has_global_flag = spm_everyone
+					NOT = { any_country = { has_country_flag = tp_is_host } }
+				}
+			}
+		}
+		effects = {
+			spm_st_mark_click = {
+				set_state_flag = smt_marked
+				spm_recount_marks = yes
+			}
+			spm_st_unmark_click = {
+				clr_state_flag = smt_marked
+				spm_recount_marks = yes
+			}
+			spm_st_mark_all_click = {
+				OWNER = { every_owned_state = { set_state_flag = smt_marked } }
+				spm_recount_marks = yes
+			}
+			spm_st_mark_col_click = {
+				OWNER = {
+					every_owned_state = {
+						limit = {
+							is_in_home_area = no
+							NOT = { is_core_of = PREV }
+						}
+						set_state_flag = smt_marked
+					}
+				}
+				spm_recount_marks = yes
+			}
+			spm_st_clear_click = {
+				every_state = { clr_state_flag = smt_marked }
+				spm_recount_marks = yes
+			}
+			spm_st_send_click = {
+				every_state = {
+					limit = { has_state_flag = smt_marked }
+					clr_state_flag = smt_marked
+					PREV.OWNER = { transfer_state = PREV }
+				}
+				spm_recount_marks = yes
+			}
+			spm_st_send_core_click = {
+				every_state = {
+					limit = { has_state_flag = smt_marked }
+					clr_state_flag = smt_marked
+					PREV.OWNER = {
+						transfer_state = PREV
+						add_state_core = PREV
+					}
+				}
+				spm_recount_marks = yes
+			}
+			spm_st_core_click = {
+				every_state = {
+					limit = { has_state_flag = smt_marked }
+					clr_state_flag = smt_marked
+					PREV.OWNER = {
+						if = {
+							limit = { NOT = { PREV = { is_core_of = PREV } } }
+							add_state_core = PREV
+						}
+						else = {
+							remove_state_core = PREV
+						}
+					}
+				}
+				spm_recount_marks = yes
+			}
+			spm_st_give_me_click = {
+				ROOT = { transfer_state = PREV }
+			}
+		}
+		triggers = {
+			spm_st_mark_visible = {
+				NOT = { has_state_flag = smt_marked }
+			}
+			spm_st_unmark_visible = {
+				has_state_flag = smt_marked
+			}
+			spm_st_clear_click_enabled = {
+				check_variable = { global.spm_marked > 0 }
+			}
+			spm_st_send_click_enabled = {
+				check_variable = { global.spm_marked > 0 }
+			}
+			spm_st_send_core_click_enabled = {
+				check_variable = { global.spm_marked > 0 }
+			}
+			spm_st_core_click_enabled = {
+				check_variable = { global.spm_marked > 0 }
+			}
+			spm_st_give_me_click_enabled = {
+				NOT = { is_owned_by = ROOT }
+			}
+		}
+	}
+
+	spm_st_topbar = {
+		context_type = player_context
+		window_name = "spm_st_topbar"
+		visible = {
+			ROOT = {
+				is_ai = no
+				OR = {
+					has_country_flag = tp_is_host
+					NOT = { has_global_flag = tp_is_multiplayer }
+					has_global_flag = spm_everyone
+					NOT = { any_country = { has_country_flag = tp_is_host } }
+				}
+			}
+		}
+		effects = {
+			spm_st_toggle_click = {
+				if = {
+					limit = { ROOT = { has_country_flag = spm_st_enabled } }
+					ROOT = { clr_country_flag = spm_st_enabled }
+				}
+				else = {
+					ROOT = { set_country_flag = spm_st_enabled }
+					spm_recount_marks = yes
+				}
+			}
+		}
+	}
+}
